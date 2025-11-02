@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
+use Illuminate\Support\Facades\Artisan;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -36,3 +37,12 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/add-coupon',[App\Http\Controllers\AdminController::class,'addCoupone'])->name('admin.product.coupon');
 });
 
+// artisan commands
+Route::get('/abc123', function () {
+    \Artisan::call('migrate', ['--force' => true]);
+    return response()->json(['status' => 'Migration completed']);
+});;
+// Route::get('/storage-link', function () {
+//     Artisan::call('storage:link');
+//     return response()->json(['status' => 'Storage link created']);
+// })->middleware('auth');
