@@ -1,0 +1,149 @@
+<div class="light-modal" wire:transition>
+    <div class="light-modal-content">
+        <div class="">
+            <div class="product-display">
+                <div class="close-btn">
+                    <button class="btn btn-default" wire:click="closeModal">X</button>
+                </div>
+                <div class="scroll-content">
+                    <div class="product-md">
+                        <div class="thumb-md">
+                            <img src="{{ asset($selected_product->image_path) }}" alt="" class="img-fluid">
+
+                        </div>
+                        <div class="p-3">
+                            <h5 class="title-md mb-0">{{ $selected_product->title }}</h5>
+                            <h5 class="fw-bold">{{ number_format($selected_product->discounted_price, 2, ',', ' ') }} €
+                            </h5>
+                            <p>{{ $selected_product->description }}</p>
+
+
+
+                        </div>
+                        <div class="p-3 mb-3">
+
+                            <div>
+
+                                <div class="mb-3 variants-sections">
+                                    @php
+                                        $grouped_options = $selected_product->getGroupedOption();
+                                    @endphp
+
+                                    @if ($grouped_options->count() > 0)
+                                        @foreach ($grouped_options as $option_id => $variants)
+                                            <h6 class="fw-bold mb-3 text-capitalize">
+                                                {{ App\Models\Options::where('id', $option_id)->first()->option_name }}
+                                            </h6>
+
+                                            @foreach ($variants as $key => $item)
+                                                <div class="row align-items-center mb-2">
+                                                    <div class="col-6">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioDefault_{{ $option_id }}"
+                                                                id="rd{{ $item->id }}" value="{{ $item->id }}"
+                                                                wire:model.live="variant.{{ $option_id }}"
+                                                                wire:click="calculateTotal"
+                                                                @if ($loop->first) checked @endif>
+                                                            <label class="form-check-label" for="rd{{ $item->id }}">
+                                                                {{ $item->value }}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="d-flex justify-content-end">
+                                                            <span>{{ number_format($item->price, 2, ',', ' ') }}
+                                                                €</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endforeach
+                                        @error('variant')
+                                            <small class="text-danger fw-bold">{{$message}}</small>
+                                        @enderror
+                                    @endif
+                                    {{-- @foreach ($variant as $option_id => $item)
+                                        Key: {{$option_id}} <br>
+                                        Value: {{$item}} <br>
+                                    @endforeach
+                                   <button wire:click="calculateTotal">test</button> --}}
+                                </div>
+                                {{-- <hr class="my-3"> --}}
+
+
+                                <div class="mb-3">
+                                    @if (count($selected_product->getChoices()) > 0)
+                                        <h6 class="fw-bold mb-3">{{ __('Choices') }}</h6>
+                                        @foreach ($selected_product->getChoices() as $item)
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            value="{{ $item->id }}" id="chk{{ $item->id }}"
+                                                            wire:model.live="choices" wire:click="calculateTotal">
+                                                        <label class="form-check-label" for="chk{{ $item->id }}">
+                                                            {{ $item->getChoiceName()->Choice_name }}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="d-flex flex-row-reverse">
+                                                        <span>{{ number_format($item->price, 2, ',', ' ') }}
+                                                            €</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="add-bar">
+                    <div class="add-bar-wrap">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="btn-content p-2">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="">
+                                            <button class="btn-rounded" wire:click="decrement"><i
+                                                    class="bi bi-dash"></i></button>
+                                        </div>
+                                        <div class="qty">{{ $quantity }}</div>
+                                        <div class="">
+                                            <button class="btn-rounded" wire:click="increment"><i
+                                                    class="bi bi-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <button class=" btn btn-add-cart" wire:click="addCart">{{ __('ADD TO BAG') }}
+                                    ({{ number_format($grand_total, 2, ',', ' ') }} €) </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

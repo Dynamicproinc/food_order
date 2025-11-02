@@ -1,0 +1,107 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="side-icon-bar">
+                                <div class="list-group rounded-0" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-home-list"
+                                        data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home"><i
+                                            class="bi bi-house"></i></a>
+                                    <a class="list-group-item list-group-item-action" id="list-profile-list"
+                                        data-bs-toggle="list" href="#list-profile" role="tab"
+                                        aria-controls="list-profile"><i class="bi bi-card-list"></i></a>
+                                    <a class="list-group-item list-group-item-action" id="list-messages-list"
+                                        data-bs-toggle="list" href="#list-messages" role="tab"
+                                        aria-controls="list-messages"><i class="bi bi-bell"></i></a>
+                                    <a class="list-group-item list-group-item-action" id="list-settings-list"
+                                        data-bs-toggle="list" href="#list-settings" role="tab"
+                                        aria-controls="list-settings"><i class="bi bi-gear"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                                    aria-labelledby="list-home-list">
+                                    <div class="p-3">
+                                        <h6 class="fw-bold">{{ __('Dashboard') }}</h6>
+                                        <div class="mt-3">
+                                            <h2 class="fw-bold mb-0">{{ $total_points?->balance ?? '0' }}</h2>
+                                            <small>{{ __('Your current available points') }}</small>
+                                        </div>
+                                        <div class="mt-2 border rounded p-2">
+                                            <h6 class="fw-bold">
+                                                {{ __('Latest orders') }}
+                                            </h6>
+                                            <div>
+                                                @if(count($sales_orders))
+                                                <table class="table table-striped table-responsive">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th scope="col">{{ __('Order')}}</th>
+                                                            <th scope="col">{{ __('Date')}}</th>
+                                                            <th scope="col">{{ __('Type')}}</th>
+                                                            <th scope="col">{{ __('Amount')}}</th>
+                                                            <th scope="col">{{ __('Status')}}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @foreach ($sales_orders as $item )
+                                                            <tr>
+                                                            <th scope="row">{{ $item->daily_order_number }}</th>
+                                                            <td>{{ $item->created_at->format('d.m.Y') }}</td>
+                                                            <td>{{ $item->order_type }}</td>
+                                                            <td style="text-align: right">{{ number_format($item->net_total, 2, ',', ' ') }} € </td>
+                                                            <td>{{ $item->status }}</td>
+                                                        </tr>
+                                                        @endforeach
+
+                                                    </tbody>
+                                                </table>
+                                                @else
+                                                <p class="text-muted">{{ __('No orders found')}}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                                    aria-labelledby="list-profile-list">
+                                    <div class="p-3">
+                                        <h6 class="fw-bold">{{ __('Orders History') }}</h6>
+                                        <div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                                    aria-labelledby="list-messages-list">
+                                    <div class="p-3">
+                                        <h6 class="fw-bold">{{ __('Notifications') }}</h6>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-settings" role="tabpanel"
+                                    aria-labelledby="list-settings-list">
+                                    <div class="p-3">
+                                        <h6 class="fw-bold">{{ __('Setting') }}</h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
