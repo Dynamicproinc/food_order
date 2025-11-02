@@ -46,7 +46,7 @@ class Add extends Component
 
         $uniq_name = time() . '-' . Str::random(10) . '.' . $this->image->getClientOriginalExtension();
 $path = $this->image->storeAs('products', $uniq_name, 'public');
-$image_path = 'storage/products/' . $uniq_name;
+$image_path = 'uploads/products/' . $uniq_name;
 
         $product = new Product;
         $product->user_id = auth()->user()->id;
