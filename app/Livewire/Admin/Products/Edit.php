@@ -77,8 +77,9 @@ class Edit extends Component
     $uniq_name = time() . '-' . Str::random(10) . '.' . $this->image->getClientOriginalExtension();
     // Store file
     $path = $this->image->storeAs('products', $uniq_name, 'public');
+   
     // Save image path
-    $image_path = 'storage/products/' . $uniq_name;
+    $image_path = 'uploads/products/' . $uniq_name;
 } else {
     // If no new upload, keep the old image path
     $image_path = $this->product->image_path;
