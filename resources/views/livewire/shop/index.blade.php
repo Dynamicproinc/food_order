@@ -38,7 +38,7 @@
                     @foreach ($products as $item)
                         
                     <div class="col-6 col-lg-4 mb-3" >
-                        <div class="product-sm" wire:click="selectProduct({{ $item->id }})">
+                        <div class="product-sm bg-white" wire:click="selectProduct({{ $item->id }})">
                             <div class="thumb-sm">
                                 <img src="{{asset($item->image_path)}}"
                                     alt="" class="img-fluid">
