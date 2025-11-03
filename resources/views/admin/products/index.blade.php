@@ -17,7 +17,7 @@
       <th scope="col">{{ __('IMAGE')}}</th>
       <th scope="col">{{ __('PRODUCT ID')}}</th>
       <th scope="col">{{ __('TITLE')}}</th>
-      <th scope="col">{{ __('CUSTOMIZATION')}}</th>
+      <th scope="col">{{ __('PRICE')}}</th>
       <th scope="col">{{ __('STATUS')}}</th>
     </tr>
   </thead>
@@ -25,10 +25,10 @@
     @foreach ($products as $item)
         
     <tr>
-      <th scope="row"><img src="{{asset($item->image_path ? $item->image_path : 'images/logo.jpg')}}" alt="" style="width:100px;height:100px; border-radius:16px;object-fit: cover"></th>
+      <th scope="row"><img src="{{asset($item->image_path ? $item->image_path : 'images/logo.jpg')}}" alt="" style="width:40px;height:40px; border-radius:4px;object-fit: cover"></th>
       <td>{{ $item->id }}</td>
       <td><a href="{{route('admin.product.edit', $item->id)}}" target="_blank">{{ $item->title }}</a></td>
-      <td>dasda</td>
+      <td>{{ $item->discounted_price}}</td>
       <td>
         @if ($item->status == 'draft')
             <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill text-capitalize"> {{ $item->status }}</span>
