@@ -60,8 +60,16 @@ class Kitchen extends Component
     
             $user_points_sum = UserPoint::where('order_id', $order->id)->sum('points');
             $ex_bal = UserPointTotal::where('user_id', $order->user_id)->first();
-            $ex_bal->balance = $ex_bal->balance + $user_points_sum;
-            $ex_bal->save();
+            if($ex_bal){
+
+                $ex_bal->balance = $ex_bal->balance + $user_points_sum;
+                $ex_bal->save();
+            }else{
+                $u_point = new UserPointTotal;
+                $u_point->user_id = $order->user_id ;
+                $u_point->balance = $user_points_sum;
+                $u_point->save();
+            }
             // send email to customer
         }
 
