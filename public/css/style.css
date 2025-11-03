@@ -714,3 +714,58 @@ footer{
     font-size: 14px;
 }
 
+/* cookie */
+ .cookie-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: #fff;
+    padding: 12px 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: system-ui, sans-serif;
+    z-index: 9999;
+  }
+  .cookie-bar p {
+    margin: 0;
+    flex: 1 1 auto;
+    font-size: 15px;
+  }
+  .cookie-bar a {
+    color: #4da3ff;
+    text-decoration: underline;
+  }
+  .cookie-bar .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .cookie-bar button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  #acceptCookies {
+    background: #FFCA2C;
+    color: #000;
+  }
+  #declineCookies {
+    background: #444;
+    color: #fff;
+  }
+  @media (min-width: 600px) {
+    .cookie-bar {
+      flex-wrap: nowrap;
+    }
+    .cookie-bar .buttons {
+      margin-top: 0;
+    }
+  }
+/* end cookie */
+

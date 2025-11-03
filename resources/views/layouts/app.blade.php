@@ -51,6 +51,10 @@
 </footer>
 
         {{--  --}}
+
+        {{-- cookies --}}
+        @include('inc.cookie')
+        {{--  --}}
     </div>
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -89,6 +93,27 @@
         });
         
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const cookieBar = document.getElementById("cookieConsent");
+    const acceptBtn = document.getElementById("acceptCookies");
+    const declineBtn = document.getElementById("declineCookies");
+
+    if (!localStorage.getItem("cookieConsent")) {
+      cookieBar.style.display = "flex";
+    }
+
+    acceptBtn.addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "accepted");
+      cookieBar.style.display = "none";
+    });
+
+    declineBtn.addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "declined");
+      cookieBar.style.display = "none";
+    });
+  });
+</script>
     {{-- sidebar --}}
 </body>
 
