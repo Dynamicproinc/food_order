@@ -44,8 +44,8 @@
             </div>
         </main>
         {{--  --}}
-        <footer class="text-center py-3">
-  <div class="container">
+        <footer class="text-center py-3 d-flex justify-content-center align-items-center" style="height:100px">
+  <div class="container ">
     &copy;  {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
   </div>
 </footer>
