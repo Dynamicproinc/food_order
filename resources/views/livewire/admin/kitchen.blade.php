@@ -31,7 +31,7 @@
                                         <div
                                             class="order-card-body p-3 @if ($item->status === 'pending') bg-pending @endif">
                                             <div class="text-uppercase">
-                                                <h6>{{ $item->getUser()->name . ' ' . $item->getUser()->last_name }} | {{ $item->telephone}}</h6>
+                                                <h6>{{ substr($item->getUser()->name, 0, 10) }} {{ substr($item->getUser()->last_name, 0, 10) }} | {{ $item->telephone}}</h6>
                                             </div>
                                             @if ($item->order_type === 'delivery')
                                                 <div class="alert alert-info">
@@ -144,9 +144,10 @@
                                             {{ $ro->daily_order_number }}
                                         </div>
                                         <div class="p-2">
-                                            <h5 class="fw-bold mb-0 text-uppercase">
-                                                {{ $ro->getUser()->name . ' ' . $ro->getUser()->last_nam }}
-                                            </h5>
+                                            <h6 class="fw-bold mb-0 text-uppercase">
+                                                {{ substr($ro->getUser()->name, 0, 10) }} {{ substr($ro->getUser()->last_name, 0, 10) }}
+                                                {{-- {{ $ro->getUser()->name . ' ' . $ro->getUser()->last_name }} --}}
+                                            </h6>
                                             <small class="fw-bolder text-uppercase">{{ $ro->order_type }}</small>
                                             <h6 class="mb-0 mb-2">{{ number_format($ro->net_total, 2, ',', ' ') }} €
                                             </h6>

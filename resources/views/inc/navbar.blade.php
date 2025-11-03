@@ -16,7 +16,7 @@
                                 @auth
                                 <a href="{{route('myaccount')}}" class="btn btn-outline-light mx-2 text-capitalize">
                                     <i class="bi bi-person"></i>
-                                    {{__('Hi')}} {{auth()->user()->name}}
+                                    {{__('Hi')}} {{ substr(auth()->user()->name, 0, 10) }}
                                 </a>
                                 @else
                                 <a href="{{ route('login')}}" type="button" class="btn btn-outline-light mx-2">
