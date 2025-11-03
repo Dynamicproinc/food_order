@@ -36,7 +36,7 @@
         {{-- sidebar end --}}
         <div style="height:80px"></div>
 
-        <main class="container" style="min-height: 100vh">
+        <main class="container" style="min-height: 100vh; margin-bottom:100px">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     @yield('content')
