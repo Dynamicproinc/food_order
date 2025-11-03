@@ -64,7 +64,9 @@
                                                             </td>
                                                             {{-- <td></td> --}}
                                                             {{-- <td style="text-align: right"></td> --}}
-                                                            <td>{{ $item->status }}</td>
+                                                            <td>
+                                                                <small class="txt-xs fw-bold text-uppercase">{{ $item->status }}</small>
+                                                            </td>
                                                         </tr>
                                                         @endforeach
 
