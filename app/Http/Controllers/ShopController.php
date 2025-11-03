@@ -11,7 +11,7 @@ class ShopController extends Controller
     public function index(){
         
         $categories = Category::get();
-        $products = Product::where('status', 'active')->get();
+        $products = Product::where('status', 'active')->orderBy('category_id', 'asc')->get();
         return view('shop.index')->with(['categories'=> $categories, 'products' => $products]);
     }
 
