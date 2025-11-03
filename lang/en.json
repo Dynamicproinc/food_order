@@ -40,7 +40,15 @@
     "(Only for orders above 70,00 €)" : "(Only for orders above 70,00 €)",
     "We currently deliver within the Velika Gorica area only.": "We currently deliver within the Velika Gorica area only.",
     "Checkout": "Checkout",
-    "Place Your Order": "Place Your Order"
+    "Place Your Order": "Place Your Order",
+    "Order": "Order",
+    "Date": "Date",
+    "Status": "Status",
+    "Accepted": "Accepted",
+    "Pending": "Pending",
+    "Ready" : "Ready",
+    "Dispatched" : "Dispatched",
+    "Pickup": "Pickup"
 
     
 

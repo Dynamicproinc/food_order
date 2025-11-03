@@ -40,7 +40,15 @@
     "(Only for orders above 70,00 €)": "(Samo za narudžbe iznad 70,00 €)",
     "We currently deliver within the Velika Gorica area only.": "Trenutno dostavljamo samo unutar područja Velike Gorice.",
     "Checkout": "Plaćanje",
-    "Place Your Order": "Potvrdite narudžbu"
+    "Place Your Order": "Potvrdite narudžbu",
+    "Order": "Narudžba",
+    "Date": "Datum",
+    "Status": "Status",
+    "Accepted": "Prihvaćeno",
+    "Pending": "Na čekanju",
+    "Ready": "Spremno",
+    "Dispatched": "Poslano",
+    "Pickup": "Preuzimanje"
 
     
 

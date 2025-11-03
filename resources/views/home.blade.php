@@ -59,13 +59,13 @@
                                                             <td>
                                                                 <h6 class="mb-0">{{ $item->created_at->format('d.m.Y') }}</h6>
                                                                 <h5 class="fw-bold mb-0">{{ number_format($item->net_total, 2, ',', ' ') }} € </h5>
-                                                                <small class="text-muted text-uppercase txt-xs fw-bolder">{{ $item->order_type }}</small>
+                                                                <small class="text-muted text-uppercase txt-xs fw-bolder">{{ __($item->order_type) }}</small>
 
                                                             </td>
                                                             {{-- <td></td> --}}
                                                             {{-- <td style="text-align: right"></td> --}}
                                                             <td>
-                                                                <small class="txt-xs fw-bold text-uppercase">{{ $item->status }}</small>
+                                                                <small class="txt-xs fw-bold text-uppercase"> {{ __($item->status) }}</small>
                                                             </td>
                                                         </tr>
                                                         @endforeach

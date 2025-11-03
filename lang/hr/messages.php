@@ -1,10 +1,11 @@
 <?php
 
 return [
-
-'my_account' => 'Moj račun',
-
-]
+    'Accepted' => 'Prihvaćeno',
+    'Pending' => 'Na čekanju',
+    'Ready' => 'Spremno',
+    'Dispatched' => 'Poslano',
+];
 
 
 
