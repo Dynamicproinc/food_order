@@ -308,7 +308,7 @@
     @else
         <div class="p-3">
             <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
-                Coupone Balance: {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
+               {{__('Coupon Balance:')}} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
             </span>
         </div>
 
