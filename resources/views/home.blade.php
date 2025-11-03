@@ -40,7 +40,8 @@
                                             </h6>
                                             <div>
                                                 @if(count($sales_orders))
-                                                <table class="table table-striped table-responsive">
+                                               <div class="tab-pane-table">
+                                                 <table class="table table-striped table-responsive">
                                                     <thead class="">
                                                         <tr>
                                                             <th scope="col">{{ __('Order')}}</th>
@@ -69,6 +70,7 @@
 
                                                     </tbody>
                                                 </table>
+                                               </div>
                                                 @else
                                                 <p class="text-muted">{{ __('No orders found')}}</p>
                                                 @endif

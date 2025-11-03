@@ -702,6 +702,10 @@ animation: fadeUp 0.4s ease-out forwards;
 }
 .side-icon-bar{
  background-color: #000;
- height: 700px;   
+ height: 500px;   
+}
+.tab-pane-table{
+    height: 300px;
+    overflow-y: auto;
 }
 
