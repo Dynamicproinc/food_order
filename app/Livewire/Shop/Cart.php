@@ -123,14 +123,14 @@ class Cart extends Component
 
         if ($this->order_type == 'delivery') {
             $this->validate([
-                'city' => 'required',
-                'address' => 'required',
-                'address_2' => 'required',
+                'city' => 'required|string|max:255',
+                'address' => 'required|string|max:255',
+                'address_2' => 'required|string|max:255',
             ]);
         }
 
         $this->validate([
-            'telephone' => 'required',
+            'telephone' => 'required|string|max:255',
             'order_type' => 'required',
             
         ]);
