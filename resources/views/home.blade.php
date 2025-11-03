@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-3">
                             <div class="side-icon-bar">
                                 <div class="list-group rounded-0" id="list-tab" role="tablist">
                                     <a class="list-group-item list-group-item-action active" id="list-home-list"
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                     aria-labelledby="list-home-list">
