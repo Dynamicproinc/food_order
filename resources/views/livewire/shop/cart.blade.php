@@ -289,7 +289,7 @@
         <div class="p-3">
             <div class="mb-2">
                 <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
-                    {{__('Coupone Balance:')}} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
+                    {{__('Coupon Balance:')}} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
                 </span>
             </div>
 
