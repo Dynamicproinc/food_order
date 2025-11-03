@@ -17,7 +17,7 @@
                     <div class="d-flex align-items-center">
                         <i class="bi bi-check2 me-2"></i>
                         <small x-data x-init="setTimeout(() => $wire.set('success_message', ''), 2000)" class="fw-bold">
-                            {{ $success_message }}
+                            {{ __($success_message) }}
                         </small>
                     </div>
                 @endif
@@ -25,7 +25,7 @@
                     <div class="d-flex align-items-center">
                         <i class="bi bi-check2 me-2"></i>
                         <small x-data x-init="setTimeout(() => $wire.set('success_message', ''), 2000)" class="fw-bold">
-                           {{ $error_message }}
+                           {{__( $error_message )}}
                         </small>
                     </div>
                 @endif

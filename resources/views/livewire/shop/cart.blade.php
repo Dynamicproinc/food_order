@@ -359,7 +359,7 @@
 @else
     <div class="empty-cart-list">
         <div>
-            <h3 class="text-muted">{{ __('Your cart is empty') }} 😢</h3>
+            <h3 class="text-muted">{{ __('Your bag is empty') }} 😢</h3>
             <div class="d-flex justify-content-center">
                 <a href="{{ route('shop.index') }}" class="btn btn-dark mt-3">{{ __('Shop') }}</a>
             </div>
