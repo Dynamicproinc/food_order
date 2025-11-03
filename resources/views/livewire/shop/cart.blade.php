@@ -55,7 +55,7 @@
                                         <input class="form-check-input pm my-3 mx-2" type="radio" id="pmcard"
                                             value="pickup" wire:model="order_type">
                                         <label class="pm-check-label my-3" for="pmcard">
-                                            <span>{{ __('Pickup/Dine in') }}</span>
+                                            <span>{{ __('Pickup/Dine-in') }}</span>
 
 
 
@@ -251,7 +251,7 @@
 
                                     <div class="">
                                         <small class="text-muted clickable"
-                                            wire:click="removeCartItem('{{ $index }}')">Remove</small>
+                                            wire:click="removeCartItem('{{ $index }}')">{{__('Remove')}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -276,7 +276,7 @@
             <span class="spinner-border spinner-border-sm" wire:loading wire:target="applyCoupon" role="status">
                 <span class="visually-hidden">Loading...</span>
             </span>
-            Apply
+            {{__('Apply')}}
         </button>
     </div>
     </div>
@@ -286,7 +286,7 @@
         <div class="p-3">
             <div class="mb-2">
                 <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
-                    Coupone Balance: {{ $user_points }} | {{ __('You can apply 10% discount') }}
+                    {{__('Coupone Balance:')}} {{ $user_points }} | {{ __('You can apply 10% discount') }}
                 </span>
             </div>
 

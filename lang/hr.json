@@ -23,7 +23,25 @@
    "Cart item has been updated": "Stavka u košarici je ažurirana",
    "Coupon added": "Kupon dodan",
     "Coupon removed": "Kupon uklonjen",
-    "Telephone": "Telefon"
+    "Telephone": "Telefon",
+    "Not enough coupons for disccount": "Nema dovoljno kupona za popust",
+    "Sub Total": "Međuzbroj",
+    "Discount": "Popust",
+    "Delivery": "Dostava",
+    "Net Total": "Ukupno",
+    "Apply Coupon": "Primijeni kupon",
+    "You can apply for 10% discount": "Možete primijeniti 10% popusta",
+    "Coupone Balance:": "Stanje kupona:",
+    "Apply": "Primijeni",
+    "Discount or gift card": "Popust ili poklon kartica",
+    "Remove": "Ukloni",
+    "Orders can only be placed between 10:00 AM and 2:00 PM.": "Narudžbe se mogu izvršiti samo između 10:00 i 14:00 sati.",
+    "Pickup/Dine-in": "Preuzimanje/U restoranu",
+    "(Only for orders above 70,00 €)": "(Samo za narudžbe iznad 70,00 €)",
+    "We currently deliver within the Velika Gorica area only.": "Trenutno dostavljamo samo unutar područja Velike Gorice."
+    
+
+
 
 
     

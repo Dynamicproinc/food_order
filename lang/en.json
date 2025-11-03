@@ -23,7 +23,23 @@
     "Cart item has been updated" :  "Cart item has been updated",
     "Coupon added": "Coupon added",
     "Coupon removed": "Coupon removed",
-    "Telephone" : "Telephone"
+    "Telephone" : "Telephone",
+    "Not enough coupons for disccount": "Not enough coupons for disccount",
+    "Sub Total": "Sub Total",
+    "Discount": "Discount",
+    "Delivery": "Delivery",
+    "Net Total": "Net Total",
+    "Apply Coupon": "Apply Coupon",
+    "You can apply for 10% discount": "You can apply for 10% discount",
+    "Coupone Balance:": "Coupone Balance:",
+    "Apply": "Apply",
+    "Discount or gift card": "Discount or gift card",
+    "Remove": "Remove",
+    "Orders can only be placed between 10:00 AM and 2:00 PM.": "Orders can only be placed between 10:00 AM and 2:00 PM.",
+    "Pickup/Dine-in": "Pickup/Dine-in",
+    "(Only for orders above 70,00 €)" : "(Only for orders above 70,00 €)",
+    "We currently deliver within the Velika Gorica area only.": "We currently deliver within the Velika Gorica area only."
+
     
 
 
