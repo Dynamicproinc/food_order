@@ -97,7 +97,7 @@
                                             type="radio" id="pmcod" value="delivery" wire:model="order_type"
                                             @if ($grand_total < 69) disabled @endif>
                                         <label class="pm-check-label my-3" for="pmcod">
-                                            {{ __('Home Delivery ') }} <small
+                                            {{ __('Home Delivery') }} <small
                                                 class="fw-bold">{{ __('(Only for orders above 70,00 €)') }}</small>
 
 
