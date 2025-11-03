@@ -1,5 +1,23 @@
 {
     "Welcome": "Welcome",
     "Logout": "Logout",
-    "Hi": "Hi!"
+    "Hi": "Hi!",
+    "My Account" : "My Account",
+    "Login": "Login",
+    "Email Address": "Email Address",
+    "Password": "Password",
+    "Remember Me": "Remember Me",
+    "Forgot Your Password?": "Forgot Your Password?",
+    "Dont have an account?": "Dont have an account?",
+    "Register": "Register",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+    "Email": "Email",
+    "Confirm Password": "Confirm Password",
+    "Already have an account?": "Already have an account?",
+    "By clicking, you agree to the" : "By clicking, you agree to the",
+    "Terms and Conditions": "Terms and Conditions"
+    
+
+
 }

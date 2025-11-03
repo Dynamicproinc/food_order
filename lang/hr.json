@@ -1,5 +1,20 @@
 {
     "Welcome": "Dobrodošli",
     "Logout": "Odjava",
-    "Hi": "Bok!"
+    "Hi": "Bok!",
+    "My Account": "Moj račun",
+    "Login": "Prijava",
+    "Email Address": "Adresa e-pošte",
+    "Password": "Lozinka",
+    "Remember Me": "Zapamti me",
+    "Forgot Your Password?": "Zaboravili ste lozinku?",
+    "Dont have an account?": "Nemate račun?",
+    "Register": "Registracija",
+    "First Name": "Ime",
+    "Last Name": "Prezime",
+    "Email": "E-pošta",
+    "Confirm Password": "Potvrdite lozinku",
+    "Already have an account?": "Već imate račun?",
+    "By clicking, you agree to the": "Klikom prihvaćate",
+    "Terms and Conditions": "Uvjete i odredbe"
 }

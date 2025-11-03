@@ -57,8 +57,8 @@
                                 <div class="form-floating">
                                         <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" id="email" placeholder="{{ __('Email') }}" required>
-                                        <label for="email">{{ __('Email') }}</label>
+                                        value="{{ old('email') }}" required autocomplete="email" id="email" placeholder="{{ __('Email Address') }}" required>
+                                        <label for="email">{{ __('Email Address') }}</label>
                                     </div>
                                
 

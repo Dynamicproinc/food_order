@@ -29,7 +29,7 @@
                         <div class="form-group mb-3">
                                     <div class="form-floating">
                                         <input type="text" class="form-control @error('email') is-invalid @enderror" id="name"
-                                            placeholder="{{ __('First Name') }}" name="email" required value="{{ old('email') }}">
+                                            placeholder="{{ __('Email Address') }}" name="email" required value="{{ old('email') }}">
                                         <label for="name">{{ __('Email Address') }}</label>
 
                                     </div>

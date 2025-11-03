@@ -57,7 +57,7 @@
                 @else
                     <div class="p-5">
                         <h5 class="text-center text-muted">
-                            {{__('😢 No product found!')}}
+                            😢 {{__('No product found!')}}
                         </h5>
                     </div>
                 @endif
