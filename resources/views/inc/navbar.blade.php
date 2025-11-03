@@ -14,7 +14,7 @@
                             </div>
                             <div>
                                 @auth
-                                <a href="{{route('myaccount')}}" class="btn btn-outline-light mx-2">
+                                <a href="{{route('myaccount')}}" class="btn btn-outline-light mx-2 text-capitalize">
                                     <i class="bi bi-person"></i>
                                     {{__('Hi')}} {{auth()->user()->name}}
                                 </a>
