@@ -5,7 +5,7 @@
     <a href="#" target="_blank">{{ __('Learn more')}}</a>.
   </p>
   <div class="buttons">
-    <button id="acceptCookies">Accept</button>
-    <button id="declineCookies">Decline</button>
+    <button id="acceptCookies">{{__('Accept')}}</button>
+    <button id="declineCookies">{{__('Decline')}}</button>
   </div>
 </div>
