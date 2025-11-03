@@ -48,7 +48,8 @@
     "Pending": "Pending",
     "Ready" : "Ready",
     "Dispatched" : "Dispatched",
-    "Pickup": "Pickup"
+    "Pickup": "Pickup",
+    "Cart item has been removed": "Cart item has been removed"
 
     
 

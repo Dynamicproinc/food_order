@@ -708,4 +708,9 @@ animation: fadeUp 0.4s ease-out forwards;
     height: 300px;
     overflow-y: auto;
 }
+footer{
+    background-color: #000 !important;
+    color: #fff;
+    font-size: 14px;
+}
 

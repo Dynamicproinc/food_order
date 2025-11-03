@@ -36,13 +36,21 @@
         {{-- sidebar end --}}
         <div style="height:80px"></div>
 
-        <main class="container">
+        <main class="container" style="height: 100vh">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     @yield('content')
                 </div>
             </div>
         </main>
+        {{--  --}}
+        <footer class="text-center py-3">
+  <div class="container">
+    &copy;  {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+  </div>
+</footer>
+
+        {{--  --}}
     </div>
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
