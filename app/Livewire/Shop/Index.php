@@ -217,18 +217,18 @@ class Index extends Component
         // shorting 
 
 
-
+        $variant = $this->variant;
         $choices = $this->choices;
 
         // sortRecursive($choices);
 
         $this->sortRecursive($choices);
-
+        $this->sortRecursive($variant);
 
 
 
         // Create a unique key based on product + variant + choices
-        $unique_key = $product_id . '-' . md5(json_encode($this->variant) . json_encode($choices));
+        $unique_key = $product_id . '-' . md5(json_encode($variant) . json_encode($choices));
 
 
         if (isset($cart[$unique_key])) {
