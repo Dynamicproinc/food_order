@@ -283,7 +283,7 @@
         </button>
     </div>
     </div>
-    @if($c_message) <small class="text-danger">{{ $c_message }}</small> @endif
+    @if($c_message) <small class="text-danger">{{ __($c_message) }}</small> @endif
     </div>
     @if ($user_points >= $min_coupon_limit)
         <div class="p-3">

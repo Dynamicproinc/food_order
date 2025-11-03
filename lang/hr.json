@@ -49,7 +49,14 @@
     "Ready": "Spremno",
     "Dispatched": "Poslano",
     "Pickup": "Preuzimanje",
-     "Cart item has been removed": "Stavka iz košarice je uklonjena"
+     "Cart item has been removed": "Stavka iz košarice je uklonjena",
+     "Invalid coupon code.": "Nevažeći kod kupona.",
+    "This coupon is no longer active.": "Ovaj kupon više nije aktivan.",
+    "This coupon is not valid at this time.": "Ovaj kupon trenutno nije valjan.",
+    "This coupon has reached its usage limit.": "Ovaj kupon je dosegao svoj limit upotrebe.",
+    "You have already used this coupon.": "Već ste iskoristili ovaj kupon.",
+    "Minimum order amount not met for this coupon.": "Minimalni iznos narudžbe za ovaj kupon nije ispunjen."
+
 
     
 
