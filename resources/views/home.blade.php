@@ -45,8 +45,8 @@
                                                         <tr>
                                                             <th scope="col">{{ __('Order')}}</th>
                                                             <th scope="col">{{ __('Date')}}</th>
-                                                            <th scope="col">{{ __('Type')}}</th>
-                                                            <th scope="col">{{ __('Amount')}}</th>
+                                                            {{-- <th scope="col">{{ __('Type')}}</th> --}}
+                                                            {{-- <th scope="col">{{ __('Amount')}}</th> --}}
                                                             <th scope="col">{{ __('Status')}}</th>
                                                         </tr>
                                                     </thead>
@@ -54,10 +54,15 @@
 
                                                         @foreach ($sales_orders as $item )
                                                             <tr>
-                                                            <th scope="row">{{ $item->daily_order_number }}</th>
-                                                            <td>{{ $item->created_at->format('d.m.Y') }}</td>
-                                                            <td>{{ $item->order_type }}</td>
-                                                            <td style="text-align: right">{{ number_format($item->net_total, 2, ',', ' ') }} € </td>
+                                                            <th scope="row"><h2 class="fw-bold">{{ $item->daily_order_number }}</h2></th>
+                                                            <td>
+                                                                <h6 class="mb-0">{{ $item->created_at->format('d.m.Y') }}</h6>
+                                                                <h5 class="fw-bold mb-0">{{ number_format($item->net_total, 2, ',', ' ') }} € </h5>
+                                                                <small class="text-muted text-uppercase txt-xs fw-bolder">{{ $item->order_type }}</small>
+
+                                                            </td>
+                                                            {{-- <td></td> --}}
+                                                            {{-- <td style="text-align: right"></td> --}}
                                                             <td>{{ $item->status }}</td>
                                                         </tr>
                                                         @endforeach
