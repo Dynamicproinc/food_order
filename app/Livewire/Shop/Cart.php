@@ -98,12 +98,13 @@ class Cart extends Component
                 $qty = (string) $item['quantity'];
                 $price = (string) $item['price'];
                  $subtotal = bcmul($qty, $price, 2);
-                $total = $total + $subtotal;
+    $total = $total + $subtotal;
             }
 
             if($this->grand_total < 69){
                 $this->order_type = 'pickup';
             }
+
             
             $this->grand_total = $total;
             $this->discount_value = ($this->grand_total * $this->discount) / 100;
@@ -130,6 +131,8 @@ class Cart extends Component
                 'address' => 'required|string|max:255',
                 'address_2' => 'required|string|max:255',
             ]);
+
+            $this->pickup_time = null;
         }
 
         $this->validate([
