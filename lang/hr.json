@@ -18,8 +18,8 @@
     "By clicking, you agree to the": "Klikom prihvaćate",
     "Terms and Conditions": "Uvjete i odredbe",
     "No product found!": "Nema pronađenih proizvoda!",
-   "Your bag is empty": "Vaša torba je prazna",
-   "ADD TO BAG": "DODAJ U TORBU",
+   "Your bag is empty": "Tvoja košarica je prazna.",
+   "ADD TO BAG": "DODAJ U KOŠARICU",
    "Cart item has been updated": "Stavka u košarici je ažurirana",
    "Coupon added": "Kupon dodan",
     "Coupon removed": "Kupon uklonjen",
@@ -61,7 +61,13 @@
     "Accept": "Prihvati",
     "Decline": "Odbij",
     "Home Delivery": "Dostava",
-    "Select Time": "Odaberite vrijeme"
+    "Select Time": "Odaberite vrijeme",
+    "Add-ons": "Dodaci",
+    "Order now": "Naruči sada",
+     "City": "Grad",
+     "Address": "Adresa",
+     "Appartment, Suite, etc. (Optional)":"Apartman, Suite, itd. (Opcionalno)",
+     "Select": "Odaberi"
 
 
 

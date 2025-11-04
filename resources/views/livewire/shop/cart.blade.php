@@ -1,11 +1,11 @@
 <div>
     @if (session('cart', []) && count(session('cart', [])) > 0)
-        <div class="">
+        <div class="d-flex justify-content-between">
 
-            <a href="{{ route('shop.index') }}" class="btn btn-default btn-lg fw-bold"> <i class="bi bi-chevron-left"></i> {{ __('Checkout') }}</a>
-            {{-- <div class="">
-                <h5 class="fw-bolder">{{ __('Checkout') }}</h5>
-            </div> --}}
+            {{-- <a href="{{ route('shop.index') }}" class="btn btn-default btn-lg fw-bold"> <i class="bi bi-chevron-left"></i> {{ __('Order now') }}</a> --}}
+            <div class="px-3">
+                <h5 class="fw-bolder">{{ __('Order now') }}</h5>
+            </div>
         </div>
         {{-- <div class="cou-switch">
             

@@ -74,7 +74,7 @@
 
                                 <div class="mb-3">
                                     @if (count($selected_product->getChoices()) > 0)
-                                        <h6 class="fw-bold mb-3">{{ __('Choices') }}</h6>
+                                        <h6 class="fw-bold mb-3">{{ __('Add-ons') }}</h6>
                                         @foreach ($selected_product->getChoices() as $item)
                                             <div class="row">
                                                 <div class="col-6">
