@@ -250,7 +250,7 @@
                                 <div class="">
 
                                     <div class="">
-                                        <small class="text-muted clickable fw-bold text-uppercase txt-xs"
+                                        <small class="text-danger clickable fw-bold text-uppercase txt-xs"
                                             wire:click="removeCartItem('{{ $index }}')">
                                             {{-- <i class="bi bi-x p-0"></i> --}}
                                             X {{__('Remove')}}
