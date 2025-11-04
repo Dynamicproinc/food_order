@@ -35,7 +35,7 @@ class Carbutton extends Component
                 $qty = (string) $item['quantity'];
                 $price = (string) $item['price'];
                 $subtotal = bcmul($qty, $price, 2);
-                $total = $total + $price;
+                $total = $total + $subtotal;
                 $itm = $qty + $itm;
             }
 

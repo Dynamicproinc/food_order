@@ -87,15 +87,18 @@ class Cart extends Component
         $cart = $cart = session('cart', []);
 
         if ($cart) {
-            $total = '0.00';
+            $total = 0;
 
 
             foreach ($cart as $item) {
-                $qty = (string) $item['quantity'];
-                $price = (string) $item['price'];
+                // $qty = (string) $item['quantity'];
+                // $price = (string) $item['price'];
                 // $subtotal = bcmul($price, 2);
                 // $total = bcadd($total, $subtotal, 2);
-                $total = $price + $total;
+                $qty = (string) $item['quantity'];
+                $price = (string) $item['price'];
+                 $subtotal = bcmul($qty, $price, 2);
+                $total = $total + $subtotal;
             }
 
             if($this->grand_total < 69){
