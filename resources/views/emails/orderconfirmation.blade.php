@@ -74,7 +74,7 @@
         <tr>
           <th>Item</th>
           <th>Quantity</th>
-          <th>Sub Total</th>
+          <th>{{ __('Price')}}</th>
           <th style="width:70px">Total</th>
         </tr>
       </thead>
@@ -110,7 +110,9 @@
           </td>
           <td>{{ $item->quantity }}</td>
           <td>{{ number_format($item->price, 2, ',', ' ') }} €</td>
-          <td class="text-right">{{ number_format($item->price, 2, ',', ' ') }} € </td>
+          <td class="text-right">
+            {{ number_format(($item->price * $item->quantity), 2, ',', ' ') }} € 
+          </td>
           {{-- <td class="text-right">{{ number_format(($item->quantity * $item->price), 2, ',', ' ') }} € </td> --}}
         </tr>
         @endforeach
