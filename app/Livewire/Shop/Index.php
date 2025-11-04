@@ -97,7 +97,8 @@ class Index extends Component
         $pprice = $this->selected_product->discounted_price;
 
 
-        $this->grand_total = ($pprice + $total_v + $total_c) * $this->quantity;
+        // $this->grand_total = ($pprice + $total_v + $total_c) * $this->quantity;
+        $this->grand_total = ($pprice + $total_v + $total_c);
     }
 
 
