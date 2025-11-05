@@ -38,7 +38,7 @@
                                             @foreach ($variants as $key => $item)
                                                 <div class="row align-items-center mb-2">
                                                     <div class="col-6">
-                                                        <div class="form-check d-flex align-items-center">
+                                                        <div class="form-check d-flex">
                                                             <input class="form-check-input" type="radio"
                                                                 name="radioDefault_{{ $option_id }}"
                                                                 id="rd{{ $item->id }}" value="{{ $item->id }}"
