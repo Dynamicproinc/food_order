@@ -38,10 +38,10 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 });
 
 // artisan commands
-Route::get('/abc123', function () {
-    \Artisan::call('migrate', ['--force' => true]);
-    return response()->json(['status' => 'Migration completed']);
-});;
+// Route::get('/abc123', function () {
+//     \Artisan::call('migrate', ['--force' => true]);
+//     return response()->json(['status' => 'Migration completed']);
+// });;
 // Route::get('/storage-link', function () {
 //     Artisan::call('storage:link');
 //     return response()->json(['status' => 'Storage link created']);

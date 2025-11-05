@@ -230,7 +230,7 @@ class Cart extends Component
            $sales_order_for_email = SalesOrder::where('id', $order->id)->where('user_id', auth()->user()->id)->first();
             //mail to customer
              Mail::to(auth()->user()->email)
-             ->bcc('hello@jobwino.com')
+             ->bcc('info@mbrothers-food.com')
              ->send(new OrderConfirmation($sales_order_for_email));
 
             // 
