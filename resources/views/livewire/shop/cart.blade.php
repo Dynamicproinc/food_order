@@ -250,14 +250,14 @@
                                 <div class="">
 
                                     <div class="">
-                                        <small class="text-danger clickable fw-bold text-uppercase txt-xs"
+                                        <div class="text-danger clickable fw-bold text-uppercase txt-xs"
                                             wire:click="removeCartItem('{{ $index }}')">
                                             <span class="spinner-border spinner-border-sm" role="status"  wire:loading wire:target="removeCartItem('{{ $index }}')">
                                                 <span class="visually-hidden">Loading...</span>
                                             </span>
 
                                             X {{ __('Remove') }}
-                                        </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
