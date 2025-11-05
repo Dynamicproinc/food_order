@@ -295,6 +295,7 @@
                 <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
                     {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
                 </span>
+                <span><i class="bi bi-info-circle"></i></span>
             </div>
 
             <div class="cou-switch">
@@ -310,10 +311,23 @@
 
         </div>
     @else
-        <div class="p-3">
-            <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
+        <div class="p-3 row">
+           <div class="col-9">
+             <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
                 {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
             </span>
+            
+           </div>
+           <div class="col-3 d-flex flex-row-reverse">
+             
+                
+            
+           </div>
+        </div>
+        <div class="p-3">
+            <div class="info-alert-bar">
+                <p>{{__('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order')}}</p>
+            </div>
         </div>
 
     @endif

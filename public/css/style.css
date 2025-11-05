@@ -240,6 +240,16 @@ i {
           width: 100%;
           height: 100%; */
 }
+
+.info-alert-bar{
+    color: #055160;
+    background: #cff4fc;
+    border-left: 3px solid#9eeaf9;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 400;
+}
 .btn-rounded {
     width: 32px;
     height: 32px;
