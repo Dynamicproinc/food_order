@@ -62,10 +62,10 @@
     <div class="header">
       <img src="{{asset('images/logo.jpg')}}" alt="" style="width:64px; filter: invert(1);">
       <h1>{{ __('Order confirmation')}}</h1>
-      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>Date: <strong>{{ $order->created_at->format('d.m.Y H:1') }}</strong></p>
+      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>{{__('Date')}}: <strong>{{ $order->created_at->format('d.m.Y H:1') }}</strong></p>
     </div>
 
-    <p><strong>From:</strong> The M-Brothers Food Truck<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@the-m-brothers.com</p>
+    <p><strong>{{__('From')}}:</strong> M Brothers Food<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@mbrothers-food.com</p>
     <p style="text-transform: capitalize;"><strong>To:</strong> {{ $order->getUser()->name.' '.$order->getUser()->last_name}} @if($order->order_type == 'delivery') <br>{{$order->address_1 }} <br>{{$order->address_2 }}@endif</p>
 
     <h3>{{ __('Order items')}}</h3>
@@ -145,7 +145,7 @@
     <div class="footer">
       {{__('Thank you for shopping with us!')}}
       <br>
-      {{__('For support, contact')}}: info@the-m-brothers.com
+      {{__('For support, contact')}}: info@mbrothers-food.com
     </div>
   </div>
 </body>
