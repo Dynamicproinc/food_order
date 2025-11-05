@@ -39,42 +39,51 @@
                                                 {{ __('Latest orders') }}
                                             </h6>
                                             <div>
-                                                @if(count($sales_orders))
-                                               <div class="tab-pane-table">
-                                                 <table class="table table-striped table-responsive">
-                                                    <thead class="">
-                                                        <tr>
-                                                            <th scope="col">{{ __('Order')}}</th>
-                                                            <th scope="col">{{ __('Date')}}</th>
-                                                            {{-- <th scope="col">{{ __('Type')}}</th> --}}
-                                                            {{-- <th scope="col">{{ __('Amount')}}</th> --}}
-                                                            <th scope="col">{{ __('Status')}}</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                @if (count($sales_orders))
+                                                    <div class="tab-pane-table">
+                                                        <table class="table table-striped table-responsive">
+                                                            <thead class="">
+                                                                <tr>
+                                                                    <th scope="col">{{ __('Order') }}</th>
+                                                                    <th scope="col">{{ __('Date') }}</th>
+                                                                    {{-- <th scope="col">{{ __('Type')}}</th> --}}
+                                                                    {{-- <th scope="col">{{ __('Amount')}}</th> --}}
+                                                                    <th scope="col">{{ __('Status') }}</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
 
-                                                        @foreach ($sales_orders as $item )
-                                                            <tr>
-                                                            <th scope="row"><h2 class="fw-bold">{{ $item->daily_order_number }}</h2></th>
-                                                            <td>
-                                                                <h6 class="mb-0">{{ $item->created_at->format('d.m.Y') }}</h6>
-                                                                <h5 class="fw-bold mb-0">{{ number_format($item->net_total, 2, ',', ' ') }} € </h5>
-                                                                <small class="text-muted text-uppercase txt-xs fw-bolder">{{ __($item->order_type) }}</small>
+                                                                @foreach ($sales_orders as $item)
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <h2 class="fw-bold">
+                                                                                {{ $item->daily_order_number }}</h2>
+                                                                        </th>
+                                                                        <td>
+                                                                            <h6 class="mb-0">
+                                                                                {{ $item->created_at->format('d.m.Y') }}
+                                                                            </h6>
+                                                                            <h5 class="fw-bold mb-0">
+                                                                                {{ number_format($item->net_total, 2, ',', ' ') }}
+                                                                                € </h5>
+                                                                            <small
+                                                                                class="text-muted text-uppercase txt-xs fw-bolder">{{ __($item->order_type) }}</small>
 
-                                                            </td>
-                                                            {{-- <td></td> --}}
-                                                            {{-- <td style="text-align: right"></td> --}}
-                                                            <td>
-                                                                <small class="txt-xs fw-bold text-uppercase"> {{ __($item->status) }}</small>
-                                                            </td>
-                                                        </tr>
-                                                        @endforeach
+                                                                        </td>
+                                                                        {{-- <td></td> --}}
+                                                                        {{-- <td style="text-align: right"></td> --}}
+                                                                        <td>
+                                                                            <small class="txt-xs fw-bold text-uppercase">
+                                                                                {{ __($item->status) }}</small>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endforeach
 
-                                                    </tbody>
-                                                </table>
-                                               </div>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 @else
-                                                <p class="text-muted">{{ __('No orders found')}}</p>
+                                                    <p class="text-muted">{{ __('No orders found') }}</p>
                                                 @endif
                                             </div>
                                         </div>
@@ -110,6 +119,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-3 d-flex justify-content-center">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-dark">
+                            <i class="bi bi-power"></i> Logout
+                        </button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
