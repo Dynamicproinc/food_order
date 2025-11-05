@@ -4,7 +4,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <h6 class="m-0 p-0  font-weight-bold">{{ __('My Shopping Bag') }} (<span
                                     class="cart-count">0.00</span>)</h6>
-                            <button class="btn-close" onclick="closeNav()"></button>
+                            {{-- <button class="btn-close" onclick="closeNav()"></button> --}}
                         </div>
                     </div>
                     <div>
