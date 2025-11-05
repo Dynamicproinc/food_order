@@ -38,7 +38,7 @@
                                             @foreach ($variants as $key => $item)
                                                 <div class="row align-items-center mb-2">
                                                     <div class="col-6">
-                                                        <div class="form-check">
+                                                        <div class="form-check d-flex align-items-center">
                                                             <input class="form-check-input" type="radio"
                                                                 name="radioDefault_{{ $option_id }}"
                                                                 id="rd{{ $item->id }}" value="{{ $item->id }}"
@@ -46,7 +46,8 @@
                                                                 wire:click="calculateTotal"
                                                                 @if ($loop->first) checked @endif>
                                                             <label class="form-check-label" for="rd{{ $item->id }}">
-                                                                {{ $item->value }}
+                                                                <div>{{ $item->value }}</div>
+                                                                <small class="text-muted">123</small>
                                                             </label>
                                                         </div>
                                                     </div>
