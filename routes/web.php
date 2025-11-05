@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Artisan;
 //     return view('welcome');
 // });
 
-Route::get('locale\{lang}',[App\Http\Controllers\LocalizationController::class, 'setLocale']);
+// Route::get('locale\{lang}',[App\Http\Controllers\LocalizationController::class, 'setLocale']);
 
 Auth::routes();
 Auth::routes(['verify' => true]);
