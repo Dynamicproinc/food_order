@@ -295,7 +295,7 @@
                 <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
                     {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
                 </span>
-                <span><i class="bi bi-info-circle"></i></span>
+                {{-- <span><i class="bi bi-info-circle"></i></span> --}}
             </div>
 
             <div class="cou-switch">
