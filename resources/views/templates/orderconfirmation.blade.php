@@ -62,7 +62,7 @@
     <div class="header">
       <img src="{{asset('images/logo.jpg')}}" alt="" style="width:64px; filter: invert(1);">
       <h1>{{ __('Order confirmation')}}</h1>
-      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>Date: <strong>{{ $order->created_at->format('d.m.Y') }}</strong></p>
+      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>Date: <strong>{{ $order->created_at->format('d.m.Y H:1') }}</strong></p>
     </div>
 
     <p><strong>From:</strong> The M-Brothers Food Truck<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@the-m-brothers.com</p>
@@ -139,7 +139,7 @@
     </table>
 
     <p><strong>{{__('Payment method')}}</strong> {{__('Cash on Delivery / Pay at pickup')}}</p>
-    <p style="text-transform: capitalize"><strong>{{__('Order type :')}}</strong> {{ $order->order_type}}</p>
+    <p style="text-transform: capitalize"><strong>{{__('Order type :')}}</strong> @if($order->order_type === 'pickup') {{$order->order_type}} @ {{$order->pickup_time}} @endif</p>
     {{-- <p><strong>Estimated Delivery:</strong> 2025-11-03</p> --}}
 
     <div class="footer">

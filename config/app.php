@@ -65,6 +65,7 @@ return [
     |
     */
 
+    // 'timezone' => 'Europe/Zagreb',
     'timezone' => 'UTC',
 
     /*
