@@ -21,7 +21,7 @@ class Product extends Model
     //     ->groupBy('option_id', 'value', 'price')
     //     ->where('product_id', $this->id)
     //     ->get();
-     return Variant::select('id','product_id', 'option_id', 'value', 'price')
+     return Variant::select('id','product_id', 'option_id', 'value','description', 'price')
         ->where('product_id', $this->id)
         ->orderBy('option_id')
         ->get()

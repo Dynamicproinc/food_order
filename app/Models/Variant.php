@@ -11,6 +11,7 @@ class Variant extends Model
         'option_id',
         'value',
         'price',
+        'description',
         'quantity',
         'product_id'
     ];

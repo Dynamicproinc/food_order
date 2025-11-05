@@ -47,7 +47,7 @@
                                                                 @if ($loop->first) checked @endif>
                                                             <label class="form-check-label" for="rd{{ $item->id }}">
                                                                 <div>{{ $item->value }}</div>
-                                                                <small class="text-muted">{{ $item->description }}</small>
+                                                                <p class="text-muted txt-xs" style="line-height: 1.2;">{{ $item->description?? $item->description }}</p>
                                                             </label>
                                                         </div>
                                                     </div>
