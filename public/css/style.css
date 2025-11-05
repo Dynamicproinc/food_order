@@ -224,6 +224,12 @@ i {
 .btn-warning, .text-bg-warning{
     background-color: #FBB100 !important;
 }
+.btn-0{
+    background:none !important;
+    outline: none;
+    border: 0;
+    padding: 0;
+}
 .btn-add-cart:hover {
      background: #FBB100;
     color: #000;
