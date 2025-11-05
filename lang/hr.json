@@ -67,7 +67,19 @@
      "City": "Grad",
      "Address": "Adresa",
      "Appartment, Suite, etc. (Optional)":"Apartman, Suite, itd. (Opcionalno)",
-     "Select": "Odaberi"
+     "Select": "Odaberi",
+    "Order confirmation": "Potvrda narudžbe",
+    "Order items": "Stavke narudžbe",
+    "Item": "Stavka",
+    "Quantity": "Količina",
+    "Price": "Cijena",
+    "Payment method": "Način plaćanja",
+    "Cash on Delivery / Pay at pickup": "Plaćanje pouzećem / Plaćanje pri preuzimanju",
+    "Order type :": "Vrsta narudžbe :",
+    "For support, contact": "Za podršku, kontaktirajte",
+    "Thank you for shopping with us!": "Hvala što kupujete kod nas!"
+
+
 
 
 

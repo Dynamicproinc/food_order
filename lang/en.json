@@ -67,7 +67,18 @@
     "City": "City",
     "Address": "Address",
     "Appartment, Suite, etc. (Optional)": "Appartment, Suite, etc. (Optional)",
-    "Select": "Select"
+    "Select": "Select",
+    "Order confirmation": "Order confirmation",
+    "Order items": "Order confirmation",
+    "Item": "Item",
+    "Quantity": "Quantity",
+    "Price": "Price",
+    "Payment method": "Payment method",
+    "Cash on Delivery / Pay at pickup": "Cash on Delivery / Pay at pickup",
+    "Order type :" : "Order type :",
+    "For support, contact" : "For support, contact",
+    "Thank you for shopping with us!" : "Thank you for shopping with us!"
+
 
 
     

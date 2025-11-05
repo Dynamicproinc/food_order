@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ORD-{{ date('Y') }}- {{ $order->daily_order_number}} Order Confirmation</title>
+  <title>ORD-{{ date('Y') }}- {{ $order->daily_order_number}} {{ __('Order confirmation')}}</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -61,21 +61,21 @@
   <div class="order">
     <div class="header">
       <img src="{{asset('images/logo.jpg')}}" alt="" style="width:64px; filter: invert(1);">
-      <h1>Order Confirmation</h1>
-      <p>Order #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>Date: <strong>{{ $order->created_at->format('d.m.Y') }}</strong></p>
+      <h1>{{ __('Order confirmation')}}</h1>
+      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>Date: <strong>{{ $order->created_at->format('d.m.Y') }}</strong></p>
     </div>
 
     <p><strong>From:</strong> The M-Brothers Food Truck<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@the-m-brothers.com</p>
     <p style="text-transform: capitalize;"><strong>To:</strong> {{ $order->getUser()->name.' '.$order->getUser()->last_name}} @if($order->order_type == 'delivery') <br>{{$order->address_1 }} <br>{{$order->address_2 }}@endif</p>
 
-    <h3>Ordered Items</h3>
+    <h3>{{ __('Order items')}}</h3>
     <table>
       <thead>
         <tr>
-          <th>Item</th>
-          <th>Quantity</th>
+          <th>{{ __('Item')}}</th>
+          <th>{{ __('Quantity')}}</th>
           <th>{{ __('Price')}}</th>
-          <th style="width:70px">Total</th>
+          <th style="width:70px">{{__('Sub Total')}}</th>
         </tr>
       </thead>
       <tbody>
@@ -119,32 +119,33 @@
        @endif
         
         <tr class="total">
-          <td colspan="3" class="text-right">Subtotal</td>
+          <td colspan="3" class="text-right">{{__('Sub Total')}}</td>
           <td class="text-right">{{number_format($order->sub_total, 2, ',', ' ')}} €</td>
         </tr>
         <tr class="total">
-          <td colspan="3" class="text-right">Discount {{$order->discount}} %</td>
+          <td colspan="3" class="text-right">{{__('Discount')}} {{$order->discount}} %</td>
           <td class="text-right">{{number_format(($order->sub_total * $order->discount) / 100, 2, ',', ' ')}} €</td>
         </tr>
         <tr class="total">
-          <td colspan="3" class="text-right">Delivery</td>
+          <td colspan="3" class="text-right">{{__('Delivery')}}</td>
           <td class="text-right">{{number_format($order->delivery, 2, ',', ' ')}} €</td>
         </tr>
         
         <tr class="total">
-          <td colspan="3" class="text-right">Total</td>
+          <td colspan="3" class="text-right">{{__('Net Total')}}</td>
           <td class="text-right">{{number_format($order->net_total, 2, ',', ' ')}} €</td>
         </tr>
       </tbody>
     </table>
 
-    <p><strong>Payment Method:</strong> Cash on Delivery / Pay at Store</p>
-    <p style="text-transform: capitalize"><strong>Order Type:</strong> {{ $order->order_type}}</p>
+    <p><strong>{{__('Payment method')}}</strong> {{__('Cash on Delivery / Pay at pickup')}}</p>
+    <p style="text-transform: capitalize"><strong>{{__('Order type :')}}</strong> {{ $order->order_type}}</p>
     {{-- <p><strong>Estimated Delivery:</strong> 2025-11-03</p> --}}
 
     <div class="footer">
-      Thank you for shopping with The M-Brothers Food Truck!<br>
-      For support, contact: info@the-m-brothers.com
+      {{__('Thank you for shopping with us!')}}
+      <br>
+      {{__('For support, contact')}}: info@the-m-brothers.com
     </div>
   </div>
 </body>
