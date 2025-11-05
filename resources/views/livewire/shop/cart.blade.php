@@ -252,8 +252,11 @@
                                     <div class="">
                                         <small class="text-danger clickable fw-bold text-uppercase txt-xs"
                                             wire:click="removeCartItem('{{ $index }}')">
-                                            {{-- <i class="bi bi-x p-0"></i> --}}
-                                            X {{__('Remove')}}
+                                            <span class="spinner-border spinner-border-sm" role="status"  wire:loading wire:target="removeCartItem('{{ $index }}')">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </span>
+
+                                            X {{ __('Remove') }}
                                         </small>
                                     </div>
                                 </div>
@@ -279,17 +282,18 @@
             <span class="spinner-border spinner-border-sm" wire:loading wire:target="applyCoupon" role="status">
                 <span class="visually-hidden">Loading...</span>
             </span>
-            {{__('Apply')}}
+            {{ __('Apply') }}
         </button>
     </div>
     </div>
-    @if($c_message) <small class="text-danger">{{ __($c_message) }}</small> @endif
+    @if ($c_message) <small
+            class="text-danger">{{ __($c_message) }}</small> @endif
     </div>
     @if ($user_points >= $min_coupon_limit)
         <div class="p-3">
             <div class="mb-2">
                 <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
-                    {{__('Coupon Balance:')}} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
+                    {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
                 </span>
             </div>
 
@@ -308,7 +312,7 @@
     @else
         <div class="p-3">
             <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
-               {{__('Coupon Balance:')}} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
+                {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
             </span>
         </div>
 
@@ -369,8 +373,8 @@
         </div>
     </div>
     @endif
-{{-- fixed message bar --}}
-        {{-- @if ($success_message || $error_message)
+    {{-- fixed message bar --}}
+    {{-- @if ($success_message || $error_message)
             <div class="fixed-message-bar">
                 <div>
                     @if ($success_message)
@@ -386,5 +390,5 @@
                 </div>
             </div>
         @endif --}}
-{{--  --}}
+    {{--  --}}
     </div>
