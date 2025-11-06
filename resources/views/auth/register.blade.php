@@ -9,7 +9,7 @@
                         <h3 class="fw-bolder">{{ __('Register') }}</h3>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-lg-6 p-3">
+                        <div class="col-6 p-3">
                             <a href="{{ route('google.login') }}" class="btn d-flex align-items-center justify-content-center"
                                 style="background-color: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
                                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo"
