@@ -17,7 +17,7 @@
                                 <span style="color: #555;">{{ __('Continue with Google') }}</span>
                             </a>
                         </div>
-                            <div>
+                            <div class="p-3">
                             @if(session('error'))
                                 <div class="alert alert-danger" role="alert">
                                     {{ session('error') }}
