@@ -12,6 +12,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Exception;
+use Illuminate\Support\Str;
 
 class GoogleController extends Controller
 {
@@ -22,15 +23,17 @@ class GoogleController extends Controller
     public function handleGoogleCallback()
     {
         try {
+            $randomPassword = Str::random(12); 
             $googleUser = Socialite::driver('google')->user();
 
             $user = User::updateOrCreate(
                 ['email' => $googleUser->getEmail()],
                 [
                     'name' => $googleUser->getName(),
+                    'last_name' => $googleUser->getName(),
                     'google_id' => $googleUser->getId(),
                     'avatar' => $googleUser->getAvatar(),
-                    'password' => bcrypt('password123') // random or dummy password
+                    'password' => bcrypt($randomPassword),
                 ]
             );
 
