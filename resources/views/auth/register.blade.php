@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" novalidate>
+                        <form method="POST" action="{{ route('register') }}" novalidate onsubmit="disableSubmitButton(this)">
                             @csrf
                            
                             {{-- <div class="row mb-3">
@@ -138,7 +138,7 @@
                                 </div>
                             </div> --}}
                             <div class="form-group">
-                                <button class="btn btn-lg btn-warning form-control">
+                                <button class="btn btn-lg btn-warning form-control" id="submit-btn" type="submit">
                                         {{ __('Register')}}
                                 </button>
                                 <div class="mt-3">
@@ -164,4 +164,14 @@
             </div>
         </div>
     </div>
+   
+<script>
+function disableSubmitButton(form) {
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    
+    // button.innerText = 'Submitting...'; //
+}
+</script>
+    
 @endsection

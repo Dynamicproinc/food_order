@@ -72,22 +72,8 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     {{-- sidebar --}}
-    <script>
-        function openNav() {
-            document.getElementById("snav").style.width = "100%";
-            document.getElementById("navcont").style.right = "0";
-        }
-
-        function closeNav() {
-            document.getElementById("navcont").style.right = "-400px";
-            document.getElementById("snav").style.width = "0";
-        }
-    </script>
-    <script>
-        window.addEventListener('open-nav', event => {
-            openNav();
-        });
-    </script>
+   
+    
     <script>
          window.addEventListener('pop', event => {
            const element = document.querySelector('.cart-icon');
