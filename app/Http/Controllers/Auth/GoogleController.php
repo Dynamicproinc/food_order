@@ -23,20 +23,28 @@ class GoogleController extends Controller
     public function handleGoogleCallback()
     {
         try {
-            $randomPassword = Str::random(12); 
-            $googleUser = Socialite::driver('google')->user();
+           $randomPassword = Str::random(12);
 
-            $user = User::updateOrCreate(
-                ['email' => $googleUser->getEmail()],
-                [
-                    'name' => $googleUser->getName(),
-                    'last_name' => $googleUser->getName(),
-                    'google_id' => $googleUser->getId(),
-                    'avatar' => $googleUser->getAvatar(),
-                    'password' => bcrypt($randomPassword),
-                    'email_verified_at' => now(), // marks email as verified
-                ]
-            );
+$googleUser = Socialite::driver('google')
+    ->scopes(['openid', 'profile', 'email'])
+    ->stateless()
+    ->user();
+
+$user = User::updateOrCreate(
+    ['email' => $googleUser->getEmail()],
+    [
+        'name' => $googleUser->getName(),
+        'last_name' => $googleUser->getName(),
+        'google_id' => $googleUser->getId(),
+        'avatar' => $googleUser->getAvatar(),
+        'password' => bcrypt($randomPassword),
+    ]
+);
+
+if (!$user->email_verified_at) {
+    $user->email_verified_at = now();
+    $user->save();
+}
 
             Auth::login($user);
 
