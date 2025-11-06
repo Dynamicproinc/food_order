@@ -28,8 +28,9 @@ class OrderConfirmation extends Mailable
      */
     public function envelope(): Envelope
     {
+        $sub = __('Order Confirmation: '.$this->order->daily_order_number);
         return new Envelope(
-            subject: 'Order Confirmation',
+            subject: $sub,
         );
     }
 
