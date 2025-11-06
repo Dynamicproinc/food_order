@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Artisan;
 
+use App\Http\Controllers\Auth\GoogleController;
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -38,10 +43,10 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 });
 
 // artisan commands
-// Route::get('/abc123', function () {
-//     \Artisan::call('migrate', ['--force' => true]);
-//     return response()->json(['status' => 'Migration completed']);
-// });;
+Route::get('/abc123', function () {
+    \Artisan::call('migrate', ['--force' => true]);
+    return response()->json(['status' => 'Migration completed']);
+});;
 // Route::get('/storage-link', function () {
 //     Artisan::call('storage:link');
 //     return response()->json(['status' => 'Storage link created']);
