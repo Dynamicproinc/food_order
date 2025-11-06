@@ -20,7 +20,7 @@
                             <div class="p-3">
                             @if(session('error'))
                                 <div class="alert alert-danger" role="alert">
-                                    {{ session('error') }}
+                                    {{ __(session('error')) }}
                                 </div>
                             @endif
                             </div>
