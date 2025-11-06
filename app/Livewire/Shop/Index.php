@@ -217,7 +217,7 @@ class Index extends Component
         //need to be the aphebetical 
         // shorting 
 
-
+        $this->variant = array_map(fn($v) => (int) $v, $this->variant);
         $variant = $this->variant;
         $choices = $this->choices;
 
@@ -226,11 +226,11 @@ class Index extends Component
         $this->sortRecursive($choices);
         $this->sortRecursive($variant);
 
-
-
+        
+        
         // Create a unique key based on product + variant + choices
         $unique_key = $product_id . '-' . md5(json_encode($variant) . json_encode($choices));
-
+        
 
         if (isset($cart[$unique_key])) {
             // If same combination exists, increase quantity

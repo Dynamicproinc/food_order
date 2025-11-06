@@ -119,6 +119,7 @@ return redirect()->back()->with('success', 'Product saved successfully!');
         Variant::create([
             'option_id' => $this->option,
             'value' => $this->variant,
+            'description'=> ' ',
             'price' => $this->variant_price,
             'product_id' => $this->product->id,
         ]);
