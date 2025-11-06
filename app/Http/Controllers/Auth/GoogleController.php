@@ -50,7 +50,8 @@ if (!$user->email_verified_at) {
 
             return redirect('/home');
         } catch (Exception $e) {
-            dd($e->getMessage());
+            // dd($e->getMessage());
+             return redirect()->route('login')->with('error', 'Google login failed or was canceled.');
         }
     }
 }
