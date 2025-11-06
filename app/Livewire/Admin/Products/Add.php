@@ -66,6 +66,7 @@ $image_path = 'uploads/products/' . $uniq_name;
                     Variant::create([
                         'option_id' =>$item['option_id'],
                         'value' => $item['variant'],
+                        'description'=> ' ',
                         'price' => $item['price'],
                         'product_id' => $product->id,
                     ]);
@@ -84,7 +85,7 @@ $image_path = 'uploads/products/' . $uniq_name;
                     ]);
                  }
                 }
-              dd('success');   
+              return redirect()->back();
 
         }
     }
