@@ -31,7 +31,7 @@
                                         <div
                                             class="order-card-body p-3 @if ($item->status === 'pending') bg-pending @endif">
                                             <div class="text-uppercase">
-                                                <h6>{{ substr($item->getUser()->name, 0, 10) }} {{ substr($item->getUser()->last_name, 0, 10) }} | {{ $item->telephone}}</h6>
+                                                <h6>{{ substr($item->getUser()?->name, 0, 10) }} {{ substr($item->getUser()?->last_name, 0, 10) }} | {{ $item->telephone}}</h6>
                                             </div>
                                             @if ($item->order_type === 'delivery')
                                                 <div class="alert alert-info">
