@@ -32,7 +32,7 @@ public static function boot()
                 ->max('daily_order_number');
 
             $order->daily_order_number = $lastOrder ? $lastOrder + 1 : 1;
-            $order->created_at = $today;
+            $order->created_at = now();
         });
     }
 
