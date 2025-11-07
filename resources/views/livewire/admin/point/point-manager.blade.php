@@ -42,7 +42,7 @@
                                     <h5><strong>{{ __('Balance') }}</strong></h5>
                                 </div>
                                 <div class="col-9">
-                                    <h5>{{$this->balance}}</h5>
+                                    <h5>{{$this->balance ? $this->balance : 0 }}</h5>
                                 </div>
                             </div>
                         </div>

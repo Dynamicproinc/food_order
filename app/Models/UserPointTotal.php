@@ -25,7 +25,14 @@ class UserPointTotal extends Model
     // Find the user
     $user = self::where('user_id',$user_id)->first();
     if (!$user) {
-        return false; // or throw an exception
+         return self::create([
+            'user_id' => $user_id,
+            'balance' => $amount,
+            
+        ]);
+        // return false; // or throw an exception
+    }else{
+        
     }
 
     // Check if deduction would make balance negative

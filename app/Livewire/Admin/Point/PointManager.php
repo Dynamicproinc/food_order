@@ -32,6 +32,7 @@ class PointManager extends Component
             'qr' => 'required',
         ]);
 
+        
         // find out the user id
         $qr_code = QrCode::where('slug', $this->qr)->first();
        if ($qr_code) {
@@ -39,7 +40,7 @@ class PointManager extends Component
             $this->user = User::find($this->user_id);
             $this->er_message = null;
 
-             $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()->balance;
+             $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
         } else {
             $this->er_message = "Invalid QR"; 
             $this->user = null;
@@ -58,13 +59,17 @@ class PointManager extends Component
            'amount' => 'required|numeric|gt:1',
         ]);
 
+        if($this->amount > $this->balance || !$this->balance){
+            return null;
+        }
+
         PointTransaction::debit($this->user->id, $this->amount, 'Coupone deduction');
         UserPointTotal::updateBalance($this->user->id, -$this->amount);
 
         $this->user = User::find($this->user_id);
         $this->amount = 0;
         // update balance
-        $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()->balance;
+        $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
         
 
     }
@@ -79,7 +84,7 @@ class PointManager extends Component
         $this->user = User::find($this->user_id);
         $this->amount = 0;
         // update balance
-        $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()->balance;
+        $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
 
     }
 
