@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
- use Illuminate\Database\Eloquent\ModelNotFoundException;
-use InvalidArgumentException;
 
 class UserPointTotal extends Model
 {
@@ -17,37 +15,29 @@ class UserPointTotal extends Model
     ];
 
 
-//  use Illuminate\Database\Eloquent\ModelNotFoundException;
-// use InvalidArgumentException;
-
-public static function updateBalance($user_id, $amount)
+  public static function updateBalance($user_id, $amount)
 {
     // Ensure amount is numeric
     if (!is_numeric($amount)) {
-        throw new InvalidArgumentException('Amount must be a numeric value.');
+        return false; // or throw an exception
     }
 
-    // Find the user or throw exception
+    // Find the user
     $user = self::find($user_id);
     if (!$user) {
-        throw new ModelNotFoundException("User with ID {$user_id} not found.");
+        return false; // or throw an exception
     }
 
     // Check if deduction would make balance negative
     if ($amount < 0 && $user->balance + $amount < 0) {
-        throw new InvalidArgumentException('Insufficient balance.');
+        return false; // insufficient balance
     }
 
     // Update balance
     $user->balance += $amount;
 
-    // Save or throw exception on failure
-    if (!$user->save()) {
-        throw new \Exception('Failed to update balance.');
-    }
-
-    return true; // success
+    // Save and return result
+    return $user->save();
 }
-
 
 }
