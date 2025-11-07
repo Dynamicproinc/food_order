@@ -6,8 +6,11 @@ use Livewire\Component;
 use App\Models\SalesOrder;
 use Carbon\Carbon;
 use App\Models\UserPoint;
+use App\Models\User;
 use App\Models\UserPointTotal;
 use App\Models\PointTransaction;
+use App\Mail\PointsNotification;
+use Illuminate\Support\Facades\Mail;
 
 class Kitchen extends Component
 {
@@ -73,7 +76,23 @@ class Kitchen extends Component
             }
             // add transaction
             PointTransaction::credit($order->user_id,$user_points_sum,"Copon Reward at Store");
+
+            // prepared data for the customer email
+            $user = User::where('id', $order->user_id)->first();
+            $user_point_total = UserPointTotal::where('user_id', $order->user_id)->first()->balance;
+
+            $email_data = [
+                'user_name' => $user->name,
+                'point' => $user_points_sum,
+                'balance' => $user_point_total,
+
+            ];
+
+            
             // send email to customer
+              Mail::to($user->email)->send(new PointsNotification($email_data));
+             
+             
         }
 
 

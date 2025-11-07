@@ -47,4 +47,8 @@ class UserPointTotal extends Model
     return $user->save();
 }
 
+public function user(){
+    return $this->belongsTo(User::class);
+}
+
 }
