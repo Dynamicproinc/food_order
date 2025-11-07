@@ -62,7 +62,7 @@
     <div class="header">
       <img src="{{asset('images/logo.jpg')}}" alt="" style="width:64px; filter: invert(1);">
       <h1>{{ __('Order confirmation')}}</h1>
-      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>{{__('Date')}}: <strong>{{ $order->created_at->format('d.m.Y H:1') }}</strong></p>
+      <p>{{ __('Order')}} #: <strong>ORD-{{ $order->daily_order_number}}</strong><br>{{__('Date')}}: <strong>{{ $order->created_at->format('d.m.Y H:i') }}</strong></p>
     </div>
 
     <p><strong>{{__('From')}}:</strong> M Brothers Food<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@mbrothers-food.com</p>

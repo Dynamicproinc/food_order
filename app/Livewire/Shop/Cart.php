@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use App\Mail\OrderConfirmation;
 use Illuminate\Support\Facades\Mail;
 use App\Models\CouponDiscount;
+use App\Models\PointTransaction;
 use Illuminate\Support\Facades\Auth;
 
 class Cart extends Component
@@ -33,6 +34,7 @@ class Cart extends Component
     public $user_points;
     public $min_coupon_limit = 10;
     public $pay_coupon = 0, $coupon_base = 10;
+    public $max_delivery_limit = 69;
 
     // 
     public $coupon_code;
@@ -101,7 +103,7 @@ class Cart extends Component
     $total = $total + $subtotal;
             }
 
-            if($this->grand_total < 69){
+            if($this->grand_total < $this->max_delivery_limit){
                 $this->order_type = 'pickup';
             }
 
@@ -181,6 +183,7 @@ class Cart extends Component
                     $single_item_point = $item['quantity'] * $points;
                     $total_points = $total_points + $single_item_point;
 
+
     
                 }
 
@@ -192,15 +195,22 @@ class Cart extends Component
                     
                 ]);
 
-                //remove the points
+               
+
+
+                //remove the points when placing the order
                 if($this->pay_coupon == 1){
                    
                     $updated_user_points = UserPointTotal::where('user_id', auth()->id())->first()->balance ?? 0;
                     
                 UserPointTotal::updateOrCreate(
                     ['user_id' => auth()->id()], // Condition
-                    ['balance' => $updated_user_points - 10] // Values to update or insert
+                    ['balance' => $updated_user_points - $this->coupon_base] // Values to update or insert
                 );
+
+                 // point transaction entry
+
+                 PointTransaction::debit(auth()->id(), $this->coupon_base, "Coupon Pay for Order");
 
                 }
 
@@ -321,6 +331,8 @@ class Cart extends Component
         }
 
         $discountAmount = min($discountAmount, $orderTotal);
+       
+       
         // 
         //  \DB::table('coupon_user')->insert([
         //     'user_id' => $user->id,
@@ -328,7 +340,7 @@ class Cart extends Component
         //     'used_at' => now(),
         // ]);
         // 
-         $this->discount_value =  $coupon->discount_value;
+        
         // $this->discountAmount = round($discountAmount, 2);
 
         // $this->discount = $this->discount + $this->discountAmount;
@@ -349,13 +361,13 @@ class Cart extends Component
     public function payCoupon(){
        if($this->pay_coupon == 1){
         //check avalibela balance enought for the transction
-        if($this->user_points >=10){
-            $this->discount = $this->discount + 10;
+        if($this->user_points >= $this->coupon_base){
+            $this->discount = $this->discount + $this->coupon_base;
             $this->dispatch('cartMessage',title: 'Coupon added');
         }
 
        }else{
-         $this->discount = $this->discount - 10;
+         $this->discount = $this->discount - $this->coupon_base;
          $this->dispatch('cartMessage',title: 'Coupon removed');
        }
        

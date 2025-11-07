@@ -7,6 +7,7 @@ use App\Models\SalesOrder;
 use Carbon\Carbon;
 use App\Models\UserPoint;
 use App\Models\UserPointTotal;
+use App\Models\PointTransaction;
 
 class Kitchen extends Component
 {
@@ -70,6 +71,8 @@ class Kitchen extends Component
                 $u_point->balance = $user_points_sum;
                 $u_point->save();
             }
+            // add transaction
+            PointTransaction::credit($order->user_id,$user_points_sum,"Copon Reward at Store");
             // send email to customer
         }
 

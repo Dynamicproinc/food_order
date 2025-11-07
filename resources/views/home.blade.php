@@ -15,9 +15,9 @@
                                     <a class="list-group-item list-group-item-action" id="list-profile-list"
                                         data-bs-toggle="list" href="#list-profile" role="tab"
                                         aria-controls="list-profile"><i class="bi bi-card-list"></i></a>
-                                    <a class="list-group-item list-group-item-action" id="list-messages-list"
+                                    {{-- <a class="list-group-item list-group-item-action" id="list-messages-list"
                                         data-bs-toggle="list" href="#list-messages" role="tab"
-                                        aria-controls="list-messages"><i class="bi bi-bell"></i></a>
+                                        aria-controls="list-messages"><i class="bi bi-qr-code"></i></a> --}}
                                     <a class="list-group-item list-group-item-action" id="list-settings-list"
                                         data-bs-toggle="list" href="#list-settings" role="tab"
                                         aria-controls="list-settings"><i class="bi bi-gear"></i></a>
@@ -29,15 +29,32 @@
                                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                     aria-labelledby="list-home-list">
                                     <div class="p-3">
-                                        <h6 class="fw-bold">{{ __('Dashboard') }}</h6>
-                                        <div class="mt-3">
-                                            <h2 class="fw-bold mb-0">{{ $total_points?->balance ?? '0' }}</h2>
-                                            <small>{{ __('Your current available points') }}</small>
+                                        
+                                        <div class="mt-3 text-center">
+                                            <h1 class="fw-bolder mb-0">{{number_format( $total_points?->balance ?? 0,0) }}</h1>
+                                            <small>{{ __('Your Points Balance') }}</small>
                                         </div>
-                                        <div class="mt-2 border rounded p-2">
+                                        <div>
+                                             
+                                        <div class="d-flex justify-content-center align-items-center">
+                                              @livewire('account.qrcode')
+                                        </div>
+                                        </div>
+                                        {{-- <div class="mt-2 border rounded p-2">
                                             <h6 class="fw-bold">
                                                 {{ __('Latest orders') }}
                                             </h6>
+                                            
+                                        </div> --}}
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                                    aria-labelledby="list-profile-list">
+                                    <div class="p-3">
+                                        <h6 class="fw-bold">{{ __('Orders History') }}</h6>
+                                        <div>
                                             <div>
                                                 @if (count($sales_orders))
                                                     <div class="tab-pane-table">
@@ -89,25 +106,13 @@
                                         </div>
 
                                     </div>
-
                                 </div>
-                                <div class="tab-pane fade" id="list-profile" role="tabpanel"
-                                    aria-labelledby="list-profile-list">
-                                    <div class="p-3">
-                                        <h6 class="fw-bold">{{ __('Orders History') }}</h6>
-                                        <div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                                {{-- <div class="tab-pane fade" id="list-messages" role="tabpanel"
                                     aria-labelledby="list-messages-list">
                                     <div class="p-3">
-                                        <h6 class="fw-bold">{{ __('Notifications') }}</h6>
 
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="tab-pane fade" id="list-settings" role="tabpanel"
                                     aria-labelledby="list-settings-list">
                                     <div class="p-3">

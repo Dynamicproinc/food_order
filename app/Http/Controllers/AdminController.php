@@ -29,6 +29,10 @@ class AdminController extends Controller
         return view('admin.products.addcoupon');
     }
 
+    public function pointManager(){
+        return view('admin.point.pointmanager');
+    }
+
 
    
 }

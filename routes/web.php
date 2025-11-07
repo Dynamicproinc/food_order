@@ -40,13 +40,15 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/product/edit/{id}', [App\Http\Controllers\AdminController::class,'editProduct'])->name('admin.product.edit');
     Route::get('/kitchen',[App\Http\Controllers\AdminController::class,'kitchen'])->name('admin.kitchen');
     Route::get('/add-coupon',[App\Http\Controllers\AdminController::class,'addCoupone'])->name('admin.product.coupon');
+    Route::get('/point-manager',[App\Http\Controllers\AdminController::class,'pointManager'])->name('admin.point.pointmanager');
+    
 });
 
 // artisan commands
-// Route::get('/abc123', function () {
-//     \Artisan::call('migrate', ['--force' => true]);
-//     return response()->json(['status' => 'Migration completed']);
-// });;
+Route::get('/abc123', function () {
+    \Artisan::call('migrate', ['--force' => true]);
+    return response()->json(['status' => 'Migration completed']);
+});;
 // Route::get('/storage-link', function () {
 //     Artisan::call('storage:link');
 //     return response()->json(['status' => 'Storage link created']);

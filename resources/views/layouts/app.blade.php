@@ -30,6 +30,7 @@
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
      <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     @livewireStyles
 </head>
 
@@ -72,7 +73,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     {{-- sidebar --}}
-   
+  
     
     <script>
          window.addEventListener('pop', event => {
