@@ -32,7 +32,7 @@
                                         
                                         <div class="mt-3 text-center">
                                             <h1 class="fw-bolder mb-0">{{number_format( $total_points?->balance ?? 0,0) }}</h1>
-                                            <small>{{ __('Your coupone Balance') }}</small>
+                                            <small>{{ __('Your Coupone Balance') }}</small>
                                         </div>
                                         <div>
                                              
