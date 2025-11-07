@@ -23,7 +23,7 @@ class UserPointTotal extends Model
     }
 
     // Find the user
-    $user = self::find($user_id);
+    $user = self::where('user_id',$user_id)->first();
     if (!$user) {
         return false; // or throw an exception
     }
