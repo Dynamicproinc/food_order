@@ -1,20 +1,12 @@
 <div>
     <div class="row justify-content-center">
         <div class="col-lg-10">
-            <div>
-                <h2>Scan QR Code</h2>
-
-<video id="camera" width="300" height="200" autoplay></video>
-<br>
-<input type="text" id="qrText" placeholder="QR Code text will appear here">
-<br>
-<button id="startScan">Start Camera</button>
-            </div>
+            
             <div class="bg-white p-3 shadow rounded mb-3">
                 <div>
                     <form wire:submit="search">
                         <input type="text" class="form-control form-control-lg mb-2"
-                            placeholder="{{ __('Scan QR code here..') }}" wire:model="qr">
+                            placeholder="{{ __('Scan QR code here..') }}" wire:model="qr" id="qrText">
                         @error('qr')
                             <small class="text-danger fw-bold">{{ $message }}</small>
                         @enderror
@@ -118,29 +110,6 @@
             {{--  --}}
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-<script>
-  const codeReader = new ZXing.BrowserQRCodeReader();
-  const videoElement = document.getElementById('camera');
-  const qrInput = document.getElementById('qrText');
-  const startButton = document.getElementById('startScan');
-
-  startButton.addEventListener('click', () => {
-    codeReader
-      .listVideoInputDevices()
-      .then(videoInputDevices => {
-        const firstDeviceId = videoInputDevices[0].deviceId;
-        return codeReader.decodeFromVideoDevice(firstDeviceId, videoElement, (result, err) => {
-          if (result) {
-            qrInput.value = result.text; // Set scanned text to input
-            codeReader.reset(); // Stop scanning after first result
-          }
-          if (err && !(err instanceof ZXing.NotFoundException)) {
-            console.error(err);
-          }
-        });
-      })
-      .catch(err => console.error(err));
-  });
-</script>
+    {{--  --}}
+    {{--  --}}
 </div>
