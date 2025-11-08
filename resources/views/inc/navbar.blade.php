@@ -24,11 +24,14 @@
                                     {{__('My Account')}}
                                 </a>
                                 @endauth
-
+{{-- 
                                 <a type="button" href="{{ route('shop.cart') }}" class="btn btn-warning">
                                     @livewire('shop.carbutton')
 
-                                </a>
+                                </a> --}}
+                                <div class="btn">
+                                     @livewire('shop.carbutton')
+                                </div>
                                 
 
 
