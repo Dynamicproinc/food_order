@@ -98,10 +98,16 @@ text-transform: uppercase;
     /* background-color: #FBB100; */
     border-radius: 16px;
     overflow: hidden;
+    position: relative;
 
 }
 .banner-image{
-    width: 350px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    position:absolute;
+    top: 0;
+    right: -80px;
 }
 
 .menu-tab {
