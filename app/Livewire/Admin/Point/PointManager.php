@@ -17,6 +17,8 @@ class PointManager extends Component
     public $er_message;
     public $amount = 0;
     public $balance;
+    public $scaned_qr;
+    public $qr_code;
     
     
 
@@ -26,6 +28,12 @@ class PointManager extends Component
     }
 
 
+    public function getQr($qr){
+        $this->scaned_qr = $qr;
+        $this->qr = $qr;
+        $this->search();
+        // dd($this->scaned_qr);
+    }
    
     public function search(){
         $this->validate([
