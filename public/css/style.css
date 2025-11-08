@@ -106,7 +106,7 @@ text-transform: uppercase;
     width: 300px;
     object-fit: cover;
     position:absolute;
-    top: 0;
+    top: -16px;
     right: -132px;
 }
 
