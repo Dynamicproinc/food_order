@@ -2,7 +2,7 @@
 @section('title', 'Shop')
 @section('content')
     <div>
-        <div class="d-flex justify-content-center mb-3">
+        <div class="d-flex justify-content-center mb-3 mt-5">
            <div>
            
              @if (count($categories) > 0)
