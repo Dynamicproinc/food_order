@@ -9,9 +9,11 @@
     @endif
     </a>
      @if (session('cart') && count(session('cart')) > 0)
+      <a type="button" href="{{ route('shop.cart') }}">
      <div class="fixed-cart">
         <i class="bi bi-bag"></i>
        </div>
+      </a>
      @endif
 
     {{-- fixed message bar --}}
