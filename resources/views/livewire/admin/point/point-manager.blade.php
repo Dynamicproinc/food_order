@@ -15,31 +15,34 @@
             </div>
            </div>
             <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-            <script>
-                const codeReader = new ZXing.BrowserQRCodeReader();
-                const videoElement = document.getElementById('camera');
-                //   const qrInput = document.getElementById('qrText');
-                const startButton = document.getElementById('startScan');
+           <script>
+    const codeReader = new ZXing.BrowserQRCodeReader();
+    const videoElement = document.getElementById('camera');
+    const startButton = document.getElementById('startScan');
 
-                startButton.addEventListener('click', () => {
-                    codeReader
-                        .listVideoInputDevices()
-                        .then(videoInputDevices => {
-                            const firstDeviceId = videoInputDevices[0].deviceId;
-                            return codeReader.decodeFromVideoDevice(firstDeviceId, videoElement, (result, err) => {
-                                if (result) {
-                                    // qrInput.value = result.text; // Set scanned text to input
-                                    @this.getQr(result.text);
-                                    codeReader.reset(); // Stop scanning after first result
-                                }
-                                if (err && !(err instanceof ZXing.NotFoundException)) {
-                                    console.error(err);
-                                }
-                            });
-                        })
-                        .catch(err => console.error(err));
+    startButton.addEventListener('click', () => {
+        codeReader
+            .listVideoInputDevices()
+            .then(videoInputDevices => {
+                // Try to find the back camera
+                const backCamera = videoInputDevices.find(device => device.label.toLowerCase().includes('back')) 
+                                   || videoInputDevices[0]; // fallback to first camera
+                const deviceId = backCamera.deviceId;
+
+                return codeReader.decodeFromVideoDevice(deviceId, videoElement, (result, err) => {
+                    if (result) {
+                        @this.getQr(result.text);
+                        codeReader.reset(); // Stop scanning after first result
+                    }
+                    if (err && !(err instanceof ZXing.NotFoundException)) {
+                        console.error(err);
+                    }
                 });
-            </script>
+            })
+            .catch(err => console.error(err));
+    });
+</script>
+
             {{--  --}}
             <div class="bg-white p-3 shadow rounded mb-3">
                 <div>
