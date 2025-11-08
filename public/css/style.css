@@ -91,7 +91,18 @@ text-transform: uppercase;
 .cat-active{
      background-color: #000 !important;
 }
+.banner{
+    height: 200px;
+    width: 100%;
+    background-color: #000;
+    /* background-color: #FBB100; */
+    border-radius: 16px;
+    overflow: hidden;
 
+}
+.banner-image{
+    height: 250px;
+}
 
 .menu-tab {
     height: 40px;
@@ -850,3 +861,42 @@ footer{
     align-items: center;
     border-radius: 50%;
 }
+/* hero */
+.hero-banner {
+  height: 200px;
+  padding: 20px 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  text-align: left;
+}
+
+.hero-banner h1 {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-weight: 800;
+}
+
+.hero-banner p {
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: #fff;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e85b27;
+}
+
+/*  */
