@@ -107,7 +107,7 @@ text-transform: uppercase;
     object-fit: cover;
     position:absolute;
     top: 0;
-    right: -80px;
+    right: -100px;
 }
 
 .menu-tab {
