@@ -27,13 +27,13 @@
                             <th scope="row">{{ $item->id }}</th>
                             <td>{{ $item->daily_order_number }}</td>
                             <td>{{ $item->created_at }}</td>
-                            <td>{{ $item->getUser()->name .' '.$item->getUser()->last_name }}</td>
+                            <td>{{ $item->getUser()?->name .' '.$item->getUser()?->last_name }}</td>
                             <td>{{ $item->order_type }}</td>
                             <td>{{ $item->net_total }}</td>
                             <td>{{ $item->pickup_time }}</td>
                             <td>{{ $item->address_1.' '. $item->address_2 }}</td>
                             <td>{{ $item->telephone }}</td>
-                            <td>{{ $item->getUser()->email }}</td>
+                            <td>{{ $item->getUser()?->email }}</td>
                             <td>{{ $item->status }}</td>
                             
                         </tr> 
