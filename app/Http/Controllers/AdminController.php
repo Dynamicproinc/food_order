@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PDO;
 use App\Models\Product;
+use App\Models\SalesOrder;
 
 class AdminController extends Controller
 {
@@ -32,6 +33,14 @@ class AdminController extends Controller
     public function pointManager(){
         return view('admin.point.pointmanager');
     }
+
+    public function orders(){
+
+        $orders = SalesOrder::latest()->paginate(50);
+        return view('admin.orders.order')->with('orders', $orders);
+    }
+
+    
 
 
    
