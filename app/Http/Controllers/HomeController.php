@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\SalesOrder;
 use App\Models\UserPoint;
 use App\Models\UserPointTotal;
+use App\Models\PointTransaction;
+
 class HomeController extends Controller
 {
     /**
@@ -32,7 +34,19 @@ class HomeController extends Controller
 
         // return $up;
 
-        return view('home')->with(['sales_orders' => $sales_orders, 'total_points' => $total_points]);
+        return view('account.qr')->with(['sales_orders' => $sales_orders, 'total_points' => $total_points]);
+    }
+
+    public function orders(){
+        $sales_orders = SalesOrder::where('user_id', auth()->user()->id)->latest()->orderBy('daily_order_number','desc')->paginate(5);
+
+        $total_points = UserPointTotal::where('user_id', auth()->user()->id)->first();
+        return view('account.orders')->with(['sales_orders' => $sales_orders, 'total_points' => $total_points]);
+    }
+
+    public function coupons(){
+        $pt = PointTransaction::where('user_id', auth()->user()->id)->latest()->paginate(10);
+        return view('account.coupon');
     }
 
     public function viewOrder($slug){

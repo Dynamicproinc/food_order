@@ -4,7 +4,7 @@
         {{-- {{$qr}} --}}
         
   <div class="d-felx justify-content-center mt-3">
-    <div class="qr-shadow rounded p-3 d-flex justify-content-center" wire:ignore>
+    <div class="rounded p-3 d-flex justify-content-center" wire:ignore>
      <div>
        <h6 class="fw-bold">{{ __('My QR') }}</h6>
     <div id="qrcode"></div>

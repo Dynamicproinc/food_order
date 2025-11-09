@@ -24,6 +24,8 @@ Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/my-account', [App\Http\Controllers\HomeController::class, 'index'])->name('myaccount');
 Route::get('/my-account/order/{slug}', [App\Http\Controllers\HomeController::class, 'viewOrder'])->name('myaccount.vieworder');
+Route::get('/my-account/orders', [App\Http\Controllers\HomeController::class, 'orders'])->name('myaccount.orders');
+Route::get('/my-account/coupons', [App\Http\Controllers\HomeController::class, 'coupons'])->name('myaccount.coupons');
 
 
 
