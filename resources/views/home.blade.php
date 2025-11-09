@@ -29,7 +29,7 @@
                             <a class="nav-link {{ request()->routeIs('myaccount') ? 'active' : '' }}" href="{{route('myaccount')}}">{{__('My QR')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('myaccount.coupons') ? 'active' : '' }}" href="{{route('myaccount.coupons')}}">{{ __('Coupon History')}}</a>
+                            <a class="nav-link {{ request()->routeIs('myaccount.coupons') ? 'active' : '' }}" href="{{route('myaccount.coupons')}}">{{ __('Coupons')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('myaccount.orders') ? 'active' : '' }}" href="{{route('myaccount.orders')}}">{{ __('Orders')}}</a>
