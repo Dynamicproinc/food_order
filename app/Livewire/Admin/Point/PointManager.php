@@ -64,7 +64,7 @@ class PointManager extends Component
 
     public function debit(){
              $this->validate([
-           'amount' => 'required|numeric|gt:1',
+           'amount' => 'required|numeric|gt:0',
         ]);
 
         if($this->amount > $this->balance || !$this->balance){
