@@ -96,7 +96,17 @@
 "Your Coupon Balance" : "Stanje vaših kupona",
 "Orders History": "Povijest narudžbi",
 "Dashboard": "Nadzorna ploča",
-"Please confirm if you want to continue with this transaction?" : "Molimo potvrdite želite li nastaviti s ovom transakcijom?"
+"Please confirm if you want to continue with this transaction?" : "Molimo potvrdite želite li nastaviti s ovom transakcijom?",
+"Hello!" : "Bok!",
+"Your available coupon balance" : "Tvoj raspoloživi saldo kupona",
+"Coupon History" : "Povijest kupona",
+"Orders" : "Narudžbe",
+"Setting" : "Postavke",
+"Type" : "Vrsta",
+"Description" : "Opis",
+"Amount" : "Iznos",
+"No records found" : "Nema zapisa",
+"No orders found" : "Nema narudžbi"
 
 
 

@@ -96,7 +96,18 @@
     "Your Coupon Balance" : "Your Points Balance",
     "Orders History": "Orders History",
     "Dashboard": "Dashboard",
-    "Please confirm if you want to continue with this transaction?" : "Please confirm if you want to continue with this transaction*?."
+    "Please confirm if you want to continue with this transaction?" : "Please confirm if you want to continue with this transaction*?.",
+    "Hello!" : "Hello!",
+    "Your available coupon balance" : "Your available coupon balance",
+    "Coupon History" : "Coupon History",
+    "Orders" : "Orders",
+    "Setting" : "Setting",
+    "Type" : "Type",
+    "Description" : "Description",
+    "Amount" : "Amount",
+    "No records found" : "No records found",
+    "No orders found" : "No orders found"
+
     
 
 

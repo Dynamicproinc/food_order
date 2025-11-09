@@ -30,7 +30,7 @@
                 {{-- {{ $user->pointTransactions()->latest()->paginate(5)->links()}} --}}
             </div>
         @else
-            <p class="text-muted">{{ __('No recrds found') }}</p>
+            <p class="text-muted">{{ __('No records found') }}</p>
         @endif
     </div>
 @endsection
