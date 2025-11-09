@@ -4,7 +4,8 @@
     <div>
         <div class="container mt-3">
             <div>
-                <table class="table table-striped">
+                @if (count($orders) > 0)
+                   <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">{{ __('ID') }}</th>
@@ -40,7 +41,10 @@
                        
                         
                     </tbody>
-                </table>
+                </table> 
+                @else
+                    <p class="text-center text-muted">{{__('No orders found')}}</p>
+                @endif
             </div>
         </div>
     </div>
