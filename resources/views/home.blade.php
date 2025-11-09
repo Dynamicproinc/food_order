@@ -17,12 +17,14 @@
                         <div class="col-4">
                             <div class="mid-text">
                                 <div class="rounded bg-dark p-3">
-                                    <h1 class="fw-bolder">{{auth()->user()->getPointBalance()?->balance}}</h1>
+                                    <h1 class="fw-bolder">{{number_format(auth()->user()->getPointBalance()?->balance ?? 0, 0)}}</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+
                 <div class="p-3">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
