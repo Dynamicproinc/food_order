@@ -208,9 +208,13 @@ class Index extends Component
 
         if (count($this->selected_product->getVariants())) {
             $this->validate([
-                'variant' => 'required'
+                'variant' => 'required',
             ]);
         }
+
+        $this->validate([
+            'quantity' => 'required|integer|min:1|max:100',
+        ]);
 
         $product_id = $this->selected_product->id;
         $cart = session()->get('cart', []);
