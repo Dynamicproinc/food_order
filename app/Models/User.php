@@ -57,4 +57,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getPointBalance(){
         return UserPointTotal::where('user_id', $this->id)->first();
     }
+
+    public function addresses()
+    {
+        return $this->hasOne(Address::class);
+    }
 }

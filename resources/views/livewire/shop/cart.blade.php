@@ -64,7 +64,8 @@
                                             <div class="">
                                                 <div class="form-group">
                                                     <label for=""
-                                                        class="mb-2">{{ __('Select Time (24-hour format)') }} </label>
+                                                        class="mb-2">{{ __('Select Time (24-hour format)') }}
+                                                    </label>
                                                     <input type="time"
                                                         class="form-control @error('pickup_time') is-invalid @enderror mb-2"
                                                         wire:model="pickup_time">
@@ -141,7 +142,7 @@
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group mb-3">
                                                     <div class="form-floating">
                                                         <input type="text"
                                                             class="form-control @error('address_2') is-invalid @enderror"
@@ -153,6 +154,13 @@
                                                     @error('address_2')
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model="save_address"
+                                                        id="ckaddress">
+                                                    <label class="form-check-label" for="ckaddress">
+                                                        {{ __('Save this address for future orders') }}
+                                                    </label>
                                                 </div>
                                                 {{-- <div class="row">
                                                 <div class="col-lg-6 form-group">
@@ -252,7 +260,8 @@
                                     <div class="">
                                         <button class=" btn-0 text-danger clickable fw-bold text-uppercase txt-xs"
                                             wire:click="removeCartItem('{{ $index }}')">
-                                            <span class="spinner-border spinner-border-sm" role="status"  wire:loading wire:target="removeCartItem('{{ $index }}')">
+                                            <span class="spinner-border spinner-border-sm" role="status" wire:loading
+                                                wire:target="removeCartItem('{{ $index }}')">
                                                 <span class="visually-hidden">Loading...</span>
                                             </span>
 
@@ -312,21 +321,22 @@
         </div>
     @else
         <div class="p-3 row">
-           <div class="col-9">
-             <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
-                {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
-            </span>
-            
-           </div>
-           <div class="col-3 d-flex flex-row-reverse">
-             
-                
-            
-           </div>
+            <div class="col-9">
+                <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
+                    {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
+                </span>
+
+            </div>
+            <div class="col-3 d-flex flex-row-reverse">
+
+
+
+            </div>
         </div>
         <div class="p-3">
             <div class="info-alert-bar">
-                <p>{{__('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order')}}</p>
+                <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
+                </p>
             </div>
         </div>
 

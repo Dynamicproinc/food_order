@@ -47,7 +47,8 @@
                                                                 @if ($loop->first) checked @endif>
                                                             <label class="form-check-label" for="rd{{ $item->id }}">
                                                                 <div>{{ $item->value }}</div>
-                                                                <p class="text-muted txt-xs" style="line-height: 1.2;">{{ $item->description?? $item->description }}</p>
+                                                                <p class="text-muted txt-xs" style="line-height: 1.2;">
+                                                                    {{ $item->description ?? $item->description }}</p>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -61,7 +62,7 @@
                                             @endforeach
                                         @endforeach
                                         @error('variant')
-                                            <small class="text-danger fw-bold">{{$message}}</small>
+                                            <small class="text-danger fw-bold">{{ $message }}</small>
                                         @enderror
                                     @endif
                                     {{-- @foreach ($variant as $option_id => $item)
@@ -123,7 +124,7 @@
                     <div class="add-bar-wrap">
                         <div class="row">
                             <div class="col-4">
-                                <div class="btn-content p-2">
+                                {{-- <div class="btn-content p-2">
                                     <div class="d-flex justify-content-between">
                                         <div class="">
                                             <button class="btn-rounded" wire:click="decrement"><i
@@ -135,12 +136,23 @@
                                                     class="bi bi-plus"></i></button>
                                         </div>
                                     </div>
+                                </div> --}}
+                                <div x-data="{ qty: @entangle('quantity').live }" class="btn-content p-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn-rounded" @click="qty--"><i class="bi bi-dash"></i></button>
+
+                                        <div class="qty" x-text="qty"></div>
+
+                                        <button class="btn-rounded" @click="qty++"><i class="bi bi-plus"></i></button>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="col-8">
-                                <button class="btn-add-cart" wire:click="addCart" wire:loading.attr="disabled">{{ __('ADD TO BAG') }}
-                                   
-                                    ({{ number_format($grand_total, 2, ',', ' ') }} €) 
+                                <button class="btn-add-cart" wire:click="addCart"
+                                    wire:loading.attr="disabled">{{ __('ADD TO BAG') }}
+
+                                    ({{ number_format($grand_total, 2, ',', ' ') }} €)
                                 </button>
                             </div>
                         </div>

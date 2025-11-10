@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\CouponDiscount;
 use App\Models\PointTransaction;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Address;
 
 class Cart extends Component
 {
@@ -43,6 +44,7 @@ class Cart extends Component
     public $final_total = 0;
     public $c_message = '';
     public $success = false;
+    public $save_address = false;
 
     // 
 
@@ -55,6 +57,7 @@ class Cart extends Component
 
     public function mount()
     {
+        // dd(auth()->user()->addresses);
         $this->cart_items = session('cart', []);
         $this->calculateTotal();
         $this->first_name = auth()->user()->name;
@@ -62,11 +65,11 @@ class Cart extends Component
         $this->email = auth()->user()->email;
         //load cities
         $this->cities = City::all();
+        $this->city = auth()->user()->addresses?->city;
+        $this->address = auth()->user()->addresses?->address_1;
+        $this->address_2 = auth()->user()->addresses?->address_2;
         // point availabilty and eligiblity
         $this->user_points = UserPointTotal::where('user_id', auth()->user()->id)->first()?->balance;
-        
-
-        
     }
 
     public function removeCartItem($index)
@@ -80,7 +83,7 @@ class Cart extends Component
         session()->put('cart', $this->cart_items);
         $this->dispatch('itemUpdate');
         $this->dispatch('pop');
-        $this->dispatch('cartMessage',title: 'Cart item has been removed');
+        $this->dispatch('cartMessage', title: 'Cart item has been removed');
         // $this->dispatch('cartMessage', title: 'Cart item removed');
         $this->calculateTotal();
     }
@@ -99,15 +102,15 @@ class Cart extends Component
                 // $total = bcadd($total, $subtotal, 2);
                 $qty = (string) $item['quantity'];
                 $price = (string) $item['price'];
-                 $subtotal = bcmul($qty, $price, 2);
-    $total = $total + $subtotal;
+                $subtotal = bcmul($qty, $price, 2);
+                $total = $total + $subtotal;
             }
 
-            if($this->grand_total < $this->max_delivery_limit){
+            if ($this->grand_total < $this->max_delivery_limit) {
                 $this->order_type = 'pickup';
             }
 
-            
+
             $this->grand_total = $total;
             $this->discount_value = ($this->grand_total * $this->discount) / 100;
 
@@ -115,9 +118,10 @@ class Cart extends Component
         }
     }
 
-    public function saveOrder(){
-    
-        
+    public function saveOrder()
+    {
+
+
         //first must calcluate latest cart total
         $this->calculateTotal();
 
@@ -140,10 +144,10 @@ class Cart extends Component
         $this->validate([
             'telephone' => 'required|string|max:255',
             'order_type' => 'required',
-            
+
         ]);
 
-        
+
         // make order
 
         $order = new SalesOrder;
@@ -159,22 +163,22 @@ class Cart extends Component
         $order->delivery = $this->delivery;
         $order->net_total = $this->net_total;
         $order->slug = Str::random(15);
-        if($order->save()){
+        if ($order->save()) {
             // save sales order items
             //fetching session
-            $cart = session('cart',[]);
-            if($cart){
+            $cart = session('cart', []);
+            if ($cart) {
 
                 $total_points = 0;
 
-                foreach($cart as $item){
+                foreach ($cart as $item) {
                     $sales_items = OrderItem::create([
                         'sales_order_id' => $order->id,
                         'product_id' => $item['product_id'],
                         'quantity' => $item['quantity'],
                         'price' => $item['price'],
-                        'variants'=> $item['variants'],
-                        'choices'=> $item['choices']
+                        'variants' => $item['variants'],
+                        'choices' => $item['choices']
                     ]);
 
                     //point calculation
@@ -182,42 +186,51 @@ class Cart extends Component
                     $points = Product::where('id', $item['product_id'])->first()->points;
                     $single_item_point = $item['quantity'] * $points;
                     $total_points = $total_points + $single_item_point;
-
-
-    
                 }
 
                 // add user earned points 
                 $user_points = UserPoint::create([
                     'user_id' => auth()->user() ? auth()->user()->id : 0,
                     'order_id' => $order->id,
-                    'points'=>$total_points,
-                    
+                    'points' => $total_points,
+
                 ]);
 
-               
+                //    save address if checked
+                if ($this->save_address) {
+                    Address::updateOrCreate(
+                        [
+                            'user_id' => auth()->id(),
+                        ],
+                        [
+                            'address_1' => $this->address,
+                            'address_2' => $this->address_2,
+                            'city' => $this->city,
+                        ]
+                    );
+                }
+
 
 
                 //remove the points when placing the order
-                if($this->pay_coupon == 1){
-                   
+                if ($this->pay_coupon == 1) {
+
                     $updated_user_points = UserPointTotal::where('user_id', auth()->id())->first()->balance ?? 0;
-                    
-                UserPointTotal::updateOrCreate(
-                    ['user_id' => auth()->id()], // Condition
-                    ['balance' => $updated_user_points - $this->coupon_base] // Values to update or insert
-                );
 
-                 // point transaction entry
+                    UserPointTotal::updateOrCreate(
+                        ['user_id' => auth()->id()], // Condition
+                        ['balance' => $updated_user_points - $this->coupon_base] // Values to update or insert
+                    );
 
-                 PointTransaction::debit(auth()->id(), $this->coupon_base, "Coupon Pay for Order");
+                    // point transaction entry
 
+                    PointTransaction::debit(auth()->id(), $this->coupon_base, "Coupon Pay for Order");
                 }
 
                 ////////////////////////////////////ONLY AFTER PAY /////////////////////////////////////////////
                 // $updated_user_points = UserPointTotal::where('user_id', auth()->id())->first()->balance ?? 0;
 
-                
+
                 // UserPointTotal::updateOrCreate(
                 //     ['user_id' => auth()->id()], // Condition
                 //     ['total' => $updated_user_points + $total_points] // Values to update or insert
@@ -225,10 +238,10 @@ class Cart extends Component
                 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-                
 
-                
-            
+
+
+
 
 
 
@@ -237,29 +250,23 @@ class Cart extends Component
 
             // clear cart
             // send email to customer
-           $sales_order_for_email = SalesOrder::where('id', $order->id)->where('user_id', auth()->user()->id)->first();
+            $sales_order_for_email = SalesOrder::where('id', $order->id)->where('user_id', auth()->user()->id)->first();
             //mail to customer
-             Mail::to(auth()->user()->email)
-             ->bcc('info@mbrothers-food.com')
-             ->send(new OrderConfirmation($sales_order_for_email));
+            Mail::to(auth()->user()->email)
+                ->bcc('info@mbrothers-food.com')
+                ->send(new OrderConfirmation($sales_order_for_email));
 
             // 
             session()->forget('cart');
 
             // redirections
 
-            return redirect()->to(route('myaccount.vieworder',$order->slug));
-
+            return redirect()->to(route('myaccount.vieworder', $order->slug));
         }
-
-
-
-
-
-        
     }
 
-    public function applyCoupon(){
+    public function applyCoupon()
+    {
         $this->validate([
             'coupon_code' => 'required',
         ]);
@@ -281,7 +288,7 @@ class Cart extends Component
             $this->c_message = 'This coupon is no longer active.';
             return;
         }
-          $now = now();
+        $now = now();
 
         // Check date validity
         if ($now->lt($coupon->valid_from) || $now->gt($coupon->valid_until)) {
@@ -325,14 +332,14 @@ class Cart extends Component
                 $discountAmount = $coupon->max_discount_amount;
             }
         } else {
-            
+
             $discountAmount = $coupon->discount_value;
             $this->discount_value =  $coupon->discount_value;
         }
 
         $discountAmount = min($discountAmount, $orderTotal);
-       
-       
+
+
         // 
         //  \DB::table('coupon_user')->insert([
         //     'user_id' => $user->id,
@@ -340,12 +347,12 @@ class Cart extends Component
         //     'used_at' => now(),
         // ]);
         // 
-        
+
         // $this->discountAmount = round($discountAmount, 2);
 
         // $this->discount = $this->discount + $this->discountAmount;
         // $this->final_total = round($orderTotal - $discountAmount, 2);
-        $this->dispatch('cartMessage',title: 'Coupon applied successfully!');
+        $this->dispatch('cartMessage', title: 'Coupon applied successfully!');
         // $this->c_message = "Coupon applied successfully!";
         $this->success = true;
         $this->calculateTotal();
@@ -358,20 +365,20 @@ class Cart extends Component
         $this->success = false;
     }
 
-    public function payCoupon(){
-       if($this->pay_coupon == 1){
-        //check avalibela balance enought for the transction
-        if($this->user_points >= $this->coupon_base){
-            $this->discount = $this->discount + $this->coupon_base;
-            $this->dispatch('cartMessage',title: 'Coupon added');
+    public function payCoupon()
+    {
+        if ($this->pay_coupon == 1) {
+            //check avalibela balance enought for the transction
+            if ($this->user_points >= $this->coupon_base) {
+                $this->discount = $this->discount + $this->coupon_base;
+                $this->dispatch('cartMessage', title: 'Coupon added');
+            }
+        } else {
+            $this->discount = $this->discount - $this->coupon_base;
+            $this->dispatch('cartMessage', title: 'Coupon removed');
         }
 
-       }else{
-         $this->discount = $this->discount - $this->coupon_base;
-         $this->dispatch('cartMessage',title: 'Coupon removed');
-       }
-       
-       $this->calculateTotal();
+        $this->calculateTotal();
     }
 
     // public function 
