@@ -37,7 +37,7 @@
                             <a class="nav-link {{ request()->routeIs('myaccount.orders') ? 'active' : '' }}" href="{{route('myaccount.orders')}}">{{ __('Orders')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">{{ __('Setting')}}</a>
+                            <a class="nav-link disabled">{{ __('Setting')}}</a>
                         </li>
                     </ul>
                 </div>
