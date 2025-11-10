@@ -41,7 +41,7 @@
                         <div class="product-sm bg-white" wire:click="selectProduct({{ $item->id }})">
                             <div class="thumb-sm">
                                 <img src="{{asset($item->image_path)}}"
-                                    alt="{{$item->title}}" class="img-fluid">
+                                    alt="{{ $item->title }}" class="img-fluid">
                             </div>
                             <div class="p-3 bg-white">
                                 <h5 class="fw-bold lh-sm">{{ $item->title }}</h5>

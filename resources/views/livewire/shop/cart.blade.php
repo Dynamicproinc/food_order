@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('telephone') is-invalid @enderror"
+                                <input type="number" class="form-control @error('telephone') is-invalid @enderror"
                                     id="telephone" placeholder="{{ __('Telephone') }}" wire:model="telephone">
                                 <label for="telephone">{{ __('Telephone') }}</label>
                                 @error('telephone')
