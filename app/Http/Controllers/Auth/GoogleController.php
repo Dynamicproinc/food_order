@@ -47,7 +47,7 @@ if (!$user->email_verified_at) {
     $user->save();
 }
 
-            Auth::login($user);
+            Auth::login($user, true);
 
             return redirect('/home');
         } catch (Exception $e) {
