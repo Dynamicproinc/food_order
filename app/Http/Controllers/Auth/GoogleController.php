@@ -29,6 +29,7 @@ $googleUser = Socialite::driver('google')
     ->scopes(['openid', 'profile', 'email'])
     ->stateless()
     ->user();
+    dd($googleUser);
 
 $user = User::updateOrCreate(
     ['email' => $googleUser->getEmail()],
