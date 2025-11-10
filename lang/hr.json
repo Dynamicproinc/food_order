@@ -106,7 +106,18 @@
 "Description" : "Opis",
 "Amount" : "Iznos",
 "No records found" : "Nema zapisa",
-"No orders found" : "Nema narudžbi"
+"No orders found" : "Nema narudžbi",
+"Oops! Page not found": "Ups! Stranica nije pronađena",
+   "It looks like there’s an internal server error. Please try again later.": "Čini se da je došlo do interne pogreške poslužitelja. Pokušajte ponovo kasnije.",
+"Go Home": "Idi na početnu stranicu",
+"Oops! Something went wrong": "Ups! Nešto je pošlo po zlu",
+"Page Expired": "Stranica je istekla",
+"Your session has expired. Please refresh the page and try again.": "Vaša sesija je istekla. Osvježite stranicu i pokušajte ponovno.",
+"Access Denied": "Pristup odbijen",
+"You don’t have permission to access this page.": "Nemate dopuštenje za pristup ovoj stranici.",
+"Server Error": "Pogreška poslužitelja",
+"The page you’re looking for doesn’t exist or has been moved.": "Stranica koju tražite ne postoji ili je premještena."
+
 
 
 

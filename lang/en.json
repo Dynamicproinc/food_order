@@ -106,7 +106,18 @@
     "Description" : "Description",
     "Amount" : "Amount",
     "No records found" : "No records found",
-    "No orders found" : "No orders found"
+    "No orders found" : "No orders found",
+    "Oops! Page not found": "Oops! Page not found",
+    "It looks like there’s an internal server error. Please try again later.": "It looks like there’s an internal server error. Please try again later.",
+    "Go Home": "Go Home",
+    "Oops! Something went wrong": "Oops! Something went wrong",
+    "Page Expired": "Page Expired",
+    "Your session has expired. Please refresh the page and try again.": "Your session has expired. Please refresh the page and try again.",
+    "Access Denied": "Access Denied",
+    "You don’t have permission to access this page.": "You don’t have permission to access this page.",
+    "Server Error": "Server Error",
+    "The page you’re looking for doesn’t exist or has been moved.": "The page you’re looking for doesn’t exist or has been moved."
+    
 
     
 
