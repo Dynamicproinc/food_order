@@ -35,9 +35,9 @@ $user = User::updateOrCreate(
     ['email' => $googleUser->getEmail()],
     [
         // 'name' => $googleUser->getName(),
-        $guser =  $googleUser->getName(),
-        'name' => $guser->user['given_name'],
-        'last_name' =>$guser->user['family_name'],
+        // $guser =  $googleUser->getName(),
+        'name' => $googleUser->user['given_name'],
+        'last_name' =>$googleUser->user['family_name'],
         'google_id' => $googleUser->getId(),
         'avatar' => $googleUser->getAvatar(),
         'password' => bcrypt($randomPassword),
