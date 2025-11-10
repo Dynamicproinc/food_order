@@ -25,7 +25,7 @@
                             <i class="bi bi-check-circle-fill"></i> {{ $success_message }}
                         </small> --}}
                     <div class="d-flex align-items-center">
-                        <i class="bi bi-check2 me-2"></i>
+                        <i class="bi bi-check-circle-fill mx-2"></i>
                         <small x-data x-init="setTimeout(() => $wire.set('success_message', ''), 1000)" class="fw-bold">
                             {{ __($success_message) }}
                         </small>
@@ -33,7 +33,7 @@
                 @endif
                 @if ($error_message)
                     <div class="d-flex align-items-center">
-                        <i class="bi bi-check2 me-2"></i>
+                        <i class="bi bi-check-circle-fill mx-2"></i>
                         <small x-data x-init="setTimeout(() => $wire.set('success_message', ''), 1000)" class="fw-bold">
                            {{__( $error_message )}}
                         </small>
