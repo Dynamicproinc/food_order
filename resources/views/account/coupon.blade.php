@@ -1,6 +1,13 @@
 @extends('home')
 @section('acc-content')
     <div>
+         <style>
+            td, th {
+                vertical-align: middle !important;
+                font-size: 12px;
+                text-transform: uppercase
+            }
+        </style>
         @if (auth()->user()->pointTransactions)
             <div>
                 <table class="table">
@@ -19,7 +26,7 @@
                                 <td>{{ $item->created_at->format('d-m-Y H:i') }}</td>
                                 <td class="text-uppercase">{{ $item->type }}</td>
                                 <td>{{ $item->description }}</td>
-                                <td>{{ $item->type === 'debit' ? -$item->amount : $item->amount }}</td>
+                                <td style="text-align: right">{{ number_format($item->type === 'debit' ? -$item->amount : $item->amount,0) }}</td>
                             </tr>
                         @endforeach
 

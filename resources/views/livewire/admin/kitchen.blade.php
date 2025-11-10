@@ -85,17 +85,17 @@
                                         </div>
                                         <div class="order-card-footer p-3">
                                             <div class="row">
-                                                <div class="col-4">
+                                                {{-- <div class="col-4">
                                                     <button class="btn btn-outline-dark btn-lg w-100">
                                                         <i class="bi bi-x-lg"></i>
                                                     </button>
-                                                </div>
-                                                <div class="col-8">
+                                                </div> --}}
+                                                <div class="col-12">
                                                     @if ($item->status === 'pending')
                                                         <button class="btn btn-warning btn-lg w-100"
                                                             wire:click="orderAccepted({{ $item->id }})">
                                                             <span class="spinner-border spinner-border-sm" wire:loading
-                                                                wire:target="orderAccepted" role="status">
+                                                                wire:target="orderAccepted({{ $item->id }})" role="status">
                                                                 <span class="visually-hidden">Loading...</span>
                                                             </span>
                                                             <i class="bi bi-check2"></i> {{ __('Accept') }}
@@ -105,7 +105,7 @@
                                                         <button class="btn btn-warning btn-lg w-100"
                                                             wire:click="orderReady({{ $item->id }})">
                                                             <span class="spinner-border spinner-border-sm" wire:loading
-                                                                wire:target="orderReady" role="status">
+                                                                wire:target="orderReady({{ $item->id }})" role="status">
                                                                 <span class="visually-hidden">Loading...</span>
                                                             </span>
                                                             <i class="bi bi-check-circle-fill"></i> {{ __('Ready') }}
@@ -154,7 +154,7 @@
                                             <div class="btn btn-dark w-100"
                                                 wire:click="orderDispatch({{ $ro->id }})">
                                                 <span class="spinner-border spinner-border-sm" wire:loading
-                                                                wire:target="orderDispatch" role="status">
+                                                                wire:target="orderDispatch({{ $ro->id }})" role="status">
                                                                 <span class="visually-hidden">Loading...</span>
                                                             </span>
                                                 {{ __('Dispatch') }}

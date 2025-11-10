@@ -1,6 +1,13 @@
 @extends('home')
 @section('acc-content')
     <div>
+        <style>
+            td, th {
+                vertical-align: middle !important;
+                font-size: 12px;
+                text-transform: uppercase
+            }
+        </style>
         @if (count($sales_orders))
             <div class="tab-pane-table">
                 <table class="table table-striped table-responsive">
@@ -30,7 +37,7 @@
 
                                 </td>
                                 
-                                <td>
+                                <td style="text-align: right">
                                     {{ number_format($item->net_total, 2, ',', ' ') }}  €
                                        
                                 </td>
@@ -40,8 +47,8 @@
                                 {{-- <td></td> --}}
                                 {{-- <td style="text-align: right"></td> --}}
                                 <td>
-                                    <small class="txt-xs fw-bold text-uppercase">
-                                        {{ __($item->status) }}</small>
+                                    
+                                        {{ __($item->status) }}
                                 </td>
                             </tr>
                         @endforeach
