@@ -14,7 +14,7 @@
                             </div>
                             <div>
                                @guest
-                                <a href="{{ route('login')}}" type="button" class="btn btn-outline-light mx-2">
+                                <a href="{{ route('login')}}" type="button" class="btn btn-outline-light">
                                     <i class="bi bi-person"></i>
                                     {{__('My Account')}}
                                 </a>
@@ -28,11 +28,11 @@
                                      @livewire('shop.carbutton')
                                 </div>
                                  @auth
-                                <a href="{{route('myaccount')}}" class="btn btn-default mx-2 text-capitalize">
+                                <a href="{{route('myaccount')}}" class="btn btn-default text-capitalize">
                                     @if (\App\Models\User::find(auth()->user()->id)->avatar)
                                     <img class="xs-avatar" src="{{\App\Models\User::find(auth()->user()->id)->avatar}}" alt="">
                                        @else 
-                                       <span class="xs-avatar-letter">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
+                                       <span class="xs-avatar-letter">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }} </span>
                                     @endif
                                     {{-- <i class="bi bi-person"></i> --}}
                                     {{-- {{__('Hi')}} {{ substr(auth()->user()->name, 0, 10) }} --}}
