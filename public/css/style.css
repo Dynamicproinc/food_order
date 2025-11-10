@@ -80,10 +80,12 @@ font-size: 12px;
 text-transform: uppercase;
 }
 .cat-button .icon:hover{
-    background-color: #000;
+    /* background-color: #000; */
+    background-color: #FBB100;
 }
 .cat-active{
-     background-color: #181818 !important;
+     /* background-color: #181818 !important; */
+     background-color: #FBB100 !important;
 }
 .banner{
     height: 280px;
