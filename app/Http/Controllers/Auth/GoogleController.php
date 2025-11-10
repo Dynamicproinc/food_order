@@ -29,7 +29,7 @@ $googleUser = Socialite::driver('google')
     ->scopes(['openid', 'profile', 'email'])
     ->stateless()
     ->user();
-    dd($googleUser->getAvatar());
+    
 
 $user = User::updateOrCreate(
     ['email' => $googleUser->getEmail()],
