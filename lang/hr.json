@@ -61,7 +61,7 @@
     "Accept": "Prihvati",
     "Decline": "Odbij",
     "Home Delivery": "Dostava",
-    "Select Time": "Odaberite vrijeme",
+     "Select Time (24-hour format)": "Odaberite vrijeme (24-satni format)",
     "Add-ons": "Dodaci",
     "Order now": "Naruči sada",
      "City": "Grad",

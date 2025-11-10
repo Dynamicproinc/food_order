@@ -64,7 +64,7 @@
                                             <div class="">
                                                 <div class="form-group">
                                                     <label for=""
-                                                        class="mb-2">{{ __('Select Time') }}</label>
+                                                        class="mb-2">{{ __('Select Time (24-hour format)') }} </label>
                                                     <input type="time"
                                                         class="form-control @error('pickup_time') is-invalid @enderror mb-2"
                                                         wire:model="pickup_time">
