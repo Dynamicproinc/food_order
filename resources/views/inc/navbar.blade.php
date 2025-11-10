@@ -38,18 +38,17 @@
                                 <div class="btn">
                                      @livewire('shop.carbutton')
                                 </div>
-                                 @auth
+                                 {{-- @auth
                                 <a href="{{route('myaccount')}}" class="btn btn-default text-capitalize">
                                     @if (\App\Models\User::find(auth()->user()->id)->avatar)
                                     <img class="xs-avatar" src="{{\App\Models\User::find(auth()->user()->id)->avatar}}" alt="">
                                        @else 
                                        <span class="xs-avatar-letter">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }} </span>
                                     @endif
-                                    {{-- <i class="bi bi-person"></i> --}}
-                                    {{-- {{__('Hi')}} {{ substr(auth()->user()->name, 0, 10) }} --}}
+                                    
                                 </a>
                                 @endauth
-                                
+                                 --}}
 
 
                             </div>
