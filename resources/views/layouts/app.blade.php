@@ -38,12 +38,12 @@
     <div id="app">
         @include('inc.navbar')
         {{-- sidebar --}}
-        <div id="snav" class="sidenav">
+        {{-- <div id="snav" class="sidenav">
             <div class="nv-wrap">
                 @livewire('shop.cartlist')
-                {{--  --}}
+               
             </div>
-        </div>
+        </div> --}}
         {{-- sidebar end --}}
         <div style="height:80px"></div>
 

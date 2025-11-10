@@ -8,7 +8,7 @@
                 text-transform: uppercase
             }
         </style>
-        @if (auth()->user()->pointTransactions)
+        @if (count(auth()->user()->pointTransactions) > 0)
             <div>
                 <table class="table">
                     <thead>
