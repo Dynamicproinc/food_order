@@ -56,6 +56,26 @@
   
 
 }
+.white-box{
+    position: fixed;
+    top:0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;  
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    box-shadow: 0 0 10px rgba(0,0,0,  0.5);
+}
+.white-box img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
     </style>
 </head>
   <body>
@@ -105,12 +125,21 @@
 
     @yield('content')
 </main>
+<div class="white-box" id="newOrderNotification">
+  <div class="text-center">
+    <img src="{{asset('images/money.gif')}}" alt="" >
+    <h4 class="fw-bold">{{__('NEW ORDER!')}}</h4>
+    <p>{{__('You have received a new order.')}}</p>
+    <a class="btn btn-dark" href="{{ route('admin.orders.index') }}">{{__('View Orders')}}</a>
+  </div>
+</div>
  <script>
     var eventSource = new EventSource('/sse'+'?v={{ uniqid() }}');
 
     eventSource.onmessage = function(event) {
         console.log('Message received: ' + event.data);
          var bell = new Audio("{{ asset('audio/bell.mp3') }}");
+        document.getElementById('newOrderNotification').style.display = 'flex';
         bell.play();
         // alert('New order received: ' + event.data);
         // Optionally, you can refresh the page or update the order list dynamically here   
