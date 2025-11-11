@@ -5,7 +5,7 @@
         <div class="container mt-3">
             <div>
                 @if (count($orders) > 0)
-                   <table class="table table-striped">
+                   <table class="table table-sm table-striped">
                     <thead>
                         <tr>
                             <th scope="col">{{ __('ID') }}</th>
@@ -14,8 +14,8 @@
                             <th scope="col">{{ __('Customer') }}</th>
                             <th scope="col">{{ __('Type') }}</th>
                             <th scope="col">{{ __('Total') }}</th>
-                            <th scope="col">{{ __('Pickup Time') }}</th>
-                            <th scope="col">{{ __('Delevery Address') }}</th>
+                            <th scope="col">{{ __('Pickup') }}</th>
+                            <th scope="col">{{ __('D/Address') }}</th>
                             <th scope="col">{{ __('Telephone') }}</th>
                             <th scope="col">{{ __('Email') }}</th>
                             <th scope="col">{{ __('Status') }}</th>
@@ -57,4 +57,5 @@
             </div>
         </div>
     </div>
+   
 @endsection

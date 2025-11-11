@@ -5,6 +5,9 @@ use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\SSEController;
+
+Route::get('/sse', [SSEController::class, 'sendSSE']);
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
@@ -50,10 +53,10 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 
 // artisan commands
 
-// Route::get('/abc123', function () {
-//     Artisan::call('migrate', ['--force' => true]);
-//     return response()->json(['status' => 'Migration completed']);
-// });;
+Route::get('/abc123', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return response()->json(['status' => 'Migration completed']);
+});;
 
 
 // Route::get('/storage-link', function () {

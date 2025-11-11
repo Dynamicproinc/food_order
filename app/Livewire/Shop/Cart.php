@@ -16,6 +16,7 @@ use App\Models\CouponDiscount;
 use App\Models\PointTransaction;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Address;
+use App\Models\SSENotification;
 
 class Cart extends Component
 {
@@ -258,6 +259,13 @@ class Cart extends Component
                 ->send(new OrderConfirmation($sales_order_for_email));
 
             // 
+            // send notification to admin or kitchen staff
+            
+            SSENotification::create([
+                'user_id' => auth()->user()->id, 
+                'message' => 'New order placed. Order ID: ' . $order->id,
+            ]);
+
             session()->forget('cart');
 
             // redirections
