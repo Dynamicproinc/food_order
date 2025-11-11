@@ -32,8 +32,10 @@
                             </td>
                             <td>{{ $item->created_at }}</td>
                             <td>
-                                <img src="{{ $item->getUser()?->avatar}}" class="xs-avatar">
+                                <div class="d-flex">
+                                                                    <img src="{{ $item->getUser()?->avatar}}" class="xs-avatar mx-2">
                                 {{ $item->getUser()?->name .' '.$item->getUser()?->last_name }}
+                                </div>
                             </td>
                             <td>{{ $item->order_type }}</td>
                             <td>{{ $item->net_total }}</td>

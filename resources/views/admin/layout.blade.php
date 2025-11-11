@@ -15,7 +15,12 @@
   height: 150px !important; /* or any height you want */
   resize: both; /* allow user to drag to resize */
 }
-
+.xs-avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
 .light-modal {
     top: 0;
     left: 0;
