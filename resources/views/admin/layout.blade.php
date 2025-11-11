@@ -113,8 +113,8 @@
          var bell = new Audio("{{ asset('audio/bell.mp3') }}");
         bell.play();
         alert('New order received: ' + event.data);
-        Optionally, you can refresh the page or update the order list dynamically here   
-        location.reload(); // Simple way to refresh the order list
+        // Optionally, you can refresh the page or update the order list dynamically here   
+        // location.reload(); // Simple way to refresh the order list
     };
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
