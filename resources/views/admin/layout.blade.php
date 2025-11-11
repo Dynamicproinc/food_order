@@ -106,7 +106,7 @@
     @yield('content')
 </main>
  <script>
-    var eventSource = new EventSource('/sse');
+    var eventSource = new EventSource('/sse'+'?v={{ uniqid() }}');
 
     eventSource.onmessage = function(event) {
         console.log('Message received: ' + event.data);
