@@ -512,7 +512,7 @@ text-transform: uppercase;
         }
 
         .accord-item input:checked~section.acd-section {
-            height: 150px !important;
+            height: 200px !important;
             /* display: flex;
             align-items: center;
             justify-content: center; */

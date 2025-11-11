@@ -61,7 +61,7 @@
 
                                         </label>
                                         <section class="acd-section border-top border-bottom">
-                                            <div class="">
+                                            <div>
                                                 <div class="form-group">
                                                     <label for=""
                                                         class="mb-2">{{ __('Select Time (24-hour format)') }}
@@ -73,10 +73,14 @@
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
                                                     <div>
-                                                        <span
+                                                        {{-- <span
                                                             class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">
                                                             {{ __('Orders can only be placed between 10:00 AM and 2:00 PM.') }}
-                                                        </span>
+                                                        </span> --}}
+                                                        <div class="info-alert-bar mt-2">
+                                                            {{-- <i class="bi bi-info-circle-fill"></i> --}}
+                                                            <span>{{ __('Please arrive within 15 minutes of your scheduled pickup time.( Working hours are from 10:00 AM to 2:00 PM. Mon - Fri)') }}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
