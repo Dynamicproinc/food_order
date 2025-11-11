@@ -31,6 +31,6 @@ class Product extends Model
 
 
     public function getChoices(){
-        return ProductChoice::where('product_id', $this->id)->get();
+        return ProductChoice::where('product_id', $this->id)->orderBy('price','asc')->get();
     }
 }
