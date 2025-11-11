@@ -25,7 +25,11 @@
                         @foreach ($orders as $item)
                             <tr>
                             <th scope="row">{{ $item->id }}</th>
-                            <td>{{ $item->daily_order_number }}</td>
+                            <td>
+                                <a href="{{route('admin.orders.show', $item->id)}}" target="_blank">
+                                {{ $item->daily_order_number }}
+                            </a>
+                            </td>
                             <td>{{ $item->created_at }}</td>
                             <td>{{ $item->getUser()?->name .' '.$item->getUser()?->last_name }}</td>
                             <td>{{ $item->order_type }}</td>

@@ -40,6 +40,11 @@ class AdminController extends Controller
         return view('admin.orders.order')->with('orders', $orders);
     }
 
+    public function showOrders($id){
+        $order = SalesOrder::findOrFail($id);
+        return view('templates.orderconfirmation')->with('order', $order);
+    }
+
     
 
 

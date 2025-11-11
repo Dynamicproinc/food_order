@@ -44,6 +44,7 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/add-coupon',[App\Http\Controllers\AdminController::class,'addCoupone'])->name('admin.product.coupon');
     Route::get('/point-manager',[App\Http\Controllers\AdminController::class,'pointManager'])->name('admin.point.pointmanager');
     Route::get('/orders',[App\Http\Controllers\AdminController::class,'orders'])->name('admin.orders.index');
+    Route::get('/orders/{id}',[App\Http\Controllers\AdminController::class,'showOrders'])->name('admin.orders.show');
     
 });
 
