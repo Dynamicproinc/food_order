@@ -17,6 +17,7 @@ use App\Models\PointTransaction;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Address;
 use App\Models\SSENotification;
+use Illuminate\Support\Facades\Lang;
 
 class Cart extends Component
 {
@@ -127,9 +128,24 @@ class Cart extends Component
         $this->calculateTotal();
 
         if ($this->order_type == 'pickup') {
-            $this->validate([
-                'pickup_time' => 'required|after_or_equal:now',
-            ]);
+            // $this->validate([
+            //     'pickup_time' => 'required|after_or_equal:now',
+            // ]);
+           $this->validate([
+    'pickup_time' => [
+        'required',
+        
+        function ($attribute, $value, $fail) {
+            $time = \Carbon\Carbon::parse($value)->format('H:i');
+            $start = '10:00';
+            $end = '14:00';
+
+            if ($time < $start || $time > $end) {
+                $fail(Lang::get('validation.custom.pickup_time.time_range'));
+            }
+        },
+    ],
+]);
         }
 
         if ($this->order_type == 'delivery') {
