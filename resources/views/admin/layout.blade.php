@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Control Panel</title>
+    <title>M Brothers - Food - Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}}?v={{ uniqid() }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}}?v={{ uniqid() }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}}?v={{ uniqid() }}">
     <style>
         body{
             background: #DFDFDF;
