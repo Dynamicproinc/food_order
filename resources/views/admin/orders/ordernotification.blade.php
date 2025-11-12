@@ -8,7 +8,7 @@
     <img src="{{asset('images/money.gif')}}" alt="" >
     <h4 class="fw-bold">{{__('NEW ORDER!')}}</h4>
     <p>{{__('You have received a new order.')}}</p>
-    <a class="btn btn-dark" href="{{ route('admin.orders.index') }}">{{__('View Orders')}}</a>
+    <a class="btn btn-dark" href="{{ route('admin.orders.index') }}" target="_blank">{{__('View Orders')}}</a>
   </div>
 </div>
     @push('script')
