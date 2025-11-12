@@ -106,6 +106,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('admin.orders.index')}}">{{ __('Orders')}}</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.orders.notification')}}">{{ __('Order Notification')}}</a></li>
             
           </ul>
         </li>
