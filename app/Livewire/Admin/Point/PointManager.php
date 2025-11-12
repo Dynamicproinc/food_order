@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\PointTransaction;
 use App\Models\UserPointTotal;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PointsNotification;
 
 class PointManager extends Component
 {
@@ -93,6 +95,17 @@ class PointManager extends Component
         $this->amount = 0;
         // update balance
         $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
+        // send email notification
+          $email_data = [
+                'user_name' => $this->user->name,
+                'point' => $this->amount,
+                'balance' => $this->balance,
+
+            ];
+
+            
+            // send email to customer
+              Mail::to($this->user->email)->send(new PointsNotification($email_data));
 
     }
 
