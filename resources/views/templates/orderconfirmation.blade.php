@@ -67,7 +67,7 @@
 
     <p><strong>{{__('From')}}:</strong> M Brothers Food<br>Poštanska ul. 1b, 10410,<br>Velika Gorica<br>Email: info@mbrothers-food.com</p>
     <p style="text-transform: capitalize;"><strong>{{__('To')}}:</strong> {{ $order->getUser()->name.' '.$order->getUser()->last_name}} @if($order->order_type == 'delivery') <br>{{$order->address_1 }} <br>{{$order->address_2 }}@endif</p>
-
+     <p><strong>Tel: </strong>{{ $order->telephone }}</p>
     <h3>{{ __('Order items')}}</h3>
     <table>
       <thead>
