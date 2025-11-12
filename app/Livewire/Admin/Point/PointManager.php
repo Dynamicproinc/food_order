@@ -85,7 +85,7 @@ class PointManager extends Component
     }
     public function credit(){
              $this->validate([
-            'amount' => 'required|numeric|gt:1',
+            'amount' => 'required|numeric|gt:0',
         ]);
 
         
