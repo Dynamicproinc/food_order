@@ -7,6 +7,7 @@ use PDO;
 use App\Models\Product;
 use App\Models\SalesOrder;
 use Carbon\Carbon;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -46,6 +47,11 @@ class AdminController extends Controller
     public function showOrders($id){
         $order = SalesOrder::findOrFail($id);
         return view('templates.orderconfirmation')->with('order', $order);
+    }
+
+    public function users(){
+        $users = User::latest()->paginate(50);
+        return view('admin.users.user')->with('users', $users);
     }
 
     
