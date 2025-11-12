@@ -92,7 +92,7 @@ class PointManager extends Component
         PointTransaction::credit($this->user->id, $this->amount, 'Coupon added');
         UserPointTotal::updateBalance($this->user->id, $this->amount);
         $this->user = User::find($this->user_id);
-        $this->amount = 0;
+       
         // update balance
         $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
         // send email notification
@@ -106,6 +106,7 @@ class PointManager extends Component
             
             // send email to customer
               Mail::to($this->user->email)->send(new PointsNotification($email_data));
+               $this->amount = 0;
 
     }
 
