@@ -3,6 +3,12 @@
 @section('title', 'Orders')
 @section('content')
 <div>
+  {{--  --}}
+ 
+  <div class="center">
+        <div class="pulse"></div>
+    </div>
+  {{--  --}}
     <div class="white-box" id="newOrderNotification">
   <div class="text-center">
     <img src="{{asset('images/money.gif')}}" alt="" >
