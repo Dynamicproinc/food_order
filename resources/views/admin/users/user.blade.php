@@ -16,7 +16,7 @@
       <th scope="col">{{__('Last Name')}}</th>
       <th scope="col">{{__('Email')}}</th>
       <th scope="col">{{__('Points')}}</th>
-      
+      <th scope="col">{{__('QR Code')}}</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +30,7 @@
       <td>{{ $item->last_name }}</td>
       <td>{{ $item->email }}</td>
       <td>{{ number_format($item->getPointBalance()?->balance ?? 0) }}</td>
+      <td>{{ $item->getQR()?->slug ?? 'n/a' }}</td>
     </tr>
    @endforeach
   </tbody>

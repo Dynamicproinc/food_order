@@ -62,4 +62,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Address::class);
     }
+
+    public function getQR(){
+        return QrCode::where('user_id', $this->id)->first();
+    }
 }
