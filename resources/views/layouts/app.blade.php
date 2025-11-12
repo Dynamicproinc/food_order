@@ -21,15 +21,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}}?v={{ uniqid() }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}}?v={{ uniqid() }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}}?v={{ uniqid() }}">
-<link rel="manifest" href="{{asset('ico/site.webmanifest')}}?v={{ uniqid() }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}}">
+<link rel="manifest" href="{{asset('ico/site.webmanifest')}}">
 <meta name="theme-color" content="#000000">
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
-     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}">
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}"> --}}
       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     @livewireStyles
 </head>
