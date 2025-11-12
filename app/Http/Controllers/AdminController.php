@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PDO;
 use App\Models\Product;
 use App\Models\SalesOrder;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -36,7 +37,9 @@ class AdminController extends Controller
 
     public function orders(){
 
-        $orders = SalesOrder::latest()->paginate(50);
+       $orders = SalesOrder::whereDate('created_at', Carbon::today())
+        ->latest()
+        ->paginate(50);
         return view('admin.orders.order')->with('orders', $orders);
     }
 
