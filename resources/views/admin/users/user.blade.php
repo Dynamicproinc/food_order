@@ -15,6 +15,7 @@
       <th scope="col">{{__('First Name')}}</th>
       <th scope="col">{{__('Last Name')}}</th>
       <th scope="col">{{__('Email')}}</th>
+      <th scope="col">{{__('Points')}}</th>
       
     </tr>
   </thead>
@@ -28,6 +29,7 @@
       <td>{{ $item->name }}</td>
       <td>{{ $item->last_name }}</td>
       <td>{{ $item->email }}</td>
+      <td>{{ number_format($item->getPointBalance()?->balance ?? 0) }}</td>
     </tr>
    @endforeach
   </tbody>
