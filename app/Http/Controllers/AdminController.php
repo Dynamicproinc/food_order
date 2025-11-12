@@ -54,6 +54,10 @@ class AdminController extends Controller
         return view('admin.users.user')->with('users', $users);
     }
 
+    public function orderNotification(){
+        return view('admin.orders.ordernotification');
+    }
+
     
 
 

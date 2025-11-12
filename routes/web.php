@@ -49,6 +49,7 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/orders',[App\Http\Controllers\AdminController::class,'orders'])->name('admin.orders.index');
     Route::get('/orders/{id}',[App\Http\Controllers\AdminController::class,'showOrders'])->name('admin.orders.show');
     Route::get('/users',[App\Http\Controllers\AdminController::class,'users'])->name('admin.users.users');
+    Route::get('/order-notification',[App\Http\Controllers\AdminController::class,'orderNotification'])->name('admin.orders.notification');
     
 });
 

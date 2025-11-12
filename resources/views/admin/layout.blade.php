@@ -125,15 +125,15 @@
 
     @yield('content')
 </main>
-<div class="white-box" id="newOrderNotification">
+{{-- <div class="white-box" id="newOrderNotification">
   <div class="text-center">
     <img src="{{asset('images/money.gif')}}" alt="" >
     <h4 class="fw-bold">{{__('NEW ORDER!')}}</h4>
     <p>{{__('You have received a new order.')}}</p>
     <a class="btn btn-dark" href="{{ route('admin.orders.index') }}">{{__('View Orders')}}</a>
   </div>
-</div>
- <script>
+</div> --}}
+ {{-- <script>
     var eventSource = new EventSource('/sse'+'?v={{ uniqid() }}');
 
     eventSource.onmessage = function(event) {
@@ -145,7 +145,8 @@
         // Optionally, you can refresh the page or update the order list dynamically here   
         // location.reload(); // Simple way to refresh the order list
     };
-</script>
+</script> --}}
+@stack('script')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
