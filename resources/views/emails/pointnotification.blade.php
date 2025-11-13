@@ -42,14 +42,15 @@
 </head>
 <body>
   <div class="container">
-    <h2>Ažuriranje Bodova</h2>
-    <p>Pozdrav {{ $email_data['user_name']}},</p>
-    <p>Hvala vam na nedavnoj transakciji. Zaradili ste <span class="points">{{ $email_data['point']}}</span> bodova.</p>
-    <p>Vaše trenutno stanje bodova je <span class="points">{{ $email_data['balance']}}</span>.</p>
-    <p>Hvala što ste naš cijenjeni korisnik.</p>
-    <div class="footer">
-      &copy; M Brothers Food
-    </div>
+    <h2>Ažuriranje Kupona</h2>
+<p>Pozdrav {{ $email_data['user_name']}},</p>
+<p>Hvala vam na nedavnoj transakciji. Zaradili ste <span class="points">{{ $email_data['point']}}</span> kupona.</p>
+<p>Vaše trenutno stanje kupona je <span class="points">{{ $email_data['balance']}}</span>.</p>
+<p>Hvala što ste naš cijenjeni korisnik.</p>
+<div class="footer">
+  &copy; M Brothers Food
+</div>
+
   </div>
 </body>
 </html>
