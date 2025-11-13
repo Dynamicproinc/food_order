@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-10">
-                <div class="order p-3" wire:poll>
+                <div class="order p-3">
                     {{--  --}}
                     @if ($orders && count($orders) > 0)
 
@@ -172,4 +172,20 @@
             </div>
         </div>
     </div>
+     {{-- @push('script') --}}
+         <script>
+    var eventSource = new EventSource('/sse'+'?v={{ uniqid() }}');
+
+    eventSource.onmessage = function(event) {
+        console.log('Message received: ' + event.data);
+         var bell = new Audio("{{ asset('audio/bell.mp3') }}");
+        // document.getElementById('newOrderNotification').style.display = 'flex';
+        bell.play();
+         @this.fetchOrders();
+        // alert('New order received: ' + event.data);
+        // Optionally, you can refresh the page or update the order list dynamically here   
+        // location.reload(); // Simple way to refresh the order list
+    };
+ </script>
+    {{-- @endpush --}}
 </div>
