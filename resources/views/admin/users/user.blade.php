@@ -28,7 +28,7 @@
                         <th scope="row">{{ $item->id }}</th>
                         <td>{{ $item->created_at }}</td>
                         <td>
-                            <img src="{{ $item->avatar }}" class="xs-avatar" alt="avatar">
+                            <img src="{{ $item->avatar }}" class="xs-avatar" alt="{{$item->name}}">
                         </td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->last_name }}</td>
