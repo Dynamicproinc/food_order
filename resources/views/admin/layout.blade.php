@@ -151,7 +151,10 @@
        <li class="nav-item">
           <a class="nav-link" href="{{route('admin.kitchen')}}">{{ __('Kitchen Orders')}}</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('admin.users.users')}}">{{ __('Users')}}</a>
        <li class="nav-item">
+        
           <a class="nav-link" href="{{route('admin.point.pointmanager')}}">{{ __('Point Manager')}}</a>
         </li>
         
