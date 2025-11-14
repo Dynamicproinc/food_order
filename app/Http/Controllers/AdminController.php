@@ -50,7 +50,7 @@ class AdminController extends Controller
     }
 
     public function users(){
-        $users = User::latest()->paginate(25);
+        $users = User::latest()->paginate(20);
         return view('admin.users.user')->with('users', $users);
     }
 
