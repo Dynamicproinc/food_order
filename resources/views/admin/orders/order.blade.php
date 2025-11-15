@@ -30,7 +30,7 @@
                                 {{ $item->daily_order_number }}
                             </a>
                             </td>
-                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                             <td>
                                 <div class="d-flex">
                                                                     <img src="{{ $item->getUser()?->avatar}}" class="xs-avatar mx-2">
