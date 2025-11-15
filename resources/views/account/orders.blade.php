@@ -31,7 +31,7 @@
                                 </th>
                                 <td>
                                     
-                                        {{ $item->created_at->format('d.m.Y') }}
+                                        {{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}
                                     
                                    
 
