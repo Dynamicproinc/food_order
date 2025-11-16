@@ -53,6 +53,11 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     
 });
 
+
+Route::get('/.env', function(Request $request) {
+    abort(404);
+});
+
 Route::get('/{any}', function($any) {
     if(str_starts_with($any, '.')) {
         abort(404);
