@@ -172,6 +172,7 @@
       
     </div>
   </div>
+    </nav>
 
       <main class="container-fluid">
         @yield('content')
