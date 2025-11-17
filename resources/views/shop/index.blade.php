@@ -8,7 +8,7 @@
                     <div class="">
                         <div class="hero-banner">
                            <div>
-                             <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
+                             <h1>uživaj u ukusnoj hrani i osvoji kupone!</h1>
                             <p>Dobij kupon za svaki burger — požuri i registriraj se još danas.</p>
                             <a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>
                            </div>
