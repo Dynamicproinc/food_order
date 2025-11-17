@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}} }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}} }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}} }}">
-<link href="https://getbootstrap.com/docs/5.3/examples/sidebars/sidebars.css" rel="stylesheet" />
+{{-- <link href="https://getbootstrap.com/docs/5.3/examples/sidebars/sidebars.css" rel="stylesheet" /> --}}
     <style>
         body{
             background: #DFDFDF;
@@ -129,7 +129,7 @@
     </style>
 </head>
   <body>
-    {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary  bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary  bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">{{ __('Admin Panel')}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -172,128 +172,12 @@
       
     </div>
   </div>
-</nav> --}}
-<div class="">
-  <div class="row">
-    <div class="col-md-2">
-      <div class=" " style="z-index: 1;">
-        {{-- <ul class="sidebar">
-          <li><a href="#">{{__('Home')}}</a></li>
-          <li><a href="#">{{__('Users')}}</a></li>
-          <li>
-            <a href="#">{{__('Orders')}}</a>
-            <ul>
-              <li>{{__('Order Notification')}}</li>
-            </ul>
-          </li>
-          <li><a href="#">{{__('Point Manager')}}</a></li>
-          <li><a href="#" target="_blank">{{__('Kitchen Orders')}} <i class="bi bi-box-arrow-up-right"></i></a></li>
-          
-          
-        </ul> --}}
-        <div class="flex-shrink-0 p-3" style="width: 280px">
-                <a
-                    href="/"
-                    class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
-                >
-                   
-                    <span class="fs-5 fw-semibold">ADMIN</span>
-                </a>
-                <ul class="list-unstyled ps-0">
-                    <li class="mb-1">
-                        <button
-                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse"
-                            aria-expanded="true"
-                        >
-                            {{__('Users')}}
-                        </button>
-                        <div class="collapse" id="home-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li>
-                                    <a href="{{ route('admin.users.users')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('All Users')}}</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.point.pointmanager')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('Point Manager')}}</a
-                                    >
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button
-                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#dashboard-collapse"
-                            aria-expanded="false"
-                        >
-                            {{__('Products')}}
-                        </button>
-                        <div class="collapse" id="dashboard-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li>
-                                    <a href="{{ route('admin.products.index')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('All Products')}}</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.addproduct')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('New Product')}}</a
-                                    >
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button
-                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#orders-collapse"
-                            aria-expanded="false"
-                        >
-                              {{__('Orders')}}
-                        </button>
-                        <div class="collapse" id="orders-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li>
-                                    <a href="{{ route('admin.orders.index')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('All Orders')}}</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.kitchen')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('Kitchen Orders')}}</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.orders.notification')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                        >{{__('Order Notification')}}</a
-                                    >
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="border-top my-3"></li>
-                    
-                </ul>
-            </div>
-      </div>
-    </div>
 
-    <div class="col-md-10">
       <main class="container-fluid">
         @yield('content')
       </main>
-    </div>
-  </div>
-</div>
+   
+ 
 
 
 
