@@ -176,7 +176,7 @@
 <div class="">
   <div class="row">
     <div class="col-md-2">
-      <div class="position-sticky top-0 sidebar-wrap" style="z-index: 1;">
+      <div class=" " style="z-index: 1;">
         {{-- <ul class="sidebar">
           <li><a href="#">{{__('Home')}}</a></li>
           <li><a href="#">{{__('Users')}}</a></li>
