@@ -322,8 +322,8 @@
                 </div>
             </div>
             @if($pay_coupon)
-            <div class="info-alert-bar mt-2">
-                {{-- <i class="bi bi-info-circle-fill"></i> --}}
+            <div class="info-alert-warning mt-2">
+                <i class="bi bi-exclamation-triangle-fill"></i>
                 <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
             @endif
 
