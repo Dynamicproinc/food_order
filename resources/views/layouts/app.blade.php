@@ -29,8 +29,8 @@
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
-     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}"> --}}
+     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     @livewireStyles
 </head>
