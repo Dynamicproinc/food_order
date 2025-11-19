@@ -309,13 +309,13 @@ text-transform: uppercase;
     font-weight: 400;
 }
 .info-alert-warning {
-    color: #66512c; /* Dark brownish text for readability */
-    background: #fff3cd; /* Light yellow background */
-    border-left: 3px solid #ffecb5; /* Slightly darker yellow border */
+    color: #721c24; /* Dark red text */
+    background: #f8d7da; /* Light red/pink background */
+    border-left: 3px solid #f5c6cb; /* Red border */
     padding: 8px;
     font-size: 12px;
     border-radius: 4px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .btn-rounded {
