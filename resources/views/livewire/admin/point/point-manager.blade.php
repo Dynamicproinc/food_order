@@ -124,7 +124,7 @@
                                         @foreach ($user->pointTransactions()->latest()->get() as $item)
                                             <tr
                                                 class="@if ($item->type === 'credit') table-success @endif @if ($item->type === 'debit') table-danger @endif">
-                                                <td>{{ $item->created_at->format('d-m-Y H:i') }}</td>
+                                                <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                                                 <td class="text-uppercase">{{ $item->type }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ $item->type === 'debit' ? -$item->amount : $item->amount }}</td>
