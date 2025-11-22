@@ -969,14 +969,20 @@ footer{
 .nav-underline li a{
     color: #000 !important;
 }
+.notice * {
+    margin: 0;
+    padding: 0;
+}
 .notice{
+   
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: #000;
     color: #fff;
-    padding: 8px 16px;
+    padding: 16px;
     margin-bottom: 16px;
     font-size: 14px;
-    line-height: 120%;
+    line-height: 1.2;
+    box-sizing: border-box;
 }   
 

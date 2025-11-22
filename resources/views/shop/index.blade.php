@@ -1,18 +1,20 @@
 @extends('layouts.app')
 @section('title', 'Shop')
 @section('content')
-    <div>
+    
         @php
             $status = App\Models\ShopStatus::whereDate('closing_date', today())
                 ->where('status_name', 'closed')
                 ->first();
         @endphp
         @if ($status)
+        <div class="fixed-bottom p-3">
             <div class="notice">
-                <p class="text-danger">{{ $status->status_color}}</p>
+                <p class="text-white">{{ $status->status_color}}</p>
             </div>
+        </div>
         @endif
-    </div>
+        
     <div class="banner">
         <div class="row">
             <div class="col-8">
