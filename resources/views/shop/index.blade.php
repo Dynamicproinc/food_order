@@ -9,7 +9,7 @@
         @endphp
         @if ($status)
             <div class="notice">
-                <p>{{ $status->status_color}}</p>
+                <p class="text-danger">{{ $status->status_color}}</p>
             </div>
         @endif
     </div>
