@@ -195,13 +195,20 @@
 
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-warning form-control">
+                             @php
+                                $status = App\Models\ShopStatus::where('status_name', 'closed')->first();
+                                @endphp
+                            <button class="btn btn-warning form-control @if ($status) disabled @endif"  @if ($status) disabled @endif>
+                               
                                 <span class="spinner-border spinner-border-sm" wire:loading wire:target="saveOrder"
                                     role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </span>
                                 {{ __('Place Your Order') }}
                             </button>
+                            @if ($status)
+                                <div class="text-danger">{{ $status->status_color}}</div>
+                            @endif
                         </div>
                     </form>
                 </div>
