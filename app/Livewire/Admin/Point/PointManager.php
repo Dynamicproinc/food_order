@@ -89,7 +89,7 @@ class PointManager extends Component
         ]);
 
         
-        PointTransaction::credit($this->user->id, $this->amount, 'Coupon added');
+        PointTransaction::credit($this->user->id, $this->amount, __('Coupon reward'));
         UserPointTotal::updateBalance($this->user->id, $this->amount);
         $this->user = User::find($this->user_id);
        
