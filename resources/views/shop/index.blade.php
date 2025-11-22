@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-4">
                     <div class="">
-                        <img src="{{ asset('images/design/banner_burger.png') }}" alt="burger" class="banner-image">
+                        <img src="{{ asset('images/design/banner_burger_main.png') }}" alt="burger" class="banner-image">
                     </div>
                 </div>
             </div>
