@@ -118,6 +118,7 @@
                                             <th>{{ __('Type') }}</th>
                                             <th>{{ __('Description') }}</th>
                                             <th>{{ __('Amount') }}</th>
+                                            <th>{{ __('Issued By') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -128,6 +129,7 @@
                                                 <td class="text-uppercase">{{ $item->type }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ $item->type === 'debit' ? -$item->amount : $item->amount }}</td>
+                                                <td>{{ $item->issued_by }}</td>
                                             </tr>
                                         @endforeach
 
