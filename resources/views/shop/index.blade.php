@@ -8,13 +8,13 @@
                 ->first();
         @endphp
         @if ($status)
-        <div class="fixed-bottom p-3">
+        <div class="fixed-bottom">
             <div class="notice">
-                <p class="text-white">{{ $status->status_color}}</p>
+                <p>{{ $status->status_color}}</p>
             </div>
         </div>
         @endif
-        
+
     <div class="banner">
         <div class="row">
             <div class="col-8">

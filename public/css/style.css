@@ -975,12 +975,12 @@ footer{
 }
 .notice{
    
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-color: #000;
-    color: #fff;
+    background-color: #FFC107;
+    color: #000;
     padding: 16px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
     font-size: 14px;
     line-height: 1.2;
     box-sizing: border-box;
