@@ -17,13 +17,13 @@ class Shopstatus extends Component
         return view('livewire.admin.setting.shopstatus');
     }
     public function  mount(){
-        $this->statuses = SS::all();
+        $this->statuses = SS::latest()->get();
     }
 
     public function delete($id){
         SS::where('id', $id)->delete();
         session()->flash('message', 'Status Deleted Successfully.');
-        $this->statuses = SS::all();
+        $this->statuses = SS::latest()->get();
     }
 
     public function saveStatus(){
@@ -34,7 +34,7 @@ class Shopstatus extends Component
         $newstatus->save();
         session()->flash('message', 'Status  Added Successfully.');
         $this->resetInputFields();
-        $this->statuses = SS::all();
+        $this->statuses = SS::latest()->get();
     }
 
     private function resetInputFields(){

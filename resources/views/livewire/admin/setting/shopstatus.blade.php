@@ -1,5 +1,8 @@
 <div>
     <div>
+        <div>
+            <h4>{{__('Shop Status')}}</h4>
+        </div>
         <div class="row mb-3">
             <div class="col-lg-3">
                 <input type="text" wire:model.defer="status" class="form-control">
