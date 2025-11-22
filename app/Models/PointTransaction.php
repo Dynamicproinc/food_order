@@ -18,6 +18,7 @@ class PointTransaction extends Model
         'reference_id',
         'description',
         'metadata',
+        'issued_by',
     ];
 
     // Cast metadata to array automatically
@@ -41,6 +42,7 @@ class PointTransaction extends Model
     {
         return self::create([
             'user_id' => $userId,
+            'issued_by'=> auth()->id(),
             'type' => 'credit',
             'amount' => $amount,
             'status' => 'completed',
@@ -56,6 +58,7 @@ class PointTransaction extends Model
     {
         return self::create([
             'user_id' => $userId,
+            'issued_by'=> auth()->id(),
             'type' => 'debit',
             'amount' => $amount,
             'status' => 'completed',
