@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>{{ __('Date') }}</th>
-                            <th>{{ __('Type') }}</th>
+                            {{-- <th>{{ __('Type') }}</th> --}}
                             <th>{{ __('Description') }}</th>
                             <th>{{ __('Amount') }}</th>
                         </tr>
@@ -22,11 +22,11 @@
                     <tbody>
                         @foreach (auth()->user()->pointTransactions()->latest()->paginate(10) as $item)
                             <tr
-                                class="@if ($item->type === 'credit') table-success @endif @if ($item->type === 'debit') table-danger @endif">
+                                class="">
                                 <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
-                                <td class="text-uppercase">{{ $item->type }}</td>
+                                {{-- <td class="text-uppercase">{{ $item->type }}</td> --}}
                                 <td>{{ $item->description }}</td>
-                                <td style="text-align: right">{{ number_format($item->type === 'debit' ? -$item->amount : $item->amount,0) }}</td>
+                                <td style="text-align: right; font-weight: bold;" @if ($item->type === 'credit') class="text-success" @endif @if ($item->type === 'debit') class="text-danger" @endif>{{ number_format($item->type === 'debit' ? -$item->amount : $item->amount,0) }}</td>
                             </tr>
                         @endforeach
 

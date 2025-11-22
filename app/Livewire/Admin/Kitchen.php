@@ -75,7 +75,7 @@ class Kitchen extends Component
                 $u_point->save();
             }
             // add transaction
-            PointTransaction::credit($order->user_id,$user_points_sum,"Copon Reward at Store");
+            PointTransaction::credit($order->user_id,$user_points_sum,__('Coupon reward for online order'));
 
             // prepared data for the customer email
             $user = User::where('id', $order->user_id)->first();
