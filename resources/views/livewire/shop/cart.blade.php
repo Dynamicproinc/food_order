@@ -196,7 +196,9 @@
                         </div>
                         <div class="form-group">
                              @php
-                                $status = App\Models\ShopStatus::where('status_name', 'closed')->first();
+                               $status = App\Models\ShopStatus::whereDate('closing_date', today())
+                                ->where('status_name', 'closed')
+                                ->first();
                                 @endphp
                             <button class="btn btn-warning form-control @if ($status) disabled @endif"  @if ($status) disabled @endif>
                                

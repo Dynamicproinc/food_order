@@ -58,6 +58,10 @@ class AdminController extends Controller
         return view('admin.orders.ordernotification');
     }
 
+    public function changeShostatus(){
+        return view('admin.setting.shopstatus');
+    }
+
    
 
     
