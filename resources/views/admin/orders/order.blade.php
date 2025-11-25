@@ -2,6 +2,91 @@
 @section('title', 'Orders')
 @section('content')
     <div>
+    <div id="printableDiv">
+        <style>
+    .receipt {
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        width: 260px;
+        border-collapse: collapse;
+    }
+    .receipt td {
+        padding: 2px 0;
+        vertical-align: top;
+    }
+    .receipt .title {
+        font-weight: bold;
+    }
+    .receipt .item-name {
+        font-weight: bold;
+        display: block;
+    }
+    .receipt .item-desc {
+        margin: 0;
+        font-size: 12px;
+    }
+</style>
+
+<table class="receipt">
+    <tr>
+        <td class="title">ORDER#123556</td>
+        
+    </tr>
+    <tr>
+        
+        <td>JANE DOE</td>
+    </tr>
+
+    <tr>
+        <td class="title">ITEM</td>
+        <td class="title">QTY</td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="item-name">Smash Burger</span>
+            <p class="item-desc">za van, Siracha, tomato, Luk, pickles</p>
+        </td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="item-name">Smash Burger</span>
+            <p class="item-desc">za van, Siracha, pickles</p>
+        </td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="item-name">Cola</span>
+        </td>
+        <td>1</td>
+    </tr>
+</table>
+
+     </div>
+
+  
+</div>
+
+<button onclick="printDiv('printableDiv')">Print Invoice</button>
+
+<script>
+function printDiv(divId) {
+    var divContents = document.getElementById(divId).innerHTML;
+    var a = window.open('', '', 'height=600, width=800');
+    a.document.write('<html>');
+    a.document.write('<head><title>Print</title></head>');
+    a.document.write('<body>');
+    a.document.write(divContents);
+    a.document.write('</body></html>');
+    a.document.close();
+    a.print();
+}
+</script>
+
         <div class="container mt-3">
             <div>
                 @if (count($orders) > 0)
