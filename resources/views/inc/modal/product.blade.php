@@ -3,7 +3,7 @@
         <div class="">
             <div class="product-display">
                 <div class="close-btn">
-                    <button class="btn btn-opacity" wire:click="closeModal">X</button>
+                    <button class="btn btn-opacity" wire:click="closeModal"> <i class="bi bi-x-lg"></i> </button>
                 </div>
                 <div class="scroll-content">
                     <div class="product-md">
