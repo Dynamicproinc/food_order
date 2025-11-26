@@ -76,7 +76,8 @@
                                         </div>
                                     </div>
                                     <div class="text">
-                                        {{ replace($item->category_name,'-',' ') }}
+                                        {{ str_replace('-', ' ', $item->category_name) }}
+
                                     </div>
                                 </div>
                             </div>
