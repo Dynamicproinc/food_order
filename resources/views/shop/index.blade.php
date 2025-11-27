@@ -22,7 +22,7 @@
                     <div class="hero-banner">
                         <div>
                             <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
-                            <p>Dobij kupon za svaki burger — požuri i registriraj se još danas.</p>
+                            <p>Dobij kupon za svako jelo iz <strong>M Brothers Food</strong> trucka — požuri i registriraj se još danas!</p>
                             <a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>
                         </div>
                     </div>
