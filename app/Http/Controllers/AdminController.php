@@ -62,6 +62,24 @@ class AdminController extends Controller
         return view('admin.setting.shopstatus');
     }
 
+    // extrabct all user emails
+    public function extractEmails(){
+        $users = User::all();
+        $emails = [];
+        foreach($users as $user){
+            $emails[] = $user->email;
+        }
+        // to text-file
+        $file = fopen("user_emails.txt", "w");
+        foreach($emails as $email){
+            // example ex1@gmail.com, ex2@gmail.com
+
+            fwrite($file, $email . ",");   
+        }
+        fclose($file);
+        return response()->download(public_path('user_emails.txt'));
+    }
+
    
 
     

@@ -3,7 +3,9 @@
 
 @section('content')
 <div class="container mt-3">
-
+<div class="d-flex flex-row-reverse">
+    <a href="{{ route('admin.users.extractemails') }}" class="btn btn-primary mb-3">{{ __('Extract Emails') }}</a>
+</div>
     @if ($users->total() > 0)
 
         <table class="table caption-top">
