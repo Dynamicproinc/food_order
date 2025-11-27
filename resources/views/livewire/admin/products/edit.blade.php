@@ -1,4 +1,5 @@
 <div>
+   @section('title', $product->title . ' - Edit Product')
    <div>
     
         <div class="rounded border bg-white shadow p-4 mb-3">

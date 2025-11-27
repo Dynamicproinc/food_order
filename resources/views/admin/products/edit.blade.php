@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', 'Edit Product')
+{{-- @section('title', 'Edit Product') --}}
 @section('content')
     <div>
         <div class="container mt-3">
