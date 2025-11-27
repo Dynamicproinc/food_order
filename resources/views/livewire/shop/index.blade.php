@@ -44,9 +44,9 @@
                                     alt="{{ $item->title }}" class="img-fluid">
                             </div>
                             <div class="p-3 bg-white">
-                                <h5 class="fw-bold lh-sm">{{ $item->title }}</h5>
+                                <h6 class="fw-bold lh-sm">{{ $item->title }}</h6>
                                 {{-- <small class="fw-bolder txt-xs text-muted text-uppercase">{{ $item->getCategory()->category_name }}</small> --}}
-                                <h6 class="fw-bold">{{ number_format($item->discounted_price, 2, ',', ' ') }} €</h6>
+                                <h6 class="">{{ number_format($item->discounted_price, 2, ',', ' ') }} €</h6>
                             </div>
                         </div>
                     </div>
