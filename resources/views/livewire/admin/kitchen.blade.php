@@ -179,17 +179,11 @@
     eventSource.onmessage = function(event) {
         console.log('Message received: ' + event.data);
          var bell = new Audio("{{ asset('audio/bell.mp3') }}");
-        // document.getElementById('newOrderNotification').style.display = 'flex';
+       
         bell.play();
          @this.fetchOrders();
 
-        //  print 
-        // var divContents = document.getElementById(divId).innerHTML;
-   
-        // end print
-        // alert('New order received: ' + event.data);
-        // Optionally, you can refresh the page or update the order list dynamically here   
-        // location.reload(); // Simple way to refresh the order list
+       
     };
  </script>
     {{-- @endpush --}}

@@ -15,6 +15,13 @@
                             <h5 class="title-md mb-0">{{ $selected_product->title }}</h5>
                             <h5 class="fw-bold">{{ number_format($selected_product->discounted_price, 2, ',', ' ') }} €
                             </h5>
+                            <div>
+                                @if($selected_product->points > 0)
+                                <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">{{__('Coupon Applied')}}</span>
+                                @else
+                                 <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">{{__('Coupon Not Applied')}}</span>
+                                @endif
+                            </div>
                             <p>{{ $selected_product->description }}</p>
 
 
