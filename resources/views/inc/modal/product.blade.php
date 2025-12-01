@@ -18,8 +18,8 @@
                             
                               <div class="mb-3 d-flex">
                                 <h5 class="fw-bold mb-0">{{ number_format($selected_product->discounted_price, 2, ',', ' ') }} €</h5>
-                                  @if($selected_product->points > 0)
-                               <div class="mx-3">
+                                <div class="mx-3">
+                                   @if($selected_product->points > 0)
                                  <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">{{__('Coupon applied')}}</span>
                                 @else
                                  <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">{{__('Coupon not applied')}}</span>
