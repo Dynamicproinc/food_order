@@ -38,9 +38,13 @@ class AdminController extends Controller
 
     public function orders(){
 
-       $orders = SalesOrder::whereDate('created_at', Carbon::today())
-        ->latest()
-        ->paginate(50);
+    //    $orders = SalesOrder::whereDate('created_at', Carbon::today())
+    //     ->latest()
+    //     ->paginate(50);
+       $orders = SalesOrder::latest()
+       ->paginate(50);
+               
+
         return view('admin.orders.order')->with('orders', $orders);
     }
 
