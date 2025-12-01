@@ -22,7 +22,7 @@
                                    @if($selected_product->points > 0)
                                  <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">{{__('Coupon applied')}}</span>
                                 @else
-                                 <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">{{__('Coupon not applied')}}</span>
+                                 <span class="badge bg-dark-subtle border border-dark-subtle text-dark-emphasis rounded-pill">{{__('Coupon not applied')}}</span>
                                 @endif
                                </div>
                               </div>
