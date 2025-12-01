@@ -12,7 +12,7 @@
 
                         </div>
                         <div class="p-3">
-                            <h5 class="title-md mb-0">{{ $selected_product->title }}</h5>
+                            <h5 class="title-md">{{ $selected_product->title }}</h5>
                             
                             
                             
