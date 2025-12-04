@@ -290,6 +290,24 @@
 
                 </div>
                 <div>
+                    {{-- new design for coupon --}}
+                    <div>
+                         <div class="point-board p-4 overflow-hidden rounded-4">
+                    <div class="row">
+                        <div class="col-8">
+                          
+                        </div>
+                        <div class="col-4">
+                            <div class="mid-text">
+                                <div class="rounded bg-dark p-3">
+                                    <h1 class="fw-bolder">{{number_format(auth()->user()->getPointBalance()?->balance ?? 0, 0)}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                    {{-- end new design coupon --}}
                     <div class="mt-3 p-3">
                         <div class="row">
                             <div class="form-group col-8">
