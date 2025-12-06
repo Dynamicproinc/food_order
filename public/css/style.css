@@ -943,6 +943,9 @@ footer{
     animation: pulse-animation 2s ease infinite;
 
 }
+.gray-5{
+    color:#b9b8b8
+}
 
 @keyframes pulse-animation {
   0% {
