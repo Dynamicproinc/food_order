@@ -131,21 +131,35 @@ class Cart extends Component
             // $this->validate([
             //     'pickup_time' => 'required|after_or_equal:now',
             // ]);
-           $this->validate([
+          $this->validate([
     'pickup_time' => [
         'required',
-        
+
+        // Check pickup time is within 10:00–14:00
         function ($attribute, $value, $fail) {
             $time = \Carbon\Carbon::parse($value)->format('H:i');
-            $start = '10:00';
-            $end = '14:00';
+            $start = '11:00';
+            $end = '16:00';
 
             if ($time < $start || $time > $end) {
-                $fail(Lang::get('validation.custom.pickup_time.time_range'));
+                $fail(\Lang::get('validation.custom.pickup_time.time_range'));
             }
+        },
+
+        // Check 20-minute gap from order_time
+        function ($attribute, $value, $fail) {
+           $orderTime = now()->setTimezone('Europe/Zagreb');
+$pickupTime = \Carbon\Carbon::parse($value, 'Europe/Zagreb');
+
+// Check if pickup time is less than 20 minutes after order time
+if ($pickupTime->lessThan($orderTime->copy()->addMinutes(20))) {
+    $fail(__('Pickup time must be at least 20 minutes after the order time. Current time: ') . $orderTime->format('H:i'));
+}
+
         },
     ],
 ]);
+
         }
 
         if ($this->order_type == 'delivery') {
