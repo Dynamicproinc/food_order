@@ -62,7 +62,7 @@
         {{--  --}}
         <footer class="text-center py-3 d-flex justify-content-center align-items-center" style="height:100px">
   <div class="container ">
-    <div><strong>{{ __('Open Hours: Monday to Friday, 10:00 – 14:00')}}</strong></div>
+    <div><strong>{{ __('Open Hours: Mon to Fri, 11:00 – 16:00 Sat 10:00 – 12:00')}}</strong></div>
     <div>{{__('For support, contact')}} <a href="mailto:info@mbrothers-food.com" class="text-white">info@mbrothers-food.com</a></div>
     <div>&copy;  {{ date('Y') }} {{ config('app.name') }}. {{__('All rights reserved.')}}</div>
   </div>
