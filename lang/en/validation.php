@@ -181,6 +181,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'pickup_time' => [
+            'time_range' => 'The pickup time must be between 11:00  and 14:00.',
+        ],
     ],
 
     /*

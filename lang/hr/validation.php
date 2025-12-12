@@ -121,7 +121,7 @@ return [
         ],
         
           'pickup_time' => [
-            'time_range' => 'Vrijeme preuzimanja mora biti između 10:00 i 14:00 sati.',
+            'time_range' => 'Vrijeme preuzimanja mora biti između 11:00 i 14:00 sati.',
         ],
     ],
 
