@@ -208,7 +208,7 @@
                                 </span>
                                 {{ __('Place Your Order') }}
                             </button>
-                            <div class="alert alert-info">
+                            <div class="alert alert-warning mt-3" role="alert">
                                 <p>Obavijest: Dana 24.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
                                
                             </div>
