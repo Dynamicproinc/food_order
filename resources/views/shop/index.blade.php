@@ -2,7 +2,7 @@
 @section('title', 'Shop')
 @section('content')
     
-        @php
+        {{-- @php
             $status = App\Models\ShopStatus::whereDate('closing_date', today())
                 ->where('status_name', 'closed')
                 ->first();
@@ -13,7 +13,7 @@
                 <p>{{ $status->status_color}}</p>
             </div>
         </div>
-        @endif
+        @endif --}}
 
     <div class="banner">
         <div class="row">

@@ -69,6 +69,26 @@
     <div class="gray-5">&copy;  {{ date('Y') }} {{ config('app.name') }}. {{__('All rights reserved.')}}</div>
   </div>
 </footer>
+{{--  notice modal--}}
+  @php
+            $status = App\Models\ShopStatus::whereDate('closing_date', today())
+                ->where('status_name', 'closed')
+                ->first();
+        @endphp
+        @if ($status)
+        <div class="fixed-bottom">
+            <div class="notice">
+                <p>{{ $status->status_color}}</p>
+            </div>
+        </div>
+        @endif
+
+         <div class="fixed-bottom">
+            <div class="notice">
+                <p><strong>Obavijest:</strong> Dana 24.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
+            </div>
+        </div>
+{{--  --}}
 
         {{--  --}}
 
