@@ -208,6 +208,10 @@
                                 </span>
                                 {{ __('Place Your Order') }}
                             </button>
+                            <div class="alert alert-info">
+                                <p>Obavijest: Dana 24.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
+                               
+                            </div>
                             @if ($status)
                                 <div class="text-danger">{{ $status->status_color}}</div>
                             @endif
