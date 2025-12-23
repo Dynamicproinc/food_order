@@ -209,7 +209,7 @@
                                 {{ __('Place Your Order') }}
                             </button>
                             <div class="alert alert-warning mt-3" role="alert">
-                                <p>Obavijest: Dana 24.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
+                                <p><strong>Obavijest:</strong> Dana 24.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
                                
                             </div>
                             @if ($status)
