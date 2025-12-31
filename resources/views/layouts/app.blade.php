@@ -83,11 +83,11 @@
         </div>
         @endif
 
-         <div class="fixed-bottom">
+         {{-- <div class="fixed-bottom">
             <div class="notice">
                 <p><strong>Obavijest:</strong> Dana 31.12.2025. radno vrijeme je od 09:00 do 12:00.</p>
             </div>
-        </div>
+        </div> --}}
 {{--  --}}
 
         {{--  --}}
