@@ -53,7 +53,18 @@ class AdminController extends Controller
         return view('templates.orderconfirmation')->with('order', $order);
     }
 
-    public function users(){
+    public function users(Request $request){
+        $keyquery = $request->input('q');
+        if($keyquery){
+            $users = User::where('name', 'LIKE', "%$keyquery%")
+            ->orWhere('email', 'LIKE', "%$keyquery%")
+            ->orWhere('last_name', 'LIKE', "%$keyquery%")
+            ->latest()
+            ->paginate(20);
+            return view('admin.users.user')->with('users', $users);
+            
+        }
+
         $users = User::latest()->paginate(20);
         return view('admin.users.user')->with('users', $users);
     }

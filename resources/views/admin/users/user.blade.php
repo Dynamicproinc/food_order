@@ -3,8 +3,16 @@
 
 @section('content')
 <div class="container mt-3">
-<div class="d-flex flex-row-reverse">
-    <a href="{{ route('admin.users.extractemails') }}" class="btn btn-primary mb-3">{{ __('Extract Emails') }}</a>
+<div class="d-flex justify-content-between">
+   <div>
+    <form action="{{route('admin.users.users')}}" method="GET">
+       
+        <div class="form-group">
+        <input type="text" name="q" placeholder="{{__('Search here...')}}" class="form-control" value="{{request('q')}}">
+    </div>
+    </form>
+   </div>
+   <div> <a href="{{ route('admin.users.extractemails') }}" class="btn btn-primary mb-3">{{ __('Extract Emails') }}</a></div>
 </div>
     @if ($users->total() > 0)
 
