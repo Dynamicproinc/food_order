@@ -69,6 +69,11 @@ class AdminController extends Controller
         return view('admin.users.user')->with('users', $users);
     }
 
+    public function userDetails($id){
+        $user = User::findOrFail($id);
+        return view('admin.users.userdetails')->with('user', $user);
+    }
+
     public function orderNotification(){
         return view('admin.orders.ordernotification');
     }
