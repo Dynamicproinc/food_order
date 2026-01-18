@@ -12,6 +12,7 @@
 <meta name="title" content="{{__('Delicious Burgers & Fresh Food | Best Online Burger Shop')}}">
 <meta name="description" content="{{__('Order the most delicious, juicy burgers and fresh food online. We serve mouthwatering burgers made from high-quality ingredients — fast delivery and unbeatable taste!')}}">
 <meta name="keywords" content="{{__('burgers, burger shop, online burger delivery, delicious burgers, cheeseburgers, gourmet burgers, fast food, best burgers, fresh food, burger restaurant, burger takeaway')}}">
+ <meta property="og:image" content="{{asset('ico/favicon-32x32.png')}}">
 {{--  --}}
     <title>{{ config('app.name', 'MBrothers Food') }}</title>
 
