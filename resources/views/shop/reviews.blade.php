@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('meta_description', __('Read reviews and ratings from our customers about :product', ['product' => $product->title]))
 @section('title', __('Reviews -'))
 @section('content')
     <div class="mb-5">
