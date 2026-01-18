@@ -12,8 +12,9 @@
                         <div class="col-6 p-3">
                             <a href="{{ route('google.login') }}" class="btn d-flex align-items-center justify-content-center"
                                 style="background-color: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-                                {{-- <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo"
-                                    style="width: 20px; margin-right: 8px;"> --}}
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo"
+                                    style="width: 20px; margin-right: 8px;">
+                                   
                                 <span style="color: #555;">{{ __('Continue with Google') }}</span>
                             </a>
                         </div>
