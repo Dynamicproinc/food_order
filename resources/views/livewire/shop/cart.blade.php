@@ -55,13 +55,22 @@
                                         <input class="form-check-input pm my-3 mx-2" type="radio" id="pmcard"
                                             value="pickup" wire:model="order_type">
                                         <label class="pm-check-label my-3" for="pmcard">
-                                            <span>{{ __('Pickup/Dine-in') }}</span>
+                                            <span>{{ __('Pickup/Dine-in') }} - Velika Gorica</span>
 
 
 
                                         </label>
                                         <section class="acd-section border-top border-bottom">
                                             <div>
+                                                {{--  --}}
+                                                <div class="map-container mb-3">
+                                                    <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.095224282094!2d16.04788747611892!3d45.70912647107904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47667f6e01d9200f%3A0x390a9429252112d6!2sThe%20M%20Brothers%20Shop!5e0!3m2!1sen!2shr!4v1768731240044!5m2!1sen!2shr"
+                                                        width="600" height="450" style="border:0;"
+                                                        allowfullscreen="" loading="lazy"
+                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
+                                                {{--  --}}
                                                 <div class="form-group">
                                                     <label for=""
                                                         class="mb-2">{{ __('Select Time (24-hour format)') }}
@@ -81,6 +90,7 @@
                                                             {{-- <i class="bi bi-info-circle-fill"></i> --}}
                                                             <span>{{ __('Please arrive within 20 minutes of your scheduled pickup time.( Working hours are from 11:00  to 14:00. Mon - Fri )') }}</span>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,8 +170,8 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" wire:model="save_address"
-                                                        id="ckaddress">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        wire:model="save_address" id="ckaddress">
                                                     <label class="form-check-label" for="ckaddress">
                                                         {{ __('Save this address for future orders') }}
                                                     </label>
@@ -195,22 +205,24 @@
 
                         </div>
                         <div class="form-group">
-                             @php
-                               $status = App\Models\ShopStatus::whereDate('closing_date', today())
-                                ->where('status_name', 'closed')
-                                ->first();
-                                @endphp
-                            <button class="btn btn-warning form-control @if ($status) disabled @endif"  @if ($status) disabled @endif>
-                               
+                            @php
+                                $status = App\Models\ShopStatus::whereDate('closing_date', today())
+                                    ->where('status_name', 'closed')
+                                    ->first();
+                            @endphp
+                            <button
+                                class="btn btn-warning form-control @if ($status) disabled @endif"
+                                @if ($status) disabled @endif>
+
                                 <span class="spinner-border spinner-border-sm" wire:loading wire:target="saveOrder"
                                     role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </span>
                                 {{ __('Place Your Order') }}
                             </button>
-                            
+
                             @if ($status)
-                                <div class="text-danger">{{ $status->status_color}}</div>
+                                <div class="text-danger">{{ $status->status_color }}</div>
                             @endif
                         </div>
                     </form>
@@ -333,10 +345,10 @@
 
                 </div>
             </div>
-            @if($pay_coupon)
-            <div class="info-alert-warning mt-2">
-                {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
-                <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
+            @if ($pay_coupon)
+                <div class="info-alert-warning mt-2">
+                    {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
+                    <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
             @endif
 
         </div>
