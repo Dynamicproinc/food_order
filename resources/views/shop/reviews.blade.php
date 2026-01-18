@@ -76,7 +76,7 @@
                                 
                             </div>
                             <div class="mx-3">
-                                <div><strong>{{$item->getUser()->name.' '.$item->getUser()->last_name}}</strong>  <small class="text-muted txt-xs">{{ $item->created_at->diffForHumans() }}</small></div>
+                                <div><strong>{{$item->getUser()->name.' '.$item->getUser()->last_name}}</strong>  <small class="text-muted txt-xs">{{ $item->created_at->timezone('Europe/Zagreb')->diffForHumans() }}</small></div>
                                 <div>
                                     
                                     <div class="d-flex star-rating mb-2">
