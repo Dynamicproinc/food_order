@@ -32,11 +32,6 @@ class Review extends Component
         $this->validate([
             'score' => 'required|min:0|max:5',
            'comment' => 'required|string|max:1000',
-        ],[
-            
-            'comment.required' => __('Please provide a comment for your review.'),
-            'comment.string' => __('The comment must be a valid string.'),
-            'comment.max' => __('The comment may not be greater than 1000 characters.'),
         ]
            
 

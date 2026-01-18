@@ -128,7 +128,16 @@
 "Saturday 10:00 – 12:00": "Subota 10:00 – 12:00",
 "Coupon applied": "Kupon primijenjen",
 "Coupon not applied": "Kupon nije primijenjen",
-"Pickup time must be at least 20 minutes after the order time. Current time: ": "Vrijeme preuzimanja mora biti najmanje 20 minuta nakon vremena narudžbe. Trenutno vrijeme: "
+"Pickup time must be at least 20 minutes after the order time. Current time: ": "Vrijeme preuzimanja mora biti najmanje 20 minuta nakon vremena narudžbe. Trenutno vrijeme: ",
+"By submitting this feedback, you acknowledge it may be visible to the public.": "Slanjem ove povratne informacije potvrđujete da može biti vidljiva javnosti.",
+"Submit Your Feedback": "Pošaljite svoje mišljenje",
+"No reviews found": "Nema pronađenih recenzija",
+"Reviews": "Recenzije",
+"Thanks for your feedback": "Hvala na vašem mišljenju",
+"Thank you for sharing your thoughts. Your comment will appear after our review.": "Hvala što ste podijelili svoje mišljenje. Vaš komentar će se prikazati nakon naše provjere.",
+"Back to shop": "Natrag u trgovinu"
+
+
 
 
 
