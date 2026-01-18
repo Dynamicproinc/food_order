@@ -75,7 +75,7 @@
             </div>
             <div class="form-group mb-3">
                 <div class="form-floating">
-                    <textarea wire:model.defer="comment" class="form-control @error($comment) is-invalid @enderror"
+                    <textarea wire:model.defer="comment" class="form-control @error('comment') is-invalid @enderror"
                         placeholder="{{ __('Leave a comment here') }}" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">{{ __('Comment') }}</label>
                     @error('comment')
