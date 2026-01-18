@@ -95,7 +95,7 @@
                                 @enderror
                             </div>
                              <div class="form-check">
-                            <input class="form-check-input" type="checkbox" wire:model="rating" value="" id="chkb1">
+                            <input class="form-check-input" type="checkbox" wire:model="rating" id="chkb1">
                             <label class="form-check-label" for="chkb1">
                             {{__('Ratings')}}
                             </label>

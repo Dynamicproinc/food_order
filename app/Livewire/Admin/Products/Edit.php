@@ -53,7 +53,7 @@ class Edit extends Component
         $this->point = $this->product->points;
         $this->status = $this->product->status;
         $this->image = $this->product->image;
-        $this->rating = $this->product->rating;
+        $this->rating = (bool) $this->product->rating;
         
 
        
@@ -94,6 +94,7 @@ $this->product->original_price = $this->original_price;
 $this->product->points = $this->point;
 $this->product->image_path = $image_path;
 $this->product->status = $this->status;
+$this->product->rating = $this->rating;
 $this->product->save();
 return redirect()->back()->with('success', 'Product saved successfully!');
 
