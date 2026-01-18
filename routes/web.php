@@ -25,6 +25,7 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 //account
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reviews/{product_slug}', [App\Http\Controllers\ReviewsController::class, 'showReviews'])->name('product.reviews');
 Route::get('/my-account', [App\Http\Controllers\HomeController::class, 'index'])->name('myaccount');
 Route::get('/my-account/order/{slug}', [App\Http\Controllers\HomeController::class, 'viewOrder'])->name('myaccount.vieworder');
 Route::get('/my-account/orders', [App\Http\Controllers\HomeController::class, 'orders'])->name('myaccount.orders');
@@ -42,6 +43,7 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     
     Route::get('/add-product', [App\Http\Controllers\AdminController::class,'addProduct'])->name('admin.addproduct');
     Route::get('/products', [App\Http\Controllers\AdminController::class,'products'])->name('admin.products.index');
+    Route::get('/reviews', [App\Http\Controllers\AdminController::class,'reviews'])->name('admin.reviews');
     Route::get('/product/edit/{id}', [App\Http\Controllers\AdminController::class,'editProduct'])->name('admin.product.edit');
     Route::get('/kitchen',[App\Http\Controllers\AdminController::class,'kitchen'])->name('admin.kitchen');
     Route::get('/add-coupon',[App\Http\Controllers\AdminController::class,'addCoupone'])->name('admin.product.coupon');
@@ -66,10 +68,10 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 // })->where('any', '.*');
 // artisan commands
 
-// Route::get('/abc123', function () {
-//     Artisan::call('migrate', ['--force' => true]);
-//     return response()->json(['status' => 'Migration completed']);
-// });;
+Route::get('/abc123', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return response()->json(['status' => 'Migration completed']);
+});;
 
 
 // Route::get('/storage-link', function () {

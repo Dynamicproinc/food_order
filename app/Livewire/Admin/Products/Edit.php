@@ -19,7 +19,7 @@ class Edit extends Component
     public $product;
     public $categories = [], $options = [], $choices = [];
     public $load_options = [], $load_choices = [];
-    public $title, $category, $description, $status, $discounted_price, $original_price, $image, $option, $variant, $variant_price, $choice, $choice_price, $point;
+    public $title, $category, $description, $status, $discounted_price, $original_price, $image, $option, $variant, $variant_price, $choice, $choice_price, $point, $rating;
     public $product_id;
     public $product_variant;
     public $variant_modal = false;
@@ -53,6 +53,7 @@ class Edit extends Component
         $this->point = $this->product->points;
         $this->status = $this->product->status;
         $this->image = $this->product->image;
+        $this->rating = $this->product->rating;
         
 
        

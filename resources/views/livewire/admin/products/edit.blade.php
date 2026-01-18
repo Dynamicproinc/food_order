@@ -94,6 +94,12 @@
                                    <small class="text-danger">{{ $message }}</small> 
                                 @enderror
                             </div>
+                             <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model="rating" value="" id="chkb1">
+                            <label class="form-check-label" for="chkb1">
+                            {{__('Ratings')}}
+                            </label>
+                        </div>
                             
                             <div class="form-group d-flex justify-content-between">
                                 <div>

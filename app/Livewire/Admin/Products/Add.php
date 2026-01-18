@@ -17,7 +17,7 @@ class Add extends Component
     use WithFileUploads;
     public $categories = [], $options = [], $choices = [];
     public $load_options = [], $load_choices = [];
-    public $title, $category, $description, $discounted_price, $original_price, $image, $option, $variant, $variant_price, $choice, $choice_price, $point;
+    public $title, $category, $description, $discounted_price, $original_price, $image, $option, $variant, $variant_price, $choice, $choice_price, $point, $rating;
 
     public function render()
     {
@@ -59,6 +59,7 @@ $image_path = 'uploads/products/' . $uniq_name;
         $product->slug = Str::slug($this->title);
         $product->image_path = $image_path;
         $product->points = $this->point;
+        $product->rating = $this->rating;
         if($product->save()){
             //if product have options
             if(count($this->options) > 0){

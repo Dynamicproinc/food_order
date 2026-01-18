@@ -1,4 +1,4 @@
-<nav class="fixed-top">
+<nav class="fixed-top black-navbar">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">

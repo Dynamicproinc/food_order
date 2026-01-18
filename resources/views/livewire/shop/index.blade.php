@@ -43,8 +43,26 @@
                                 <img src="{{asset($item->image_path)}}"
                                     alt="{{ $item->title }}" class="img-fluid">
                             </div>
+                            
                             <div class="p-3 bg-white">
                                 <h6 class="fw-bold lh-sm">{{ $item->title }}</h6>
+                                @if ($item->rating)
+                               <div>
+                             <div class="d-flex star-rating mb-2">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    @if ($i <= $item->getRatingScore()['integer_part'])
+                                        <i class="bi bi-star-fill"></i>
+                                    @else
+                                        <i class="bi bi-star"></i>
+                                    @endif
+                                @endfor
+                                
+                                
+                               
+                                <span> {{$item->getRatingScore()['average_score']}} </span>
+                            </div>
+                           </div>
+                           @endif
                                 {{-- <small class="fw-bolder txt-xs text-muted text-uppercase">{{ $item->getCategory()->category_name }}</small> --}}
                                 <h6 class="">{{ number_format($item->discounted_price, 2, ',', ' ') }} €</h6>
                             </div>

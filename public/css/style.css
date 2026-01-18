@@ -10,7 +10,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: #dfdfdf !important;
 }
-nav {
+
+.black-navbar{
     background: #000;
 }
 .dark-1 {
@@ -989,5 +990,132 @@ footer{
     font-size: 14px;
     line-height: 1.2;
     box-sizing: border-box;
-}   
+}  
 
+.star-rating i{
+    font-size: 12px !important;
+    margin-right: 2px;
+    color: #FBB100;
+}
+
+
+.star-rating span{
+    font-size: 12px !important;
+}
+
+
+.review-image-container{
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.review-image-container img{
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+}
+
+.star-icon{
+    /* font-size: 36px !important; */
+    color: #7e7d7d !important;
+}
+.star-rating-lg input[type="radio"] {
+    display: none;
+}
+.star-rating-lg div {
+    margin-right:4px;
+    
+}
+.star-rating-lg div label{
+cursor: pointer !important;
+
+}
+.star-selected{
+    color: #FBB100 !important;
+}
+.comment-area{
+    position:relative;
+}
+.submitting{
+    position:absolute;
+    top:0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.777);
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    
+}
+.success-submit{
+    position:absolute;
+    top:0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+
+    
+}
+
+/* customized paginator */
+/* Pagination container */
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Normal page links */
+.pagination .page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0 3px;
+    border-radius: 0;
+    padding: 6px 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover */
+.pagination .page-link:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+/* Active page */
+.pagination .page-item.active .page-link {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Disabled */
+.pagination .page-item.disabled .page-link {
+    color: #999;
+    background-color: #fff;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Remove blue focus outline */
+.pagination .page-link:focus {
+    box-shadow: none;
+}
+/* end customized paginator */

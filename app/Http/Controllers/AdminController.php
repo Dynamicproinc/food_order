@@ -99,7 +99,9 @@ class AdminController extends Controller
         fclose($file);
         return response()->download(public_path('user_emails.txt'));
     }
-
+    public function reviews(){
+        return view('admin.products.reviews');
+    }
    
 
     

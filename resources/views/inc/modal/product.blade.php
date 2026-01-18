@@ -13,7 +13,25 @@
                         </div>
                         <div class="p-3">
                             <h5 class="title-md">{{ $selected_product->title }}</h5>
-                            
+
+                           @if ($selected_product->rating)
+                               <div>
+                             <div class="d-flex star-rating mb-2">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    @if ($i <= $selected_product->getRatingScore()['integer_part'])
+                                        <i class="bi bi-star-fill"></i>
+                                    @else
+                                        <i class="bi bi-star"></i>
+                                    @endif
+                                @endfor
+                                
+                                
+                               
+                                <span> {{$selected_product->getRatingScore()['average_score']}} | <a href="{{route('product.reviews', $selected_product->slug)}}"> {{$selected_product->getRatingScore()['total_ratings']}} {{__('Reviews')}}</a></span>
+                            </div>
+                           </div>
+                           @endif
+                           
                             
                             
                               <div class="mb-3 d-flex">
