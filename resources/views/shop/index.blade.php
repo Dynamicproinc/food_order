@@ -23,7 +23,7 @@
                         <div>
                             <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
                             <p>Dobij kupon za svako jelo iz <strong>M Brothers Food</strong> trucka — požuri i registriraj se još danas!</p>
-                            <a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>
+                             @guest()<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
                         </div>
                     </div>
                 </div>
