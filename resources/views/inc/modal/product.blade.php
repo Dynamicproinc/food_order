@@ -27,7 +27,7 @@
                                 
                                 
                                
-                                <span> {{$selected_product->getRatingScore()['average_score']}} | <a href="{{route('product.reviews', $selected_product->slug)}}"> {{$selected_product->getRatingScore()['total_ratings']}} {{__('Reviews')}}</a></span>
+                                <span> ({{$selected_product->getRatingScore()['average_score']}}) | <a href="{{route('product.reviews', $selected_product->slug)}}"> {{$selected_product->getRatingScore()['total_ratings']}} {{__('Reviews')}}</a></span>
                             </div>
                            </div>
                            @endif

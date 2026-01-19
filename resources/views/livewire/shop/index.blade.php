@@ -57,9 +57,9 @@
                                     @endif
                                 @endfor
                                 
-                                
-                               
-                                <span> {{$item->getRatingScore()['average_score']}} </span>
+
+
+                                <span>({{$item->getRatingScore()['average_score']}})</span>
                             </div>
                            </div>
                            @endif
