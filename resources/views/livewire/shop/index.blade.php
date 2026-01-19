@@ -44,7 +44,7 @@
                                     alt="{{ $item->title }}" class="img-fluid">
                             </div>
                             
-                            <div class="p-3 bg-white">
+                            <div class="p-3 bg-white no-select">
                                 <h6 class="fw-bold lh-sm">{{ $item->title }}</h6>
                                 @if ($item->rating)
                                <div>
