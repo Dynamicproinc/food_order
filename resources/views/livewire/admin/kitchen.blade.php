@@ -151,14 +151,14 @@
                                             <small class="fw-bolder text-uppercase">{{ $ro->order_type }}</small>
                                             <h6 class="mb-0 mb-2">{{ number_format($ro->net_total, 2, ',', ' ') }} €
                                             </h6>
-                                            <div class="btn btn-dark w-100"
+                                            <button wire:loading.attr="disabled" class="btn btn-dark w-100"
                                                 wire:click="orderDispatch({{ $ro->id }})">
                                                 <span class="spinner-border spinner-border-sm" wire:loading
                                                                 wire:target="orderDispatch({{ $ro->id }})" role="status">
                                                                 <span class="visually-hidden">Loading...</span>
                                                             </span>
                                                 {{ __('Dispatch') }}
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
