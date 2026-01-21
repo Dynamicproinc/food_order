@@ -123,6 +123,9 @@ class Cart extends Component
     public function saveOrder()
     {
 
+    if (empty(session('cart', []))) {
+    return redirect()->to(route('shop.index'));
+}
 
         //first must calcluate latest cart total
         $this->calculateTotal();
