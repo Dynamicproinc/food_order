@@ -88,7 +88,7 @@
                                                         </span> --}}
                                                         <div class="info-alert-bar mt-2">
                                                             {{-- <i class="bi bi-info-circle-fill"></i> --}}
-                                                            <span>{{ __('Please arrive within 20 minutes of your scheduled pickup time.( Working hours are from 11:00  to 14:00. Mon - Fri )') }}</span>
+                                                            <span>{{ __('Please arrive within 20 minutes of your scheduled pickup time.( Working hours are from 11:00  to 17:00. Tue - Fri )') }}</span>
                                                         </div>
 
                                                     </div>
