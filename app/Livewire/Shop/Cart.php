@@ -142,7 +142,7 @@ class Cart extends Component
         function ($attribute, $value, $fail) {
             $time = \Carbon\Carbon::parse($value)->format('H:i');
             $start = '11:00';
-            $end = '14:00';
+            $end = '17:00';
 
             if ($time < $start || $time > $end) {
                 $fail(\Lang::get('validation.custom.pickup_time.time_range'));
