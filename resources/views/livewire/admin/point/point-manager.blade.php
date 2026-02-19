@@ -129,7 +129,7 @@
                                                 <td class="text-uppercase">{{ $item->type }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ $item->type === 'debit' ? -$item->amount : $item->amount }}</td>
-                                                <td>{{ $item->issued_by }}</td>
+                                                <td>{{ \App\Models\User::where('id', $item->issued_by)->first()?->name ?? 'Unknown' }}</td>
                                             </tr>
                                         @endforeach
 
