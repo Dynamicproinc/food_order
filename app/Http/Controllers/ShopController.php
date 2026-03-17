@@ -27,9 +27,13 @@ class ShopController extends Controller
         //     ->where('status', 'active')
         //     ->get();
         $category_id = Category::where('category_name', $item_category)->first();
+        if($category_id){
 
-        $products = Product::where('category_id',$category_id->id)->where('status', 'active')->get();
-        return view('shop.index')->with(['categories'=> $categories, 'products' => $products]);
+            $products = Product::where('category_id',$category_id->id)->where('status', 'active')->get();
+            return view('shop.index')->with(['categories'=> $categories, 'products' => $products]);
+        }else{
+            return abort(404);
+        }
         // return view('shop.index');
     }
 
