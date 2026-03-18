@@ -23,7 +23,7 @@
                         <div>
                             <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
                             <p>Dobij kupon za svako jelo iz <strong>M Brothers Food</strong> trucka — požuri i registriraj se još danas!</p>
-                             @guest()<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
+                             @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-4">
                 <div class="">
-                    <img src="{{ asset('images/design/banner_burger_main.png') }}" alt="burger" class="banner-image">
+                    <img src="{{ asset('images/design/bolognese.png') }}" alt="burger" class="banner-image">
                 </div>
             </div>
         </div>
