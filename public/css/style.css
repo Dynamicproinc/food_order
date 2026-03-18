@@ -1137,3 +1137,26 @@ cursor: pointer !important;
     -ms-user-select: none;     
 }
 
+/* Hide scrollbar by default */
+.scrollable {
+  overflow: auto;
+  scrollbar-width: thin; /* for Firefox */
+  scrollbar-color: transparent transparent; /* for Firefox */
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.scrollable::-webkit-scrollbar {
+  width: 8px; /* width of scrollbar */
+  background: transparent; /* hide track */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: transparent; /* hide thumb by default */
+  border-radius: 4px;
+}
+
+/* Show scrollbar on hover */
+.scrollable:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5); /* visible thumb */
+}
+
