@@ -96,7 +96,7 @@
         </div>
             </div>
             <div class="d-sm-none d-block">
-                        <div style="max-width:355px; overflow-x:auto;">
+                        <div style="max-width:380px; overflow-x:auto;">
 
             @if (count($categories) > 0)
                 <div class="d-flex mb-3">
