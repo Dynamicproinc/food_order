@@ -18,7 +18,7 @@ class ShopController extends Controller
     
 
     public function category($item_category){
-        $categories = Category::get();
+        $categories = Category::orderBy('category_name', 'asc')->get();
         // = Category::where('category_name', $category);
         //  $products = Product::query()
         //     ->when($category, function ($query) {
