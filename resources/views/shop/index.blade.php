@@ -40,7 +40,7 @@
     </div>
     
     <div class="d-flex justify-content-center mb-3 mt-3">
-        <div>
+        <div style="max-width:400px; overflow-x:auto;">
 
             @if (count($categories) > 0)
                 <div class="d-flex mb-3">
@@ -86,6 +86,8 @@
                     @endforeach
 
                 </div>
+
+
                 {{--  --}}
 
                 {{--  --}}
