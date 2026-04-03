@@ -1161,8 +1161,8 @@ cursor: pointer !important;
     
   font-size: 12px;
   font-weight: bold;
-  letter-spacing: 2px;  
-  text-transform: uppercase;
+  /* letter-spacing: 2px;   */
+  /* text-transform: uppercase; */
 }
 .fc-label{
     
