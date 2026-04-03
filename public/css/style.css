@@ -1153,6 +1153,7 @@ cursor: pointer !important;
     position: absolute;
     top: 8px;
     right: 8px;
+    accent-color:rgb(51, 51, 51); 
 
 }
 .fc-title{
@@ -1173,14 +1174,15 @@ top: 8px;
     background:#fff;
     border-radius: 4px;
     padding: 8px;
+    color: #3d3d3d !important;
    
 }
 
 .fc-wrapper .fc-input:checked + .fc-label{
-  border: 2px solid rgb(56, 143, 249);
+  border: 2px solid rgb(85, 85, 85);
   /* border: 2px solid  rgb(0, 88, 156); */
-  background: rgba(89, 154, 233, 0.127);
-  color: rgb(56, 143, 249) !important;
+  background: rgba(51, 51, 51, 0.138);
+  color: rgb(51, 51, 51) !important;
  
 
 }
