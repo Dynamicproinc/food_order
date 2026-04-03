@@ -1137,5 +1137,51 @@ cursor: pointer !important;
     -ms-user-select: none;     
 }
 
+.fc-wrapper{
+    margin-right: 16px;
+    width: 132px;
+    height: 100px;
+    display: block;
+    /* height: 75px; */
+   
+    position: relative;
+    
+    
+}
+.fc-input{
+    /* display: none; */
+    position: absolute;
+    top: 8px;
+    right: 8px;
 
+}
+.fc-title{
+    
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;  
+  text-transform: uppercase;
+}
+.fc-label{
+    
+/* position: absolute;
+top: 8px;
+    left: 8px; */
+    /* margin-top:32px; */
+    display: block;
+     border: 2px solid  #EBEBE4;
+    background:#fff;
+    border-radius: 4px;
+    padding: 8px;
+   
+}
+
+.fc-wrapper .fc-input:checked + .fc-label{
+  border: 2px solid rgb(56, 143, 249);
+  /* border: 2px solid  rgb(0, 88, 156); */
+  background: rgba(89, 154, 233, 0.127);
+  color: rgb(56, 143, 249) !important;
+ 
+
+}
 
