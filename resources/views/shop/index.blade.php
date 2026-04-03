@@ -33,7 +33,7 @@
             </div>
             <div class="col-4">
                 <div class="">
-                    <img src="{{ asset('images/design/bolognese.png') }}" alt="burger" class="banner-image">
+                    <img src="{{ asset('images/design/philly_cheese.png') }}" alt="burger" class="banner-image">
                 </div>
             </div>
         </div>
