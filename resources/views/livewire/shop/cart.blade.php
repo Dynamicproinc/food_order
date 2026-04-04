@@ -337,7 +337,10 @@
 
                     @if ($user_points >= $min_coupon_limit)
                         <div class="p-3">
-                            <div class="mb-2">
+                           
+
+                            <div class="cou-switch">
+                                 <div class="mb-2">
                                 <span
                                     class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
                                     {{ __('Coupon Balance:') }} {{ $user_points }} |
@@ -345,8 +348,6 @@
                                 </span>
                                 {{-- <span><i class="bi bi-info-circle"></i></span> --}}
                             </div>
-
-                            <div class="cou-switch">
                                 <div class="d-flex justify-content-between">
                                     <label for="apple-switch">{{ __('Apply Coupon') }}</label>
                                     <input id="apple-switch" class="apple-switch" type="checkbox"
