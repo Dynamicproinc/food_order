@@ -2,7 +2,7 @@
   <div class="did-you-know p-3">
     <h3 class="quote-mark mb-0">"</h3>
 
-    <h5 style="font-size: 16px; font-weight:800">{{\App\Models\DidYouKnow::inRandomOrder()->where('language', app()->getLocale())->value('content')}}</h5>
+    <h5 style="font-size: 16px; font-weight:800">{{\App\Models\Didyouknow::inRandomOrder()->where('language', app()->getLocale())->value('content')}}</h5>
    
   </div>
     @if ($qr)
