@@ -310,9 +310,9 @@ text-transform: uppercase;
     font-weight: 400;
 }
 .info-alert-warning {
-    color: #721c24; /* Dark red text */
-    background: #f8d7da; /* Light red/pink background */
-    border-left: 3px solid #f5c6cb; /* Red border */
+    color: #92400E; /* Dark red text */
+    background: #FEF3C7; /* Light red/pink background */
+    border-left: 3px solid #F59E0B; /* Red border */
     padding: 8px;
     font-size: 12px;
     border-radius: 4px;
