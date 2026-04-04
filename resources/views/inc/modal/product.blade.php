@@ -141,6 +141,9 @@
                                                             {{ number_format($item->price, 2, ',', ' ') }}
                                                             €
                                                            </small>
+                                                           {{-- <div class="fc-img">
+                                                            <img src="{{asset('images/design/tomato.jpg')}}" alt="">
+                                                           </div> --}}
                                                         </label>
                                                     </div>
                                                 </div>

@@ -306,129 +306,136 @@
                     {{-- new design for coupon --}}
                     {{-- end new design coupon --}}
                     <div class="mt-3 p-3">
-                        <div class="row">
-                            <div class="form-group col-8">
-                                <input type="text" class="form-control @error('coupon_code') is-invalid  @enderror"
-                                    wire:model="coupon_code" placeholder="{{ __('Discount or gift card') }}">
-                                @error('coupon_code')
-                                    <span class="text-danger">{{ $message }}</span>
-        @endif
-    </div>
-    <div class="form-group col-4">
-        <button class="btn btn-outline-dark form-control" wire:click="applyCoupon">
-            <span class="spinner-border spinner-border-sm" wire:loading wire:target="applyCoupon" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </span>
-            {{ __('Apply') }}
-        </button>
-    </div>
-    </div>
-    @if ($c_message) <small
-            class="text-danger">{{ __($c_message) }}</small> @endif
-    </div>
-    @if ($user_points >= $min_coupon_limit)
-        <div class="p-3">
-            <div class="mb-2">
-                <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
-                    {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('You can apply for 10% discount') }}
-                </span>
-                {{-- <span><i class="bi bi-info-circle"></i></span> --}}
-            </div>
+                            <h5 class="small">{{__('Recomendations')}}</h5>
+                            <div class="row">
+                                @if($recomendation)
+                                @foreach ($recomendation as $item)
+                                    
+                                <div class="col-4">
+                                    <div>
+                                       <a href="">
+                                        <div class="rec-img">
+                                            <img src="{{ \App\Models\Product::where('id', $item['product_id'])->first()->image_path }}" alt="">
+                                          
+                                        </div>
+                                       </a>
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
+                               
+                                
+                                
+                               
+                            </div>
+                    </div>
+                    @if ($user_points >= $min_coupon_limit)
+                        <div class="p-3">
+                            <div class="mb-2">
+                                <span
+                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
+                                    {{ __('Coupon Balance:') }} {{ $user_points }} |
+                                    {{ __('You can apply for 10% discount') }}
+                                </span>
+                                {{-- <span><i class="bi bi-info-circle"></i></span> --}}
+                            </div>
 
-            <div class="cou-switch">
-                <div class="d-flex justify-content-between">
-                    <label for="apple-switch">{{ __('Apply Coupon') }}</label>
-                    <input id="apple-switch" class="apple-switch" type="checkbox" wire:model.live="pay_coupon"
-                        value="1" wire:click="payCoupon">
+                            <div class="cou-switch">
+                                <div class="d-flex justify-content-between">
+                                    <label for="apple-switch">{{ __('Apply Coupon') }}</label>
+                                    <input id="apple-switch" class="apple-switch" type="checkbox"
+                                        wire:model.live="pay_coupon" value="1" wire:click="payCoupon">
 
 
 
+                                </div>
+                            </div>
+                            @if ($pay_coupon)
+                                <div class="info-alert-warning mt-2">
+                                    {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
+                                    <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
+                            @endif
+
+                        </div>
+                    @else
+                        <div class="p-3 row">
+                            <div class="col-9">
+                                <span
+                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
+                                    {{ __('Coupon Balance:') }} {{ $user_points }} |
+                                    {{ __('Not enough coupons for disccount') }}
+                                </span>
+
+                            </div>
+                            <div class="col-3 d-flex flex-row-reverse">
+
+
+
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="info-alert-bar">
+                                <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
+                                </p>
+                            </div>
+                        </div>
+
+                    @endif
+
+                    <div class="p-3">
+                        <div class="d-flex justify-content-between fw-normal">
+                            <div>
+                                <span>{{ __('Sub Total') }}</span>
+
+                            </div>
+                            <div class="text-right">
+                                <span>{{ number_format($grand_total, 2, ',', ' ') }} €</span>
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between fw-normal">
+                            <div>
+                                <span>{{ __('Discount') }} ({{ $discount . '%' }})</span>
+
+                            </div>
+                            <div class="text-right">
+                                <span> {{ number_format($discount_value, 2, ',', ' ') }} € </span>
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between fw-normal mb-3">
+                            <div>
+                                <span>{{ __('Delivery') }}</span>
+
+                            </div>
+                            <div class="text-right">
+                                <span> {{ number_format(0, 2, ',', ' ') }} €</span>
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold">
+                            <div>
+                                <span class="fw-bolder">{{ __('Net Total') }}</span>
+
+                            </div>
+                            <div class="text-right">
+                                <span class="fw-bolder"> {{ number_format($net_total, 2, ',', ' ') }} €</span>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            @if ($pay_coupon)
-                <div class="info-alert-warning mt-2">
-                    {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
-                    <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
-            @endif
-
         </div>
     @else
-        <div class="p-3 row">
-            <div class="col-9">
-                <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
-                    {{ __('Coupon Balance:') }} {{ $user_points }} | {{ __('Not enough coupons for disccount') }}
-                </span>
-
-            </div>
-            <div class="col-3 d-flex flex-row-reverse">
-
-
-
-            </div>
-        </div>
-        <div class="p-3">
-            <div class="info-alert-bar">
-                <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
-                </p>
-            </div>
-        </div>
-
-    @endif
-
-    <div class="p-3">
-        <div class="d-flex justify-content-between fw-normal">
+        <div class="empty-cart-list">
             <div>
-                <span>{{ __('Sub Total') }}</span>
-
-            </div>
-            <div class="text-right">
-                <span>{{ number_format($grand_total, 2, ',', ' ') }} €</span>
-
+                <h3 class="text-muted">{{ __('Your bag is empty') }} 😢</h3>
+                <div class="d-flex justify-content-center">
+                    <a href="{{ route('shop.index') }}" class="btn btn-dark mt-3">{{ __('Shop') }}</a>
+                </div>
             </div>
         </div>
-        <div class="d-flex justify-content-between fw-normal">
-            <div>
-                <span>{{ __('Discount') }} ({{ $discount . '%' }})</span>
-
-            </div>
-            <div class="text-right">
-                <span> {{ number_format($discount_value, 2, ',', ' ') }} € </span>
-
-            </div>
-        </div>
-        <div class="d-flex justify-content-between fw-normal mb-3">
-            <div>
-                <span>{{ __('Delivery') }}</span>
-
-            </div>
-            <div class="text-right">
-                <span> {{ number_format(0, 2, ',', ' ') }} €</span>
-
-            </div>
-        </div>
-        <div class="d-flex justify-content-between fw-bold">
-            <div>
-                <span class="fw-bolder">{{ __('Net Total') }}</span>
-
-            </div>
-            <div class="text-right">
-                <span class="fw-bolder"> {{ number_format($net_total, 2, ',', ' ') }} €</span>
-
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-@else
-    <div class="empty-cart-list">
-        <div>
-            <h3 class="text-muted">{{ __('Your bag is empty') }} 😢</h3>
-            <div class="d-flex justify-content-center">
-                <a href="{{ route('shop.index') }}" class="btn btn-dark mt-3">{{ __('Shop') }}</a>
-            </div>
-        </div>
-    </div>
     @endif
     {{-- fixed message bar --}}
     {{-- @if ($success_message || $error_message)
@@ -448,4 +455,4 @@
             </div>
         @endif --}}
     {{--  --}}
-    </div>
+</div>

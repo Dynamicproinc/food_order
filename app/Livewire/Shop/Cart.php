@@ -48,6 +48,8 @@ class Cart extends Component
     public $success = false;
     public $save_address = false;
 
+    public $recomendation;
+
     // 
 
 
@@ -59,6 +61,8 @@ class Cart extends Component
 
     public function mount()
     {
+
+
         // dd(auth()->user()->addresses);
         $this->cart_items = session('cart', []);
         $this->calculateTotal();
@@ -72,6 +76,8 @@ class Cart extends Component
         $this->address_2 = auth()->user()->addresses?->address_2;
         // point availabilty and eligiblity
         $this->user_points = UserPointTotal::where('user_id', auth()->user()->id)->first()?->balance;
+
+        $this->recomendation = Product::whereIn('id', [18,21,26])->where('status', 'active')->get();
     }
 
     public function removeCartItem($index)
