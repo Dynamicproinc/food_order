@@ -693,6 +693,7 @@ input.apple-switch:checked {
     border-bottom: 1px solid #949495; */
     /* padding: 16px 0 !important; */
     font-weight: bold;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 

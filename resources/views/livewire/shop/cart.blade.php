@@ -342,9 +342,9 @@
                             <div class="cou-switch p-3 bg-white rounded">
                                  <div class="mb-2">
                                 <span
-                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
-                                    {{ __('Coupon Balance:') }} {{ $user_points }} |
-                                    {{ __('You can apply for 10% discount') }}
+                                    class="text-success small txt-xs">
+                                    <span class="mb-0 h6 fw-bold">{{ __('Coupon Balance:') }} {{number_format( $user_points,0) }}</span> <br/>
+                                    <small class="text-muted mt-0">{{ __('You can apply for 10% discount') }}</small>
                                 </span>
                                 {{-- <span><i class="bi bi-info-circle"></i></span> --}}
                             </div>
