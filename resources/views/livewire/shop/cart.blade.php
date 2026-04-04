@@ -308,7 +308,7 @@
                     {{-- <div class="mt-3 p-3">
                             <h5 class="small">{{__('Recomendations')}}</h5>
                             <div class="row">
-                                @if(count($recomendation) > 0)
+                                @if (count($recomendation) > 0)
                                 @foreach ($recomendation as $item)
                                     
                                 <div class="col-4">
@@ -337,17 +337,19 @@
 
                     @if ($user_points >= $min_coupon_limit)
                         <div class="p-3">
-                           
+
 
                             <div class="cou-switch p-3 bg-white rounded">
-                                 <div class="mb-2">
-                                <span
-                                    class="text-success small txt-xs">
-                                    <span class="mb-0 h6 text-uppercase" style="font-size: 14px;font-weight:800;lettr-space:2px">{{ __('Coupon Balance:') }} {{number_format( $user_points,0) }}</span> <br/>
-                                    <small class="text-muted mt-0">{{ __('You can apply for 10% discount') }}</small>
-                                </span>
-                                {{-- <span><i class="bi bi-info-circle"></i></span> --}}
-                            </div>
+                                <div class="mb-2">
+                                    <span class="text-success small txt-xs">
+                                        <span class="mb-0 h6 text-uppercase"
+                                            style="font-size: 14px;font-weight:800;lettr-space:2px">{{ __('Coupon Balance:') }}
+                                            {{ number_format($user_points, 0) }}</span> <br />
+                                        <small
+                                            class="text-muted mt-0">{{ __('You can apply for 10% discount') }}</small>
+                                    </span>
+                                    {{-- <span><i class="bi bi-info-circle"></i></span> --}}
+                                </div>
                                 <div class="d-flex justify-content-between">
                                     <label for="apple-switch">{{ __('Apply Coupon') }}</label>
                                     <input id="apple-switch" class="apple-switch" type="checkbox"
@@ -357,35 +359,40 @@
 
                                 </div>
                             </div>
+                            <div>
+                                <p class="placeholder-glow w-100 rounded" wire:loading wire:target="payCoupon">
+                                    <span class="placeholder col-12 rounded"></span>
+                                </p>
+                            </div>
                             @if ($pay_coupon)
                                 <div class="info-alert-warning mt-2">
                                     {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
                                     <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
-                                    
+
                                 </div>
-                                @endif
-                    @else
-                        <div class="p-3 row">
-                            <div class="col-9">
-                                <span
-                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
-                                    {{ __('Coupon Balance:') }} {{ $user_points }} |
-                                    {{ __('Not enough coupons for disccount') }}
-                                </span>
+                            @endif
+                        @else
+                            <div class="p-3 row">
+                                <div class="col-9">
+                                    <span
+                                        class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
+                                        {{ __('Coupon Balance:') }} {{ $user_points }} |
+                                        {{ __('Not enough coupons for disccount') }}
+                                    </span>
 
+                                </div>
+                                <div class="col-3 d-flex flex-row-reverse">
+
+
+
+                                </div>
                             </div>
-                            <div class="col-3 d-flex flex-row-reverse">
-
-
-
+                            <div class="p-3">
+                                <div class="info-alert-bar">
+                                    <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="p-3">
-                            <div class="info-alert-bar">
-                                <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
-                                </p>
-                            </div>
-                        </div>
 
                     @endif
 
