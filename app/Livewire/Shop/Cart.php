@@ -77,7 +77,8 @@ class Cart extends Component
         // point availabilty and eligiblity
         $this->user_points = UserPointTotal::where('user_id', auth()->user()->id)->first()?->balance;
 
-        $this->recomendation = Product::whereIn('id', [18,21,26])->where('status', 'active')->get();
+        $this->recomendation = Product::whereIn('id', [1,2])->where('status', 'active')->get();
+        // $this->recomendation = Product::whereIn('id', [18,21,26])->where('status', 'active')->get();
     }
 
     public function removeCartItem($index)

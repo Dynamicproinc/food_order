@@ -305,19 +305,24 @@
                 <div>
                     {{-- new design for coupon --}}
                     {{-- end new design coupon --}}
-                    <div class="mt-3 p-3">
+                    {{-- <div class="mt-3 p-3">
                             <h5 class="small">{{__('Recomendations')}}</h5>
                             <div class="row">
                                 @if(count($recomendation) > 0)
                                 @foreach ($recomendation as $item)
                                     
                                 <div class="col-4">
-                                    <div>
-                                       <a href="">
+                                    <div class="bg-white r-panel">
+                                       <a href="" class="">
                                         <div class="rec-img">
                                             <img src="{{ \App\Models\Product::where('id', $item->id)->first()->image_path }}" alt="">
                                           
                                         </div>
+                                       <div class="p-2">
+                                         <small>
+                                            Smash burger
+                                        </small>
+                                       </div>
                                        </a>
                                     </div>
                                 </div>
@@ -328,7 +333,8 @@
                                 
                                
                             </div>
-                    </div>
+                    </div> --}}
+
                     @if ($user_points >= $min_coupon_limit)
                         <div class="p-3">
                             <div class="mb-2">
