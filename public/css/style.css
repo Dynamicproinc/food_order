@@ -689,9 +689,9 @@ input.apple-switch:checked {
   border-color: #333;
 }
 .cou-switch{
-    border-top: 1px solid #949495;
-    border-bottom: 1px solid #949495;
-    padding: 16px 0 !important;
+    /* border-top: 1px solid #949495;
+    border-bottom: 1px solid #949495; */
+    /* padding: 16px 0 !important; */
     font-weight: bold;
 
 }

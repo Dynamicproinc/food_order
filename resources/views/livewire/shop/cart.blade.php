@@ -339,7 +339,7 @@
                         <div class="p-3">
                            
 
-                            <div class="cou-switch">
+                            <div class="cou-switch p-3 bg-white rounded">
                                  <div class="mb-2">
                                 <span
                                     class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">
@@ -361,9 +361,9 @@
                                 <div class="info-alert-warning mt-2">
                                     {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
                                     <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
-                            @endif
-
-                        </div>
+                                    
+                                </div>
+                                @endif
                     @else
                         <div class="p-3 row">
                             <div class="col-9">
