@@ -343,7 +343,7 @@
                                  <div class="mb-2">
                                 <span
                                     class="text-success small txt-xs">
-                                    <span class="mb-0 h6 fw-bold">{{ __('Coupon Balance:') }} {{number_format( $user_points,0) }}</span> <br/>
+                                    <span class="mb-0 h6 text-uppercase" style="font-size: 12px;font-weight:800;lettr-space:2px">{{ __('Coupon Balance:') }} {{number_format( $user_points,0) }}</span> <br/>
                                     <small class="text-muted mt-0">{{ __('You can apply for 10% discount') }}</small>
                                 </span>
                                 {{-- <span><i class="bi bi-info-circle"></i></span> --}}
