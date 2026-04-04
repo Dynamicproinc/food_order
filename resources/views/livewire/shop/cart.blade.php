@@ -308,14 +308,14 @@
                     <div class="mt-3 p-3">
                             <h5 class="small">{{__('Recomendations')}}</h5>
                             <div class="row">
-                                @if($recomendation)
+                                @if(count($recomendation) > 0)
                                 @foreach ($recomendation as $item)
                                     
                                 <div class="col-4">
                                     <div>
                                        <a href="">
                                         <div class="rec-img">
-                                            <img src="{{ \App\Models\Product::where('id', $item['product_id'])->first()->image_path }}" alt="">
+                                            <img src="{{ \App\Models\Product::where('id', $item->id)->first()->image_path }}" alt="">
                                           
                                         </div>
                                        </a>
