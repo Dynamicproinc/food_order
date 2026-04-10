@@ -5,7 +5,7 @@
            <div>
              <div class="d-flex justify-content-center p-3">
                 <div>
-                    <video id="camera" width="300" height="200" autoplay></video>
+                    <video id="camera" width="100%" height="400" autoplay></video>
 
                 </div>
             </div>
