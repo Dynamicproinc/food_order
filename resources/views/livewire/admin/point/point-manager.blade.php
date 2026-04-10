@@ -15,7 +15,7 @@
                         {{ __('Scan') }}</button>
                 </div>
             </div>
-            {{-- <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
             <script>
                 const codeReader = new ZXing.BrowserQRCodeReader();
                 const videoElement = document.getElementById('camera');
@@ -43,10 +43,10 @@
                         })
                         .catch(err => console.error(err));
                 });
-            </script> --}}
+            </script>
 
             {{--  --}}
-            <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
+            {{-- <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
 
 <script>
     const codeReader = new ZXing.BrowserMultiFormatReader(); // ✅ supports barcodes + QR
@@ -79,7 +79,7 @@
             })
             .catch(err => console.error(err));
     });
-</script>
+</script> --}}
             {{--  --}}
             <div class="bg-white p-3 shadow rounded mb-3">
                 <div>
