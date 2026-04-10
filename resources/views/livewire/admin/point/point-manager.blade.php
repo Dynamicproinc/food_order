@@ -2,21 +2,54 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             {{--  --}}
-           <div>
-             <div class="d-flex justify-content-center p-3">
-                <div>
-                    <video id="camera" width="100%" height="400" autoplay></video>
+            <div>
+                <div class="d-flex justify-content-center p-3">
+                    <div>
+                        <video id="camera" width="100%" height="400" autoplay></video>
 
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center p-3">
+
+                    <button id="startScan" class="btn btn-outline-dark"><i class="bi bi-qr-code-scan"></i>
+                        {{ __('Scan') }}</button>
                 </div>
             </div>
-            <div class="d-flex justify-content-center p-3">
-                
-                <button id="startScan" class="btn btn-outline-dark"><i class="bi bi-qr-code-scan"></i> {{__('Scan')}}</button>
-            </div>
-           </div>
+            {{-- <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
+            <script>
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                const videoElement = document.getElementById('camera');
+                const startButton = document.getElementById('startScan');
+
+                startButton.addEventListener('click', () => {
+                    codeReader
+                        .listVideoInputDevices()
+                        .then(videoInputDevices => {
+                            // Try to find the back camera
+                            const backCamera = videoInputDevices.find(device => device.label.toLowerCase().includes(
+                                    'back')) ||
+                                videoInputDevices[0]; // fallback to first camera
+                            const deviceId = backCamera.deviceId;
+
+                            return codeReader.decodeFromVideoDevice(deviceId, videoElement, (result, err) => {
+                                if (result) {
+                                    @this.getQr(result.text);
+                                    codeReader.reset(); // Stop scanning after first result
+                                }
+                                if (err && !(err instanceof ZXing.NotFoundException)) {
+                                    console.error(err);
+                                }
+                            });
+                        })
+                        .catch(err => console.error(err));
+                });
+            </script> --}}
+
+            {{--  --}}
             <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-           <script>
-    const codeReader = new ZXing.BrowserQRCodeReader();
+
+<script>
+    const codeReader = new ZXing.BrowserMultiFormatReader(); // ✅ supports barcodes + QR
     const videoElement = document.getElementById('camera');
     const startButton = document.getElementById('startScan');
 
@@ -25,15 +58,20 @@
             .listVideoInputDevices()
             .then(videoInputDevices => {
                 // Try to find the back camera
-                const backCamera = videoInputDevices.find(device => device.label.toLowerCase().includes('back')) 
-                                   || videoInputDevices[0]; // fallback to first camera
+                const backCamera = videoInputDevices.find(device =>
+                    device.label.toLowerCase().includes('back')
+                ) || videoInputDevices[0];
+
                 const deviceId = backCamera.deviceId;
 
                 return codeReader.decodeFromVideoDevice(deviceId, videoElement, (result, err) => {
                     if (result) {
-                        @this.getQr(result.text);
-                        codeReader.reset(); // Stop scanning after first result
+                        console.log("Barcode:", result.text);
+
+                        @this.getQr(result.text); // your Livewire call
+                        codeReader.reset(); // stop after scan
                     }
+
                     if (err && !(err instanceof ZXing.NotFoundException)) {
                         console.error(err);
                     }
@@ -42,7 +80,6 @@
             .catch(err => console.error(err));
     });
 </script>
-
             {{--  --}}
             <div class="bg-white p-3 shadow rounded mb-3">
                 <div>
@@ -125,11 +162,13 @@
                                         @foreach ($user->pointTransactions()->latest()->get() as $item)
                                             <tr
                                                 class="@if ($item->type === 'credit') table-success @endif @if ($item->type === 'debit') table-danger @endif">
-                                                <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
+                                                <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}
+                                                </td>
                                                 <td class="text-uppercase">{{ $item->type }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ $item->type === 'debit' ? -$item->amount : $item->amount }}</td>
-                                                <td>{{ \App\Models\User::where('id', $item->issued_by)->first()?->name ?? 'Unknown' }}</td>
+                                                <td>{{ \App\Models\User::where('id', $item->issued_by)->first()?->name ?? 'Unknown' }}
+                                                </td>
                                             </tr>
                                         @endforeach
 
