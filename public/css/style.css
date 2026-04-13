@@ -922,6 +922,7 @@ footer{
     /* transform: translate(-50%, -50%); */
     color: #fff;
     z-index: 5;
+    width: calc(100% - 64px);
 }
 .hr-text h1{
     font-size: 15px;
