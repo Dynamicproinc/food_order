@@ -924,8 +924,9 @@ footer{
     z-index: 5;
 }
 .hr-text h1{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
+    letter-spacing: 1px;
     color: #fff;
     text-transform: uppercase;
     
