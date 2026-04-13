@@ -919,7 +919,7 @@ footer{
     position: absolute;
     bottom: 32px;
     left: 32px;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     color: #fff;
     z-index: 5;
 }
