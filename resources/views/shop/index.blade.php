@@ -104,9 +104,8 @@
             </video>
             <div class="overlay"></div>
             <div class="hr-text">
-                <h1>Gladni? 😋</h1>
-                <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i pridružite se street food
-                    zabavi!</p>
+                <h1>Prepustite se okusima pravog street food iskustva</h1>
+                <p>Posjetite naš food truck u Velikoj Gorici i otkrijte zašto se svi vraćaju po još.</p>
             </div>
 
         </div>
