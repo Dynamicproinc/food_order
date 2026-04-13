@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400 !important;
@@ -933,12 +934,12 @@ footer{
     width: calc(100% - 64px);
 }
 .hr-text h1{
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #fff;
     text-transform: uppercase;
-    
+    font-family: "Bebas Neue", sans-serif;
 }
 .hr-text p{
     font-size: 12px;
