@@ -98,7 +98,7 @@
         </div> --}}
          <div class="banner">
             {{-- add video cover here responsivr --}}
-            <video autoplay muted loop style="width: 100%; height:100%">
+            <video autoplay muted loop style="width: 100%; height:250px; object-fit: cover;">
                 <source src="{{ asset('videos/mbrothers_food.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
