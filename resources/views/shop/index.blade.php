@@ -99,7 +99,7 @@
         <div class="banner">
             {{-- add video cover here responsivr --}}
             <video autoplay muted loop style="width: 100%; height:100%; object-fit: cover;">
-                <source src="{{ asset('mbrothers_food_app.mp4') }}" type="video/mp4">
+                <source src="{{ asset('videos/mbrothers_food_app.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay"></div>
