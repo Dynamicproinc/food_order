@@ -106,6 +106,7 @@
             <div class="hr-text">
                 <h1>Prepustite se okusima pravog street food iskustva</h1>
                 <p>Posjetite naš food truck u Velikoj Gorici i otkrijte zašto se svi vraćaju po još.</p>
+                 @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
             </div>
 
         </div>
