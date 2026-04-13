@@ -915,6 +915,13 @@ footer{
   /* background-color: rgba(0, 0, 0, 0.5); */
   z-index: 1;
 }
+.hr-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
 .hero-banner h1 {
   font-size: 20px;
   margin: 0 0 8px 0;

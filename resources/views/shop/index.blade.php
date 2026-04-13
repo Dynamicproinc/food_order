@@ -96,14 +96,19 @@
             </div>
            
         </div> --}}
-         <div class="banner">
+        <div class="banner">
             {{-- add video cover here responsivr --}}
             <video autoplay muted loop style="width: 100%; height:100%; object-fit: cover;">
                 <source src="{{ asset('videos/mbrothers_food.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay"></div>
-                      
+            <div class="hr-text">
+                <h1>Gladni? 😋</h1>
+                <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i pridružite se street food
+                    zabavi!</p>
+            </div>
+
         </div>
 
 
