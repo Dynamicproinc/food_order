@@ -934,7 +934,7 @@ footer{
     width: calc(100% - 64px);
 }
 .hr-text h1{
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #fff;
