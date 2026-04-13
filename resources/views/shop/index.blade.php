@@ -41,7 +41,7 @@
 
 
     <div>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        {{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="banner">
@@ -80,8 +80,7 @@
                                         <div>
                                             <h1>Gladni? 😋</h1>
                                             <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i pridružite se street food zabavi!</p>
-                                            {{-- @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj
-                                                se</a>@endguest --}}
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -93,46 +92,19 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="carousel-item">
-                    <div class="banner">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="">
-                                    <div class="hero-banner">
-                                        <div>
-                                            <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
-                                            <p>Dobij kupon za svako jelo iz <strong>M Brothers Food</strong> trucka — požuri
-                                                i registriraj se još danas!</p>
-                                            @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj
-                                                se</a>@endguest
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                            <div class="col-4">
-                                <div class="">
-                                    <img src="{{ asset('images/design/philly_cheese.png') }}" alt="burger"
-                                        class="banner-image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+               
             </div>
-            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button> --}}
+           
+        </div> --}}
+         <div class="banner">
+            {{-- add video cover here responsivr --}}
+            <video autoplay muted loop style="width: 100%; height:100%">
+                <source src="{{ asset('videos/mbrothers_food.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+                      
         </div>
+
+
     </div>
 
     <div class="d-flex justify-content-center mb-3 mt-3">
