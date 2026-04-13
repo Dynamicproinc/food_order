@@ -924,9 +924,10 @@ footer{
     z-index: 5;
 }
 .hr-text h1{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: #fff;
+    text-transform: uppercase;
     
 }
 .hero-banner h1 {
