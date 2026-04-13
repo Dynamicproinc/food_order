@@ -49,12 +49,28 @@
         {{-- sidebar end --}}
         <div style="height:80px"></div>
 
-        <main class="container" style="min-height: 100vh; margin-bottom:100px">
-            <div class="row justify-content-center">
+        <main class="" style="min-height: 100vh; margin-bottom:100px">
+          <div class="banner">
+            
+            <video autoplay muted loop style="width: 100%; height:100%; object-fit: cover;">
+                <source src="{{ asset('videos/mbrothers_food_app.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+            <div class="hr-text">
+                <h1>Prepustite se okusima pravog street food iskustva</h1>
+                <p>Posjetite naš food truck u Velikoj Gorici i otkrijte zašto se svi vraćaju po još.</p>
+                 @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
+            </div>
+
+        </div>
+           <div class="container">
+             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     @yield('content')
                 </div>
             </div>
+           </div>
         </main>
         {{--  --}}
        {{-- <div class="fixed-cart">
