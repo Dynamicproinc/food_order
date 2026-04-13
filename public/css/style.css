@@ -931,6 +931,11 @@ footer{
     text-transform: uppercase;
     
 }
+.hr-text p{
+    font-size: 12px;
+    color: #fff;
+    font-weight: 500;
+}
 .hero-banner h1 {
   font-size: 20px;
   margin: 0 0 8px 0;
