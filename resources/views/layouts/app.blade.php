@@ -47,7 +47,7 @@
             </div>
         </div> --}}
         {{-- sidebar end --}}
-        <div style="height:80px"></div>
+        <div style="height:20px"></div>
 
         <main class="" style="min-height: 100vh; margin-bottom:100px">
           <div class="banner">
