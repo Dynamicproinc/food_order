@@ -96,7 +96,7 @@
             </div>
            
         </div> --}}
-        {{-- <div class="banner">
+        <div class="banner">
             
             <video autoplay muted loop style="width: 100%; height:100%; object-fit: cover;">
                 <source src="{{ asset('videos/mbrothers_food_app.mp4') }}" type="video/mp4">
@@ -109,7 +109,7 @@
                  @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
             </div>
 
-        </div> --}}
+        </div>
 
 
     </div>

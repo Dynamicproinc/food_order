@@ -47,10 +47,10 @@
             </div>
         </div> --}}
         {{-- sidebar end --}}
-        <div style="height:20px"></div>
+        <div style="height:80px"></div>
 
         <main class="" style="min-height: 100vh; margin-bottom:100px">
-          <div class="banner">
+          {{-- <div class="banner">
             
             <video autoplay muted loop style="width: 100%; height:100%; object-fit: cover;">
                 <source src="{{ asset('videos/mbrothers_food_app.mp4') }}" type="video/mp4">
@@ -63,7 +63,7 @@
                  @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj se</a>@endguest
             </div>
 
-        </div>
+        </div> --}}
            <div class="container">
              <div class="row justify-content-center">
                 <div class="col-lg-8">
