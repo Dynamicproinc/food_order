@@ -88,7 +88,7 @@
               @if (count($item->variants) > 0)
                <ul>
                  @foreach ($item->variants as $variant)
-                    <li>{{\App\Models\Variant::where('id', $variant)->first()->value}}</li>
+                    <li>{{\App\Models\Variant::where('id', $variant)->first()?->value}}</li>
                 @endforeach
                </ul>
               @endif
@@ -97,12 +97,14 @@
                  @foreach ($item->choices as $choice)
                  {{-- {{$choice}} --}}
                  @php
-                   $ch = \App\Models\ProductChoice::where('id', $choice)->first();
-                   $cprice = $ch->price;
-                   $cid = $ch->Choice_id
+                  if($ch = \App\Models\ProductChoice::where('id', $choice)->first()){
+                    $cprice = $ch->price;
+                    $cid = $ch->Choice_id;
+                  }
+                  
                  @endphp
 
-                    <li>{{ \App\Models\Choice::where('id', $cid)->first()->Choice_name .' - '. number_format($cprice, 2, ',', ' ')  }}€</li>
+                    <li>{{ \App\Models\Choice::where('id', $cid)->first()?->Choice_name .' - '. number_format($cprice, 2, ',', ' ')  }}€</li>
                 @endforeach
                </ul>
               @endif
