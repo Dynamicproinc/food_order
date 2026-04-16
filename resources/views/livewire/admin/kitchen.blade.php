@@ -73,7 +73,7 @@
                                                                            }
                                                                         @endphp
 
-                                                                        <li>{{ \App\Models\Choice::where('id', $cid)->first()?? ->Choice_name :'choice deleted' }}
+                                                                        <li>{{ \App\Models\Choice::where('id', $cid)->first()?->Choice_name }}
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>
