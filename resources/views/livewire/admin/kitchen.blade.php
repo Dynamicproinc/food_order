@@ -64,8 +64,13 @@
                                                                                 'id',
                                                                                 $choice,
                                                                             )->first();
-                                                                            $cprice = $ch->price;
-                                                                            $cid = $ch->Choice_id;
+                                                                           if($ch) {
+                                                                               $cprice = $ch->price;
+                                                                               $cid = $ch->Choice_id;
+                                                                           } else {
+                                                                               $cprice = 0;
+                                                                               $cid = 0;
+                                                                           }
                                                                         @endphp
 
                                                                         <li>{{ \App\Models\Choice::where('id', $cid)->first()?? ->Choice_name :'choice deleted' }}
