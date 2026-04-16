@@ -98,9 +98,13 @@
                  {{-- {{$choice}} --}}
                  @php
                   if($ch = \App\Models\ProductChoice::where('id', $choice)->first()){
-                    $cprice = $ch->price ?? 0;
+                    $cprice = $ch->price;
                     $cid = $ch->Choice_id;
+                  }else{
+                    $cprice = 0;
+                    $cid = 0;
                   }
+
                   
                  @endphp
 
