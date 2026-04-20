@@ -84,7 +84,7 @@
           @foreach($order->getItems() as $item)
         <tr>
           <td>
-           <span style="font-weight: 700"> {{ $item->getProduct()->title .' - '.number_format(($item->getProduct()->discounted_price), 2, ',', ' ').'€' }}</span>
+           <span style="font-weight: 700"> {{ $item->getProduct()->printable_name ?? $item->getProduct()->title .' - '.number_format(($item->getProduct()->discounted_price), 2, ',', ' ').'€' }}</span>
             <div>
               @if (count($item->variants) > 0)
                <ul>

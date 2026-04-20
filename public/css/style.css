@@ -12,6 +12,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #dfdfdf !important;
+    /* background: #121212 !important; */
+}
+.bg-white {
+    /* background: #1E1E1E !important; */
 }
 
 .black-navbar{
@@ -214,6 +218,7 @@ text-transform: uppercase;
     border-radius: 16px;
     height: 600px;
     background-color: #fff;
+    /* background-color: #1E1E1E; */
     max-width: 450px;
     overflow: hidden;
 }
