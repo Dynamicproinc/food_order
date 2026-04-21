@@ -138,7 +138,11 @@
     "Back to shop": "Back to shop",
     "Submit": "Submit",
     "Comment": "comment",
-    "Read reviews and ratings from our customers about :product": "Read reviews and ratings from our customers about :product"
+    "Read reviews and ratings from our customers about :product": "Read reviews and ratings from our customers about :product",
+    "Delete my account": "Delete my account",
+    "Are you sure you want to delete your account? This action cannot be undone.": "Are you sure you want to delete your account? This action cannot be undone.",
+    "Once deleted, all your data will be permanently removed.": "Once deleted, all your data will be permanently removed.",
+    "Delete Account": "Delete Account"
     
     
 

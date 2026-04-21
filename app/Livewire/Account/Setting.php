@@ -43,4 +43,13 @@ class Setting extends Component
 
 
     }
+
+    public function delete(){
+        try {
+            auth()->user()->delete();
+            return redirect()->route('home');
+        } catch (\Throwable $th) {
+            $this->addError('general', 'Something went wrong');
+        }
+    }
 }

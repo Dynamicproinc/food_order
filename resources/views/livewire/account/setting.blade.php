@@ -22,4 +22,14 @@
 
         </form>
     </div>
+
+    <div>
+        <div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">{{__('Delete my account')}}</h4>
+  <p>{{__('Are you sure you want to delete your account? This action cannot be undone.')}}</p>
+  <hr>
+  <p class="mb-0">{{__('Once deleted, all your data will be permanently removed.')}}</p>
+  <button class="btn btn-danger" wire:click="delete" wire:confirm="{{__('Are you sure you want to delete your account? This action cannot be undone.')}}">{{__('Delete Account')}}</button>
+</div>
+    </div>
 </div>

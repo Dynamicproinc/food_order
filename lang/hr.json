@@ -138,7 +138,11 @@
 "Back to shop": "Natrag u trgovinu",
 "Submit": "Pošalji",
 "Comment": "Komentar",
-"Read reviews and ratings from our customers about :product": "Pročitajte recenzije i ocjene naših kupaca o :product"
+"Read reviews and ratings from our customers about :product": "Pročitajte recenzije i ocjene naših kupaca o :product",
+ "Delete my account": "Izbriši moj račun",
+    "Are you sure you want to delete your account? This action cannot be undone.": "Jeste li sigurni da želite izbrisati svoj račun? Ova radnja se ne može poništiti.",
+    "Once deleted, all your data will be permanently removed.": "Nakon brisanja, svi vaši podaci bit će trajno uklonjeni.",
+    "Delete Account": "Izbriši račun"
 
 
 
