@@ -58,4 +58,8 @@ class HomeController extends Controller
         return abort(404);
         
     }
+
+    public function setting(){
+        return view('account.setting');
+    }
 }

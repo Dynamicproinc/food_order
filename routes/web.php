@@ -30,6 +30,7 @@ Route::get('/my-account', [App\Http\Controllers\HomeController::class, 'index'])
 Route::get('/my-account/order/{slug}', [App\Http\Controllers\HomeController::class, 'viewOrder'])->name('myaccount.vieworder');
 Route::get('/my-account/orders', [App\Http\Controllers\HomeController::class, 'orders'])->name('myaccount.orders');
 Route::get('/my-account/coupons', [App\Http\Controllers\HomeController::class, 'coupons'])->name('myaccount.coupons');
+Route::get('/my-account/setting', [App\Http\Controllers\HomeController::class, 'setting'])->name('myaccount.setting');
 
 
 
@@ -68,10 +69,10 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 // })->where('any', '.*');
 // artisan commands
 
-Route::get('/abc123', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return response()->json(['status' => 'Migration completed']);
-});;
+// Route::get('/abc123', function () {
+//     Artisan::call('migrate', ['--force' => true]);
+//     return response()->json(['status' => 'Migration completed']);
+// });;
 
 
 // Route::get('/storage-link', function () {
