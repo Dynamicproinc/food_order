@@ -55,6 +55,9 @@
                         
                     </tbody>
                 </table> 
+                <div class="">
+                    {{ $orders->links() }}
+                </div>
                 @else
                     <p class="text-center text-muted">{{__('No orders found')}}</p>
                 @endif

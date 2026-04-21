@@ -42,7 +42,7 @@ class AdminController extends Controller
     //     ->latest()
     //     ->paginate(50);
        $orders = SalesOrder::latest()
-       ->paginate(50);
+       ->paginate(15);
                
 
         return view('admin.orders.order')->with('orders', $orders);
