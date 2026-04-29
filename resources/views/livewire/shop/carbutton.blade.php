@@ -9,11 +9,22 @@
     @endif
     </a>
      @if (session('cart') && count(session('cart')) > 0)
-      <a type="button" href="{{ route('shop.cart') }}">
+      {{-- <a type="button" href="{{ route('shop.cart') }}">
      <div class="fixed-cart">
         <i class="bi bi-bag"></i>
        </div>
-      </a>
+      </a> --}}
+      <div class="fixed-bottom">
+        <div class="m-3 rounded bg-warning p-3 d-flex align-items-center justify-content-between shadow-sm">
+         
+          <small class="fw-bolder">
+            {{ __($item_count) }} - {{ number_format($grand_total, 2, ',', ' ') }} €
+          </small>
+          <small>
+            <a href="/cart" class="fw-bolder text-decoration-none text-black">View Cart</a>
+          </small>
+        </div>
+      </div>
      @endif
 
     {{-- fixed message bar --}}
