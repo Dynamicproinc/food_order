@@ -220,13 +220,15 @@
                                 </span>
                                 {{ __('Place Your Order') }}
                             </button>
-                            <div>
-                                <p class="text-muted small">
+
+                            <div class="mt-2">
+                                <p class="text-muted small" style="font-size: 11px">
                                     By clicking <strong>Place Your Order</strong>, you agree to our
                                     <a href="/terms-of-use"><strong>Terms of Use</strong></a> and
                                     <a href="/privacy-policy"><strong>Privacy Policy</strong></a>.
                                 </p>
                             </div>
+
 
                             @if ($status)
                                 <div class="text-danger">{{ $status->status_color }}</div>

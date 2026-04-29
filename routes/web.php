@@ -16,6 +16,9 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 Route::get('/privacy-policy', function () {
     return view('pages.privacy-hr');
 })->name('privacy.policy');
+Route::get('/terms-of-use', function () {
+    return view('pages.terms-hr');
+})->name('terms');
 
 // Route::get('/', function () {
 //     return view('welcome');
