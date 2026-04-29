@@ -12,6 +12,11 @@ Route::get('/sse', [SSEController::class, 'sendSSE']);
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
+// privcacy policy
+Route::get('/privacy-policy', function () {
+    return view('pages.privacy-hr');
+})->name('privacy.policy');
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
