@@ -14,7 +14,8 @@
         <i class="bi bi-bag"></i>
        </div>
       </a> --}}
-      <div class="fixed-bottom">
+      <div class="d-block d-sm-none">
+        <div class="fixed-bottom">
         <div class="m-3 rounded bg-warning p-3 d-flex align-items-center justify-content-between shadow-sm">
          
           <small class="fw-bolder text-black">
@@ -24,6 +25,7 @@
             <a href="/cart" class="fw-bolder text-decoration-none text-black">View Cart</a>
           </small>
         </div>
+      </div>
       </div>
      @endif
 
