@@ -4,137 +4,216 @@
     <div>
         <div class="row justify-content-center">
             <div class="col-lg-10">
+                <style>
+                    h5 {
+                        font-weight: 600;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                </style>
                 <div>
-                    # Pravila privatnosti (GDPR usklađeno)
+                    <h5>Pravila privatnosti (GDPR usklađeno)</h5>
 
-                    **Datum stupanja na snagu:** 29. travnja 2026.
+                    <p>
+                        Datum stupanja na snagu: 29. travnja 2026.
+                    </p>
 
-                    ## 1. Uvod
 
-                    M Brothers food j.d.o.o („mi“, „naš“) upravlja web stranicom https://mbrothers-food.com/. Posvećeni smo
-                    zaštiti vaših osobnih podataka i poštivanju vaše privatnosti u skladu s Općom uredbom o zaštiti podataka
-                    (GDPR).
+                    <h5>1. Uvod</h5>
 
-                    Ova Pravila privatnosti objašnjavaju kako prikupljamo, koristimo i štitimo vaše podatke.
+                    <p>
+                        M Brothers food j.d.o.o („mi“, „naš“) upravlja web stranicom https://mbrothers-food.com/. Posvećeni
+                        smo
+                        zaštiti vaših osobnih podataka i poštivanju vaše privatnosti u skladu s Općom uredbom o zaštiti
+                        podataka
+                        (GDPR).</br></br>
 
-                    ---
+                        Ova Pravila privatnosti objašnjavaju kako prikupljamo, koristimo i štitimo vaše podatke.
+                    </p>
 
-                    ## 2. Voditelj obrade
 
-                    **Naziv tvrtke:** M Brothers food j.d.o.o
-                    **Web stranica:** https://mbrothers-food.com/
-                    **Email:** [info@mbrothers-food.com](mailto:info@mbrothers-food.com)
+                    <h5>2. Voditelj obrade</h5>
 
-                    ---
+                    <p>
 
-                    ## 3. Koje podatke prikupljamo
+                        Naziv tvrtke: M Brothers food j.d.o.o
+                        Web stranica: <a href="https://mbrothers-food.com/">https://mbrothers-food.com/</a>
+                        Email: <a href="mailto:info@mbrothers-food.com">info@mbrothers-food.com</a>
+                    </p>
 
-                    Možemo prikupljati sljedeće vrste osobnih podataka:
 
-                    * Ime i prezime
-                    * Email adresa
-                    * Broj telefona (ako je dostavljen)
-                    * Podaci vezani uz narudžbe ili usluge
-                    * Tehnički podaci (IP adresa, preglednik, uređaj)
 
-                    ---
 
-                    ## 4. Kako koristimo vaše podatke
 
-                    Vaše podatke koristimo isključivo u sljedeće svrhe:
+                    <h5>3. Koje podatke prikupljamo</h5>
 
-                    * Pružanje i upravljanje uslugama
-                    * Odgovaranje na upite i korisničku podršku
-                    * Obrada narudžbi ili zahtjeva
-                    * Poboljšanje rada web stranice i korisničkog iskustva
-                    * Ispunjavanje zakonskih obveza
+                    <p>
 
-                    ---
+                        Možemo prikupljati sljedeće vrste osobnih podataka:</br></br>
+                        Ime i prezime</br>
+                        Email adresa</br>
+                        Broj telefona (ako je dostavljen)</br>
+                        Podaci vezani uz narudžbe ili usluge</br>
+                        Tehnički podaci (IP adresa, preglednik, uređaj)</br></br>
+                    </p>
 
-                    ## 5. Pravna osnova obrade
 
-                    Vaše podatke obrađujemo na temelju:
 
-                    * Vašeg pristanka
-                    * Izvršenja ugovora
-                    * Zakonskih obveza
-                    * Legitimitetnog interesa (npr. poboljšanje usluga)
 
-                    ---
+                   
+                    <h5>4. Kako koristimo vaše podatke</h5>
 
-                    ## 6. Dijeljenje podataka
+                    <p>
 
-                    **Ne prodajemo, ne iznajmljujemo i ne dijelimo vaše osobne podatke s trećim stranama.**
+                        Vaše podatke koristimo isključivo u sljedeće svrhe:</br></br>
+    
+                        Pružanje i upravljanje uslugama</br>
+                        Odgovaranje na upite i korisničku podršku</br>
+                        Obrada narudžbi ili zahtjeva</br>
+                        Poboljšanje rada web stranice i korisničkog iskustva</br>
+                        Ispunjavanje zakonskih obveza</br></br>
+                    </p>
 
-                    Vaši podaci koriste se isključivo unutar tvrtke M Brothers food j.d.o.o, osim ako je otkrivanje podataka
-                    zakonski obvezno.
+                   
+                    <h5>5. Pravna osnova obrade</h5>
 
-                    ---
+                    <p>
 
-                    ## 7. Čuvanje podataka
+                        Vaše podatke obrađujemo na temelju</br></br>
+    
+                        Vašeg pristanka</br>
+                        Izvršenja ugovora</br>
+                        Zakonskih obveza</br>
+                        Legitimitetnog interesa (npr. poboljšanje usluga)</br></br>
+    
+                        
+                    </p>
 
-                    Osobne podatke čuvamo samo onoliko dugo koliko je potrebno za svrhe navedene u ovim pravilima ili koliko
-                    to zahtijeva zakon.
+                    <h5>
+                        
+                        6. Dijeljenje podataka
+                    </h5>
 
-                    ---
 
-                    ## 8. Vaša prava prema GDPR-u
+                    <p>
 
-                    Imate pravo na:
+                        Ne prodajemo, ne iznajmljujemo i ne dijelimo vaše osobne podatke s trećim stranama.</br></br>
+    
+                        Vaši podaci koriste se isključivo unutar tvrtke M Brothers food j.d.o.o, osim ako je otkrivanje podataka
+                        zakonski obvezno.</br></br>
+    
+                        
+                    </p>
 
-                    * Pristup svojim podacima
-                    * Ispravak netočnih podataka
-                    * Brisanje podataka
-                    * Ograničenje ili prigovor na obradu
-                    * Prenosivost podataka
-                    * Povlačenje privole u bilo kojem trenutku
+                    <h5>
 
-                    Za ostvarivanje svojih prava kontaktirajte nas na:
-                    [info@mbrothers-food.com](mailto:info@mbrothers-food.com)
+                        7. Čuvanje podataka
+                    </h5>
 
-                    ---
+                    <p>
 
-                    ## 9. Sigurnost podataka
+                        Osobne podatke čuvamo samo onoliko dugo koliko je potrebno za svrhe navedene u ovim pravilima ili koliko
+                        to zahtijeva zakon.</br></br>
+                    </p>
 
-                    Primjenjujemo odgovarajuće tehničke i organizacijske mjere kako bismo zaštitili vaše podatke od
-                    neovlaštenog pristupa, gubitka ili zlouporabe.
+                  
+                    <h5>
 
-                    ---
+                        8. Vaša prava prema GDPR-u
+                    </h5>
 
-                    ## 10. Kolačići (Cookies)
+                    <p>
 
-                    Naša web stranica može koristiti kolačiće radi poboljšanja korisničkog iskustva. Kolačiće možete
-                    kontrolirati ili onemogućiti putem postavki vašeg preglednika.
+                        Imate pravo na:</br></br>
+    
+                        Pristup svojim podacima</br>
+                        Ispravak netočnih podataka</br>
+                        Brisanje podataka</br>
+                        Ograničenje ili prigovor na obradu</br>
+                        Prenosivost podataka</br>
+                        Povlačenje privole u bilo kojem trenutku</br></br>
+    
+                        Za ostvarivanje svojih prava kontaktirajte nas na:
+                        <a href="mailto:info@mbrothers-food.com">info@mbrothers-food.com</a>
+                        
+                    </p>
 
-                    ---
 
-                    ## 11. Usluge trećih strana
+                 
 
-                    Ne dijelimo vaše osobne podatke s trećim stranama, osim ako je to nužno za funkcioniranje web stranice
-                    ili zakonski obavezno.
+                   
+                    <h5>
+                         9. Sigurnost podataka
+                    </h5>
 
-                    ---
+                    <p>
+                        Primjenjujemo odgovarajuće tehničke i organizacijske mjere kako bismo zaštitili vaše podatke od
+                    neovlaštenog pristupa, gubitka ili zlouporabe.</br></br>
+                    </p>
 
-                    ## 12. Izmjene pravila
+                    
 
-                    Zadržavamo pravo izmjene ovih Pravila privatnosti. Sve promjene bit će objavljene na ovoj stranici s
-                    ažuriranim datumom.
+                    <h5>
+                        10. Kolačići (Cookies)
+                    </h5>
 
-                    ---
+                    <p>
+                        Naša web stranica može koristiti kolačiće radi poboljšanja korisničkog iskustva. Kolačiće možete
+                    kontrolirati ili onemogućiti putem postavki vašeg preglednika.</br></br>
+                    </p>
 
-                    ## 13. Kontakt
+                    
 
-                    Ako imate pitanja o ovim Pravilima privatnosti ili vašim podacima, kontaktirajte nas:
+                    <h5>
+                        11. Usluge trećih strana
+                    </h5>
 
-                    **Email:** [info@mbrothers-food.com](mailto:info@mbrothers-food.com)
+                    
 
-                    ---
+                    <p>
+                        Ne dijelimo vaše osobne podatke s trećim stranama, osim ako je to nužno za funkcioniranje web stranice
+                    ili zakonski obavezno.</br></br>
+                    </p>
 
-                    ## 14. Naša posvećenost privatnosti
+                   <h5>
+                     12. Izmjene pravila
+                   </h5>
 
-                    U M Brothers food j.d.o.o vaša privatnost nam je izuzetno važna. U potpunosti smo posvećeni zaštiti
+                    <p>
+                        Zadržavamo pravo izmjene ovih Pravila privatnosti. Sve promjene bit će objavljene na ovoj stranici s
+                    ažuriranim datumom.</br></br>
+                    </p>
+
+                    
+
+                    <h5>
+                        13. Kontakt
+                    </h5>
+                    <p>
+                         Ako imate pitanja o ovim Pravilima privatnosti ili vašim podacima, kontaktirajte nas:</br></br>
+
+                    Email: <a href="mailto:info@mbrothers-food.com">info@mbrothers-food.com</a><br></br>
+                    </p>
+
+
+                   
+
+                    
+
+                    <h5>
+                        14. Naša posvećenost privatnosti
+                    </h5>
+
+                    <p>
+                         U M Brothers food j.d.o.o vaša privatnost nam je izuzetno važna. U potpunosti smo posvećeni zaštiti
                     vaših osobnih podataka i jamčimo da se oni nikada neće dijeliti s trećim stranama u marketinške ili
                     komercijalne svrhe.
+                    </p>
 
                 </div>
             </div>
