@@ -22,7 +22,7 @@
             {{ __($item_count) }} - {{ number_format($grand_total, 2, ',', ' ') }} €
           </small>
           <small>
-            <a href="/cart" class="fw-bolder text-decoration-none text-black">View Cart</a>
+            <a href="/cart" class="fw-bolder text-decoration-none text-black">{{ __('View Cart') }}</a>
           </small>
         </div>
       </div>
