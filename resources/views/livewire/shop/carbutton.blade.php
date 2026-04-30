@@ -17,7 +17,7 @@
       {{-- hide if route is shop.cart --}}
       @if (request()->route()->getName() != 'shop.cart')
           
-      <div class="d-block d-sm-none">
+      <div class="d-block d-sm-none" wire:ignore>
         <div class="fixed-bottom">
         <div class="m-3 rounded bg-warning p-3 d-flex align-items-center justify-content-between shadow-sm">
          
