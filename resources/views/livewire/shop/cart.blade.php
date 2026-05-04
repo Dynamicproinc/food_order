@@ -223,7 +223,7 @@
 
                             <div class="mt-2">
                                 <p class="text-muted small" style="font-size: 11px">
-                                    Klikom na <strong>Naručite</strong> prihvaćate naše
+                                    Klikom na <strong>Potvrdite narudžbu</strong> prihvaćate naše
                                     <a href="/terms-of-use"><strong>Uvjeti korištenja</strong></a> i
                                     <a href="/privacy-policy"><strong>Pravila privatnosti</strong></a>.
                                 </p>
