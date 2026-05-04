@@ -84,8 +84,8 @@
     {{-- <div><strong>{{ __('Saturday 10:00 – 12:00')}}</strong></div> --}}
     <div class="">{{__('For support, contact')}} <a href="mailto:info@mbrothers-food.com" class="text-white">info@mbrothers-food.com</a></div>
     <div class="mb-3">
-      <a href="/terms-of-use" class="me-2 text-white">Terms of Use</a>
-                                    <a href="/privacy-policy" class="text-white">Privacy Policy</a>
+      <a href="/terms-of-use" class="me-2 text-white">{{ __('Terms of Use') }}</a>
+      <a href="/privacy-policy" class="text-white">{{ __('Privacy Policy') }}</a>
     </div>
     <div class="gray-5">&copy;  {{ date('Y') }} {{ config('app.name') }}. {{__('All rights reserved.')}}</div>
   </div>
