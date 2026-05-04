@@ -223,9 +223,9 @@
 
                             <div class="mt-2">
                                 <p class="text-muted small" style="font-size: 11px">
-                                    By clicking <strong>Place Your Order</strong>, you agree to our
-                                    <a href="/terms-of-use"><strong>Terms of Use</strong></a> and
-                                    <a href="/privacy-policy"><strong>Privacy Policy</strong></a>.
+                                    Klikom na <strong>Naručite</strong> prihvaćate naše
+                                    <a href="/terms-of-use"><strong>Uvjeti korištenja</strong></a> i
+                                    <a href="/privacy-policy"><strong>Pravila privatnosti</strong></a>.
                                 </p>
                             </div>
 
