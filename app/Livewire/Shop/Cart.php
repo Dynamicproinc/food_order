@@ -148,8 +148,8 @@ class Cart extends Component
         // Check pickup time is within 10:00–14:00
         function ($attribute, $value, $fail) {
             $time = \Carbon\Carbon::parse($value)->format('H:i');
-            $start = '11:00';
-            $end = '17:00';
+            $start = '10:00';
+            $end = '16:00';
 
             if ($time < $start || $time > $end) {
                 $fail(\Lang::get('validation.custom.pickup_time.time_range'));
