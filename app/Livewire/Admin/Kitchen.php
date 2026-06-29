@@ -22,8 +22,8 @@ class Kitchen extends Component
     {
 
         return view('livewire.admin.kitchen',[
-            //  'orders'=> SalesOrder::whereDate('created_at', Carbon::today())->whereNotIn('status', ['ready', 'dispatched'])->orderBy('daily_order_number', 'desc')->get(),
-              'orders'=> SalesOrder::whereNotIn('status', ['ready', 'dispatched'])->orderBy('daily_order_number', 'desc')->get(),
+             'orders'=> SalesOrder::whereDate('created_at', Carbon::today())->whereNotIn('status', ['ready', 'dispatched'])->orderBy('daily_order_number', 'desc')->get(),
+            //   'orders'=> SalesOrder::whereNotIn('status', ['ready', 'dispatched'])->orderBy('daily_order_number', 'desc')->get(),
         ]);
     }
 
@@ -34,8 +34,8 @@ class Kitchen extends Component
     public function fetchOrders(){
         // $orders = SalesOrder::whereDate('created_at', Carbon::today())->whereNotIn('status', ['ready', 'dispatched'])->orderBy('daily_order_number', 'desc')->get();
         // $this->orders = $orders;
-        //  $ready_orders = SalesOrder::whereDate('created_at', Carbon::today())->where('status', 'ready')->orderBy('updated_at', 'desc')->get();
-         $ready_orders = SalesOrder::where('status', 'ready')->orderBy('updated_at', 'desc')->get();
+         $ready_orders = SalesOrder::whereDate('created_at', Carbon::today())->where('status', 'ready')->orderBy('updated_at', 'desc')->get();
+        //  $ready_orders = SalesOrder::where('status', 'ready')->orderBy('updated_at', 'desc')->get();
         $this->ready_orders = $ready_orders;
 
 
