@@ -182,9 +182,12 @@ return [
             'rule-name' => 'custom-message',
         ],
         'pickup_time' => [
-            'time_range' => 'The pickup time must be between 11:00  and 14:00.',
+            'time_range' => 'The pickup time must be between 10:00  and 16:00.',
+             'saturday_limit' => 'On Saturday, orders can only be picked up until 12:00.',
         ],
+      
     ],
+
 
     /*
     |--------------------------------------------------------------------------

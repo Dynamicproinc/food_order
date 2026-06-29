@@ -209,10 +209,15 @@
                                 $status = App\Models\ShopStatus::whereDate('closing_date', today())
                                     ->where('status_name', 'closed')
                                     ->first();
+
+                                    // if status is closed or if time is saturday and pickup time is after 12:00, disable the button
+                                 $disabled_button = $status || (now()->isSaturday() && now()->format('H:i') > '12:00');
+                               if($disabled_button) echo '<small class="text-danger"> Narudžbe se ne mogu izvršiti subotom nakon 12:00 sati </small>';
+                                
                             @endphp
                             <button
-                                class="btn btn-warning form-control @if ($status) disabled @endif"
-                                @if ($status) disabled @endif>
+                                class="btn btn-warning form-control @if ($disabled_button) disabled @endif"
+                                @if ($disabled_button) disabled @endif>
 
                                 <span class="spinner-border spinner-border-sm" wire:loading wire:target="saveOrder"
                                     role="status">

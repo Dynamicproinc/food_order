@@ -121,8 +121,10 @@ return [
         ],
         
           'pickup_time' => [
-            'time_range' => 'Vrijeme preuzimanja mora biti između 11:00 i 17:00 sati.',
+            'time_range' => 'Vrijeme preuzimanja mora biti između 10:00 i 16:00 sati.',
+            'saturday_limit' => 'U subotu narudžbe se mogu preuzeti samo do 12:00 sati.',
         ],
+      
     ],
 
     /*

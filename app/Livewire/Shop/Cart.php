@@ -154,6 +154,11 @@ class Cart extends Component
             if ($time < $start || $time > $end) {
                 $fail(\Lang::get('validation.custom.pickup_time.time_range'));
             }
+            // if date is saturday user cannot order after 12:00
+            // $date = \Carbon\Carbon::parse($value);
+            // if ($date->isSaturday() && $time > '12:00') {
+            //     $fail(\Lang::get('validation.custom.pickup_time.saturday_limit'));
+            // }
         },
 
         // Check 20-minute gap from order_time
