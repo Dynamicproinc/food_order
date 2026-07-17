@@ -146,7 +146,7 @@
                                 <div class="ready-items mb-3">
                                     <div class="d-flex">
                                         <div class="mid-cont">
-                                            {{ $ro->daily_order_number }}
+                                            {{ $ro->daily_order_number.'-'.$ro->id }}
                                         </div>
                                         <div class="p-2">
                                             <h6 class="fw-bold mb-0 text-uppercase">
