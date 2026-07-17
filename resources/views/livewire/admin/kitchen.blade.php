@@ -12,7 +12,7 @@
                                     <div class="order-card">
                                         <div class="order-card-head p-3 border-bottom bg-warning">
                                             <div class="d-flex justify-content-between">
-                                                <h5 class="fw-bolder">#{{ $item->daily_order_number }} <small>{{$item->id}}</small></h5>
+                                                <h5 class="fw-bolder">#{{ $item->daily_order_number }} -  <small class="text-muted">{{ $item->id }}</small></h5>
                                                 @if ($item->order_type === 'pickup')
                                                     <h6 class="fw-bolder text-uppercase">
                                                         {{ $item->order_type }}
