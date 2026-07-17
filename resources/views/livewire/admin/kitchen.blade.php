@@ -157,7 +157,7 @@
                                                 {{-- {{ $ro->getUser()->name . ' ' . $ro->getUser()->last_name }} --}}
                                             </h6>
                                             <small class="fw-bolder text-uppercase">{{ $ro->order_type }}</small>
-                                            <h6 class="mb-0 mb-2">{{ number_format($ro->net_total, 2, ',', ' ') }} €
+                                            <h6 class="mb-0 mb-2 text-success">{{ number_format($ro->net_total, 2, ',', ' ') }} €
                                             </h6>
                                             <button wire:loading.attr="disabled" class="btn btn-dark w-100"
                                                 wire:click="orderDispatch({{ $ro->id }})">
