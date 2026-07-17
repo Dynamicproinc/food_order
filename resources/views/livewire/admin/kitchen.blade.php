@@ -146,7 +146,10 @@
                                 <div class="ready-items mb-3">
                                     <div class="d-flex">
                                         <div class="mid-cont">
-                                            {{ $ro->daily_order_number.'-'.$ro->id }}
+                                           <p>
+                                             {{ $ro->daily_order_number }}
+                                             <small class="small text-muted">{{ $ro->id }}</small>
+                                           </p>
                                         </div>
                                         <div class="p-2">
                                             <h6 class="fw-bold mb-0 text-uppercase">
