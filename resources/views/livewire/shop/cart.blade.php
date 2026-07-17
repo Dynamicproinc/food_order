@@ -210,7 +210,7 @@
                                     ->where('status_name', 'closed')
                                     ->first();
                             $now = now()->setTimezone('Europe/Zagreb');
-                            $disabled_button = $status || ($now->isSaturday() && $now->format('H:i') > '12:00');
+                            $disabled_button = $status || ($now->isSaturday() && $now->format('H:i') > '11:58');
                                   
                                if($disabled_button) echo '<small class="text-danger"> Narudžbe se ne mogu izvršiti subotom nakon 12:00 sati </small>';
                                 
