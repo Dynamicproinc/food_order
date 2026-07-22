@@ -38,18 +38,18 @@
                             datasets: [{
                                 label: 'Total Sales',
                                 data: @json($data['total_amount']),
-                                lineTension: 0,
+                               
                                 backgroundColor: 'transparent',
                                 borderColor: '#007bff',
-                                borderWidth: 4,
+                                borderWidth: 1,
                                 pointBackgroundColor: '#007bff'
                             }, {
                                 label: 'Order Count',
                                 data: @json($data['order_count']),
-                                lineTension: 0,
+                               
                                 backgroundColor: 'transparent',
                                 borderColor: '#28a745',
-                                borderWidth: 4,
+                                borderWidth: 1,
                                 pointBackgroundColor: '#28a745'
                             }]
                         },
