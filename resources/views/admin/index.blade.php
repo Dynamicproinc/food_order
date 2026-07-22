@@ -74,8 +74,8 @@
                             datasets: [{
                                 label: 'Order Count',
                                 data: @json($data['order_count']),
-                                backgroundColor: 'tomato',
-                                borderColor: 'tomato',
+                                backgroundColor: 'green',
+                                borderColor: 'green',
                                 borderWidth: 1
                             }]
                         },
