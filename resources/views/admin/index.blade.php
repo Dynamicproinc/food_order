@@ -85,7 +85,15 @@
                                 backgroundColor: '#00800031',
                                 borderColor: 'green',
                                 borderWidth: 1
-                            }]
+                            },
+                        {
+                            label: 'User Registration',
+                                data: @json($data['user_registration_count']),
+                                backgroundColor: '#007bff2e',
+                                borderColor: '#007bff',
+                                borderWidth: 1 
+                        }
+                        ]
                         },
                         options: {
                             scales: {
