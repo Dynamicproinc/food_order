@@ -32,7 +32,10 @@ class AdminController extends Controller
         ->groupBy('month')
         ->get();
         $data = [
-            'month' => $sales->pluck('month'),
+            // month in words
+            'month' => $sales->pluck('month')->map(function($month) {
+                return date('F', mktime(0, 0, 0, $month, 1));
+            }),
             'total_amount' => $sales->pluck('total_amount'),
         ];
 
