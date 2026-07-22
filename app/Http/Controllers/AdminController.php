@@ -29,12 +29,14 @@ class AdminController extends Controller
         // get this year total sales for each month for chart
         $sales = SalesOrder::selectRaw('MONTH(created_at) as month, SUM(net_total) as total_amount')
         ->whereYear('created_at', Carbon::now()->year)
+        ->where('status', 'dispatched')
         ->groupBy('month')
         ->get();
 
         // get numbers of times each month has been ordered for chart
         $orderCount = SalesOrder::selectRaw('MONTH(created_at) as month, COUNT(*) as order_count')
         ->whereYear('created_at', Carbon::now()->year)
+        ->where('status', 'dispatched')
         ->groupBy('month')
         ->get();
         $data = [
