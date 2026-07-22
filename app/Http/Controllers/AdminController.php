@@ -23,6 +23,23 @@ class AdminController extends Controller
         return view('admin.kitchen.kitchen');
     }
 
+    public function index(){
+        // pass data to view via data array yearly
+
+        // get this year total sales for each month for chart
+        $sales = SalesOrder::selectRaw('MONTH(created_at) as month, SUM(net_total) as total_amount')
+        ->whereYear('created_at', Carbon::now()->year)
+        ->groupBy('month')
+        ->get();
+        $data = [
+            'month' => $sales->pluck('month'),
+            'total_amount' => $sales->pluck('total_amount'),
+        ];
+
+       
+        return view('admin.index')->with('data', $data);
+    }
+
     public function editProduct($id){
         $product_id = $id;
         return view('admin.products.edit')->with('product_id', $product_id);

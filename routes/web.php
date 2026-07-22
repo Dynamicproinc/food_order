@@ -49,7 +49,7 @@ Route::get('/category/{category}', [App\Http\Controllers\ShopController::class, 
 Route::get('/cart', [App\Http\Controllers\ShopController::class, 'cart'])->name('shop.cart')->middleware(['auth','verified']);
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
-    
+    Route::get('/', [App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
     Route::get('/add-product', [App\Http\Controllers\AdminController::class,'addProduct'])->name('admin.addproduct');
     Route::get('/products', [App\Http\Controllers\AdminController::class,'products'])->name('admin.products.index');
     Route::get('/reviews', [App\Http\Controllers\AdminController::class,'reviews'])->name('admin.reviews');
