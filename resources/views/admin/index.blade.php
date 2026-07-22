@@ -39,7 +39,7 @@
                                 label: 'Total Sales',
                                 data: @json($data['total_amount']),
                                
-                                backgroundColor: 'transparent',
+                                backgroundColor: '#007bff2e',
                                 borderColor: '#007bff',
                                 borderWidth: 1,
                                 pointBackgroundColor: '#007bff'
