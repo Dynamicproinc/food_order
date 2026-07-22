@@ -31,12 +31,19 @@ class AdminController extends Controller
         ->whereYear('created_at', Carbon::now()->year)
         ->groupBy('month')
         ->get();
+
+        // get numbers of times each month has been ordered for chart
+        $orderCount = SalesOrder::selectRaw('MONTH(created_at) as month, COUNT(*) as order_count')
+        ->whereYear('created_at', Carbon::now()->year)
+        ->groupBy('month')
+        ->get();
         $data = [
             // month in words
             'month' => $sales->pluck('month')->map(function($month) {
                 return date('F', mktime(0, 0, 0, $month, 1));
             }),
             'total_amount' => $sales->pluck('total_amount'),
+            'order_count' => $orderCount->pluck('order_count'),
         ];
 
        
