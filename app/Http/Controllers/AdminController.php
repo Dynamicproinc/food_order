@@ -39,6 +39,13 @@ class AdminController extends Controller
         ->where('status', 'dispatched')
         ->groupBy('month')
         ->get();
+
+        // get user registration count for each month for chart
+        $userRegistrationCount = User::selectRaw('MONTH(created_at) as month, COUNT(*) as user_registration_count')
+        ->whereYear('created_at', Carbon::now()->year)
+        ->groupBy('month')
+        ->get();
+
         $data = [
             // month in words
             'month' => $sales->pluck('month')->map(function($month) {
@@ -46,6 +53,7 @@ class AdminController extends Controller
             }),
             'total_amount' => $sales->pluck('total_amount'),
             'order_count' => $orderCount->pluck('order_count'),
+            'user_registration_count' => $userRegistrationCount->pluck('user_registration_count'),
         ];
 
        

@@ -15,11 +15,18 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">{{ __('Order Count')}}</h5>
                             <p class="card-text">{{ __('Number of orders for the current month')}}</p>
                             <canvas class="my-4" id="salses_count_chart" width="900" height="380"></canvas>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ __('User Registration')}}</h5>
+                            <p class="card-text">{{ __('Number of new users registered')}}</p>
+                            <canvas class="my-4" id="user_registration_chart" width="900" height="380"></canvas>
                         </div>
                     </div>
                 </div>
@@ -30,6 +37,7 @@
                 <script>
                     var ctx = document.getElementById("salses_chart");
                     var ctx2 = document.getElementById("salses_count_chart");
+                    var ctx3 = document.getElementById("user_registration_chart");
 
                     var SalesChart = new Chart(ctx, {
                         type: 'line',
@@ -76,6 +84,32 @@
                                 data: @json($data['order_count']),
                                 backgroundColor: '#00800031',
                                 borderColor: 'green',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            },
+                            legend: {
+                                display: false,
+                            }
+                        }
+                    });
+
+                    var UserRegistrationChart = new Chart(ctx3, {
+                        type: 'line',
+                        data: {
+                            labels: @json($data['month']),
+                            datasets: [{
+                                label: 'User Registration',
+                                data: @json($data['user_registration_count']),
+                                backgroundColor: '#007bff2e',
+                                borderColor: '#007bff',
                                 borderWidth: 1
                             }]
                         },
