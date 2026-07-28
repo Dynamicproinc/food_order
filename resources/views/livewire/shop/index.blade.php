@@ -88,7 +88,7 @@
 
     {{-- loading skeleton --}}
 
-    <div class="loading-skelaton" wire:loading wire:target="selectProduct">
+    {{-- <div class="loading-skelaton" wire:loading wire:target="selectProduct">
         <div class="skelaton-box">
             <div class="container">
                 <div class="card border-0">
@@ -117,7 +117,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     {{-- cart modal --}}
