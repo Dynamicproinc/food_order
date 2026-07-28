@@ -216,7 +216,7 @@
                                 
                             @endphp
                             <button
-                                class="btn btn-warning form-control @if ($disabled_button) disabled @endif"
+                                class="btn btn-warning shine-btn form-control @if ($disabled_button) disabled @endif"
                                 @if ($disabled_button) disabled @endif>
 
                                 <span class="spinner-border spinner-border-sm" wire:loading wire:target="saveOrder"
