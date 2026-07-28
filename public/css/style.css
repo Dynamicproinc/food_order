@@ -521,7 +521,23 @@ text-transform: uppercase;
             border-radius: 16px;
         }
 
-       
+       .loading-skelaton{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: 9999;
+        
+       }
+       .skelaton-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+       }
 
         .pm-check-label {
             position: relative;
