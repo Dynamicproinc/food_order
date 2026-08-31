@@ -16,6 +16,7 @@
             background: #DFDFDF;
             /* overflow-x: hidden; */
         }
+        
         button{
              font-family: "JetBrains Mono", monospace !important;
              font-weight: lighter !important;
@@ -29,7 +30,7 @@
             /* background: #120f04 !important;
              */
             font-weight: 500 !important;
-           background-color: rgb(192, 217, 242);
+           background-color: rgb(214, 229, 245) !important;
         }
         #product_description {
   height: 150px !important; /* or any height you want */
@@ -147,7 +148,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary  bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/admin">{{ __('Admin Panel')}}</a>
+    <a class="navbar-brand" href="/admin"><img src="{{asset('images/logo.jpg')}}" alt="Logo" class="img-fluid rounded-2" style="max-height: 40px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
