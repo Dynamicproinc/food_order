@@ -21,11 +21,16 @@
                 <tbody>
                     @foreach ($orders as $item)
                         <tr @if($item->status !== 'dispatched') class="pending-order" @endif>
-                            <td scope="row">{{ $item->id }}</td>
+                            <td scope="row">
+                           {{ $item->id }} 
+                            </td>
                             <td>
-                                <a href="{{ route('admin.orders.show', $item->id) }}" target="_blank">
-                                    {{ $item->daily_order_number }}
-                                </a>
+                                <span class="badge text-bg-dark">
+
+                                    <a href="{{ route('admin.orders.show', $item->id) }}" target="_blank" class="text-decoration-none text-white">
+                                        {{ $item->daily_order_number }}
+                                    </a>
+                                </span>
                             </td>
                             <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                             <td>
