@@ -28,7 +28,7 @@
         .pending-order td{
             /* background: #120f04 !important;
              */
-            font-weight: bold !important;
+            font-weight: 500 !important;
            background-color: rgb(192, 217, 242);
         }
         #product_description {
