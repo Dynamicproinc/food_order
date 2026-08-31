@@ -52,7 +52,7 @@
                             <td>
                                 {{-- dispatch order action  --}}
                                 <button wire:loading.attr="disabled" wire:confirm="Are you sure?"
-                                    class="btn btn-sm btn-dark @if ($item->status === 'dispatched') disabled @endif"
+                                    class="btn btn-sm btn-primary @if ($item->status === 'dispatched') disabled @endif"
                                     @if ($item->status === 'dispatched') disabled @endif
                                     wire:click="dispatchOrder({{ $item->id }})">
                                     <span wire:loading wire:target="dispatchOrder({{$item->id}})" class="spinner-border spinner-border-sm" role="status">
