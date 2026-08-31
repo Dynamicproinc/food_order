@@ -75,4 +75,11 @@
             <p class="text-center text-muted">{{ __('No orders found') }}</p>
         @endif
     </div>
+    <script>
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('show-alert', (event) => {
+            alert(event.message);
+        });
+    });
+</script>
 </div>

@@ -60,10 +60,13 @@ class Index extends Component
                 
                 // send email to customer
                   Mail::to($user->email)->send(new PointsNotification($email_data));
+                   $this->dispatch('show-alert', message: 'Order dispatched successfully!');
             }else{
-                dd('The email couldn’t be sent.');
+                
+                                   $this->dispatch('show-alert', message: 'The email couldn’t be sent.');
 
             }
     }
     }
 }
+

@@ -22,6 +22,9 @@
              /* text-transform: uppercase; */
              /* font-size:12px !important; */
         }
+        .disabled{
+          cursor: not-allowed;
+        }
         #product_description {
   height: 150px !important; /* or any height you want */
   resize: both; /* allow user to drag to resize */
