@@ -24,7 +24,11 @@
              /* font-size:12px !important; */
         }
         .disabled{
-          cursor: not-allowed;
+          cursor: not-allowed !important;
+        }
+        .disabled:hover{
+                   cursor: not-allowed !important;
+
         }
         .pending-order td{
             /* background: #120f04 !important;
