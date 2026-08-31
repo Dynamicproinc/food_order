@@ -1,7 +1,7 @@
 <div>
     <div>
         @if (count($orders) > 0)
-            <table class="table table-sm table-striped">
+            <table class="table table-sm">
                 <thead>
                     <tr>
                         <th scope="col">{{ __('ID') }}</th>
@@ -20,8 +20,8 @@
                 </thead>
                 <tbody>
                     @foreach ($orders as $item)
-                        <tr>
-                            <th scope="row">{{ $item->id }}</th>
+                        <tr @if($item->status !== 'dispatched') class="pending-order" @endif>
+                            <td scope="row">{{ $item->id }}</td>
                             <td>
                                 <a href="{{ route('admin.orders.show', $item->id) }}" target="_blank">
                                     {{ $item->daily_order_number }}

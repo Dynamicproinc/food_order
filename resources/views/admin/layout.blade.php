@@ -25,6 +25,12 @@
         .disabled{
           cursor: not-allowed;
         }
+        .pending-order td{
+            /* background: #120f04 !important;
+             */
+            font-weight: bold !important;
+           background-color: rgb(192, 217, 242);
+        }
         #product_description {
   height: 150px !important; /* or any height you want */
   resize: both; /* allow user to drag to resize */
