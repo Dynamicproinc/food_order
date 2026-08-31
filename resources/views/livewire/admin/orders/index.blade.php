@@ -58,7 +58,7 @@
                                     <span wire:loading wire:target="dispatchOrder({{$item->id}})" class="spinner-border spinner-border-sm" role="status">
                                         
                                     </span>
-                                    {{ __('Dispatch') }} <i class="bi bi-box-arrow-in-right"></i>
+                                    {{ __('Dispatch') }} 
                                 </button>
 
                             </td>
