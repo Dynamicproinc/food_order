@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                     @foreach ($orders as $item)
-                        <tr @if($item->status !== 'dispatched') class="pending-order" @endif>
+                        <tr @if($item->status === 'pending') class="pending-order" @endif>
                             <td scope="row">
                            {{ $item->id }} 
                             </td>
