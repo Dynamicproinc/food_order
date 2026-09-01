@@ -7,13 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}} }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}} }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}} }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('ico/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('ico/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('ico/favicon-16x16.png')}}">
 {{-- <link href="https://getbootstrap.com/docs/5.3/examples/sidebars/sidebars.css" rel="stylesheet" /> --}}
     <style>
         body{
             background: #DFDFDF;
+            /* background: #fffff; */
             /* overflow-x: hidden; */
         }
         
