@@ -7,7 +7,7 @@
                         <th scope="col">{{ __('ID') }}</th>
                         <th scope="col">{{ __('DON') }}</th>
                         <th scope="col">{{ __('Date') }}</th>
-                        <th scope="col">{{ __('Customer') }}</th>
+                        <th scope="col" style="width: 200px;">{{ __('Customer') }}</th>
                         {{-- <th scope="col">{{ __('Type') }}</th> --}}
                         <th scope="col">{{ __('Total') }}</th>
                         <th scope="col">{{ __('Pickup') }}</th>
