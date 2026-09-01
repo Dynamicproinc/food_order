@@ -38,7 +38,14 @@
                                     <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2">
                                     <div>
                                         {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}<br/>
-                                         <span class="badge rounded-pill text-bg-dark">{{ $item->order_type }}</span>
+                                        <span class="fw-bold small text-muted text-capitalize">
+                                            @if ($item->order_type === 'delivery')
+                                                <i class="bi bi-truck"></i>
+                                            @else
+                                                <i class="bi bi-person-walking"></i>
+                                            @endif
+                                             {{ $item->order_type }}
+                                            </span>
                                     </div>
                                 </div>
                                 
