@@ -21,7 +21,7 @@
                 <tbody>
                     @foreach ($orders as $item)
                         <tr @if($item->status === 'pending') class="pending-order" @endif>
-                            <td scope="row">
+                            <td scope="row" @if($item->status === 'pending') class="hg-l-b" @endif>
                            {{ $item->id }} 
                             </td>
                             <td>

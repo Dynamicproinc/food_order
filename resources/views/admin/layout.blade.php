@@ -41,6 +41,9 @@
                    cursor: not-allowed !important;
 
         }
+        .hg-l-b{
+          border-left: 4px solid #0B57D0 !important;
+        }
         .pending-order td{
             /* background: #120f04 !important;
              */
