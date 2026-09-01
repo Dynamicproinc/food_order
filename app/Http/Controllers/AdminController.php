@@ -15,7 +15,7 @@ class AdminController extends Controller
         return view('admin.products.addproduct');
     }
     public function products(){
-        $products = Product::paginate(20);
+        $products = Product::orderBy('status', 'asc')->paginate(20);
         return view('admin.products.index')->with('products', $products);
     }
 
