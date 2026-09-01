@@ -25,7 +25,7 @@
             font-size: 14px !important;
             color:maroon !important;
             text-align: right !important;
-            /* width:200px; */
+            width:100px;
         }
         button{
              font-family: "JetBrains Mono", monospace !important;
