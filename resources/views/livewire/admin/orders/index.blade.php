@@ -8,7 +8,7 @@
                         <th scope="col">{{ __('DON') }}</th>
                         <th scope="col">{{ __('Date') }}</th>
                         <th scope="col">{{ __('Customer') }}</th>
-                        <th scope="col">{{ __('Type') }}</th>
+                        {{-- <th scope="col">{{ __('Type') }}</th> --}}
                         <th scope="col">{{ __('Total') }}</th>
                         <th scope="col">{{ __('Pickup') }}</th>
                         <th scope="col">{{ __('D/Address') }}</th>
@@ -34,12 +34,15 @@
                             </td>
                             <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                             <td>
-                                <div class="d-flex">
+                                <div class="d-flex mb-2">
                                     <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2">
                                     {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}
                                 </div>
+                                
+                                <span class="badge rounded-pill text-bg-dark">{{ $item->order_type }}</span>
+
                             </td>
-                            <td>{{ $item->order_type }}</td>
+                            {{-- <td></td> --}}
                             <td class="price-text">{{ $item->net_total }} €</td>
                             <td>{{ $item->pickup_time }}</td>
                             <td>{{ $item->address_1 . ' ' . $item->address_2 }}</td>
