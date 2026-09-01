@@ -56,7 +56,7 @@
                             <td class="price-text">{{ $item->net_total }} €</td>
                             <td>{{ $item->pickup_time }}</td>
                             <td>{{ $item->address_1 . ' ' . $item->address_2 }}</td>
-                            <td>{{ $item->telephone }}</td>
+                            <td style="letter-spacing: 2px">{{ $item->telephone }}</td>
                             <td>{{ $item->getUser()?->email }}</td>
                             <td>
                                 @if ($item->status === 'dispatched')
