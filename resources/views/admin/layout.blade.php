@@ -17,7 +17,15 @@
             /* background: #fffff; */
             /* overflow-x: hidden; */
         }
-        
+        .price-text{
+            font-family: "JetBrains Mono", monospace !important;
+            font-weight: normal !important;
+            text-transform: uppercase;
+            /* font-size:12px !important; */
+            font-size: 14px !important;
+            color:maroon !important;
+            text-align: right !important;
+        }
         button{
              font-family: "JetBrains Mono", monospace !important;
              font-weight: lighter !important;

@@ -40,7 +40,7 @@
                                 </div>
                             </td>
                             <td>{{ $item->order_type }}</td>
-                            <td>{{ $item->net_total }}</td>
+                            <td class="price-text">{{ $item->net_total }} €</td>
                             <td>{{ $item->pickup_time }}</td>
                             <td>{{ $item->address_1 . ' ' . $item->address_2 }}</td>
                             <td>{{ $item->telephone }}</td>
