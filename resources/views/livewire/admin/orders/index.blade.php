@@ -50,13 +50,21 @@
                                     <span class="badge text-bg-success"> <i class="bi bi-check"></i>
                                         {{ $item->status }}</span>
                                 @else
-                                    <span class="badge text-bg-secondary"> <i class="bi bi-clock-history"></i>
+                                          @if ($item->status === 'canceled')
+                                    <span class="badge text-bg-danger"> <i class="bi bi-x"></i>
                                         {{ $item->status }}</span>
+                                @else
+                                    <span class="badge text-bg-secondary"> <i class="bi bi-clock-history"></i>
+                                        {{ $item->status }}
+                                    </span>
+                                    @endif
                                 @endif
+
+                                
                             </td>
                             <td>
                                 {{-- dispatch order action  --}}
-                                <button wire:loading.attr="disabled" wire:confirm="Are you sure?"
+                                {{-- <button wire:loading.attr="disabled" wire:confirm="Are you sure?"
                                     class="btn btn-sm btn-primary @if ($item->status === 'dispatched') disabled @endif"
                                     @if ($item->status === 'dispatched') disabled @endif
                                     wire:click="dispatchOrder({{ $item->id }})">
@@ -64,7 +72,21 @@
                                         
                                     </span>
                                     {{ __('Dispatch') }} 
+                                </button> --}}
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    
                                 </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif"  @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif  href="#"  wire:confirm="Are you sure?"  wire:click="dispatchOrder({{ $item->id }})">{{ __('Dispatch') }}</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif" @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif href="#" wire:confirm="Are you sure?" wire:click="cancelOrder({{ $item->id }})">{{ __('Cancel order') }}</a>
+                                    </li>
+                                    
+                                </ul>
+                                </div>
 
                             </td>
                         </tr>

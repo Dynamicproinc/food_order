@@ -68,5 +68,12 @@ class Index extends Component
             }
     }
     }
+
+    public function cancelOrder($order_id){
+         $order = SalesOrder::findOrFail($order_id);
+        $order->status = 'canceled';
+        $order->save();
+          $this->dispatch('show-alert', message: 'order has been canceled');
+    }
 }
 
