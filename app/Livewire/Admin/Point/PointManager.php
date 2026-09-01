@@ -45,14 +45,16 @@ class PointManager extends Component
         
         // find out the user id
         $qr_code = QrCode::where('slug', $this->qr)->first();
-       if ($qr_code) {
-            $this->user_id = $qr_code->user_id;
+        $email = User::where('email', $this->qr)->first();
+        
+       if ($qr_code || $email) {
+            $this->user_id = $qr_code ? $qr_code->user_id : $email->id;
             $this->user = User::find($this->user_id);
             $this->er_message = null;
 
              $this->balance = UserPointTotal::where('user_id', $this->user_id)->first()?->balance;
         } else {
-            $this->er_message = "Invalid QR"; 
+            $this->er_message = "Invalid QR or Email"; 
             $this->user = null;
         }
         
