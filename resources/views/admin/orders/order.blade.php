@@ -6,7 +6,7 @@
 
 
 
-        <div class="container mt-3">
+        <div class="mt-3">
             @livewire('admin.orders.index')
         </div>
     </div>
