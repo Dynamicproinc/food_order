@@ -97,6 +97,9 @@
                                     <li class="">
                                         <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif" @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif href="#" wire:confirm="Are you sure?" wire:click="cancelOrder({{ $item->id }})">{{ __('Cancel order') }}</a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('admin.orders.show', $item->id) }}" target="_blank">{{ __('View') }}</a>
+                                    </li>
                                     
                                 </ul>
                                 </div>
