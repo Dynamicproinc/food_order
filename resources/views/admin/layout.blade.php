@@ -27,6 +27,9 @@
             text-align: right !important;
             width:100px;
         }
+        .table td{
+           background: #eeeded ;
+        }
         button{
              font-family: "JetBrains Mono", monospace !important;
              font-weight: lighter !important;
