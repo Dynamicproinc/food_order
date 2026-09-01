@@ -40,7 +40,7 @@
                         <td>
                             <img src="{{ $item->avatar }}" class="xs-avatar" alt="{{$item->name}}">
                         </td>
-                        <td>{{ \Illuminate\Support\Str::limit($item->first_name, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->name, 20) }}</td>
                         <td>{{ \Illuminate\Support\Str::limit($item->last_name, 20) }}</td>
                         <td>{{ $item->email }}</td>
                         <td>{{ number_format($item->getPointBalance()?->balance ?? 0) }}</td>
