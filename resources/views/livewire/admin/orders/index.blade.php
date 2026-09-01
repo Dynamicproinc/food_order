@@ -1,7 +1,7 @@
 <div>
     <div>
         @if (count($orders) > 0)
-            <table class="table table-sm">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">{{ __('ID') }}</th>
