@@ -36,10 +36,13 @@
                             <td>
                                 <div class="d-flex mb-2">
                                     <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2">
-                                    {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}
+                                    <div>
+                                        {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}<br/>
+                                         <span class="badge rounded-pill text-bg-dark">{{ $item->order_type }}</span>
+                                    </div>
                                 </div>
                                 
-                                <span class="badge rounded-pill text-bg-dark">{{ $item->order_type }}</span>
+                               
 
                             </td>
                             {{-- <td></td> --}}
