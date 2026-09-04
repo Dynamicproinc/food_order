@@ -33,6 +33,17 @@
      {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
      <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+      {{-- google analytics --}}
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WSYZRPENSJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WSYZRPENSJ');
+</script>
+      {{--  --}}
     @livewireStyles
 </head>
 
