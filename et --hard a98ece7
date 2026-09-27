@@ -1,0 +1,48 @@
+[33mcommit a98ece7cc92fe7595f62c1c6b241e78fedbc4d93[m
+Author: Lakmal Wijerathna <samdynmic@gmail.com>
+Date:   Sun Sep 27 15:45:30 2026 +0200
+
+    new update
+
+ app/Livewire/Darktheme/Shop/Index.php              |  26 [32m+[m
+ app/Livewire/Shop/Cart.php                         |   3 [32m+[m[31m-[m
+ app/Livewire/Shop/Index.php                        |   6 [31m-[m
+ app/Livewire/Spa/App/Cart.php                      |  51 [32m++[m
+ app/Livewire/Spa/App/Shop.php                      |  42 [32m++[m
+ app/Livewire/Spa/App/ShowProduct.php               | 273 [32m++++++++[m
+ app/Livewire/Spa/App/ShowSingleProduct.php         |  13 [32m+[m
+ public/css/dark-mode.css                           | 718 [32m+++++++++++++++++++++[m
+ public/css/style.css                               |  13 [32m+[m[31m-[m
+ public/images/mb-food-cr-002.jpg                   | Bin [31m0[m -> [32m542153[m bytes
+ public/images/mb-food-cr-003.jpg                   | Bin [31m0[m -> [32m665319[m bytes
+ public/images/mb-foods-cr-001.webp                 | Bin [31m0[m -> [32m185784[m bytes
+ public/images/test-banner.webp                     | Bin [31m0[m -> [32m110448[m bytes
+ resources/views/account/coupon.blade.php           |   1 [32m+[m
+ resources/views/account/orders.blade.php           |   1 [32m+[m
+ resources/views/auth/login.blade.php               |   6 [32m+[m[31m-[m
+ resources/views/auth/passwords/confirm.blade.php   |   2 [32m+[m[31m-[m
+ resources/views/auth/passwords/email.blade.php     |   2 [32m+[m[31m-[m
+ resources/views/auth/passwords/reset.blade.php     |   2 [32m+[m[31m-[m
+ resources/views/auth/register.blade.php            |   4 [32m+[m[31m-[m
+ resources/views/auth/verify.blade.php              |   2 [32m+[m[31m-[m
+ resources/views/dark/home.blade.php                | 147 [32m++++[m[31m-[m
+ resources/views/home.blade.php                     |  12 [32m+[m[31m-[m
+ resources/views/inc/dark-navbar.blade.php          |  52 [32m++[m
+ resources/views/inc/footer.blade.php               |  25 [32m+[m
+ resources/views/inc/mobile-side-nav.blade.php      | 104 [32m+++[m
+ resources/views/inc/modal/product.blade.php        |   3 [32m+[m[31m-[m
+ resources/views/inc/spa/topnav.blade.php           |  41 [32m++[m
+ resources/views/layouts/app-dark.blade.php         | 100 [32m++[m[31m-[m
+ resources/views/layouts/app.blade.php              |  45 [32m+[m[31m-[m
+ resources/views/livewire/account/qrcode.blade.php  |   6 [32m+[m[31m-[m
+ resources/views/livewire/account/setting.blade.php |  11 [32m+[m[31m-[m
+ .../views/livewire/darktheme/shop/index.blade.php  | 144 [32m+++++[m
+ resources/views/livewire/shop/carbutton.blade.php  |   6 [32m+[m[31m-[m
+ resources/views/livewire/shop/cart.blade.php       |  97 [32m++[m[31m-[m
+ resources/views/livewire/spa/app/cart.blade.php    | 102 [32m+++[m
+ resources/views/livewire/spa/app/shop.blade.php    | 185 [32m++++++[m
+ .../views/livewire/spa/app/show-product.blade.php  | 222 [32m+++++++[m
+ .../livewire/spa/app/show-single-product.blade.php |   3 [32m+[m
+ resources/views/shop/show-product.blade.php        |  10 [32m+[m
+ routes/web.php                                     |  39 [32m+[m[31m-[m
+ 41 files changed, 2420 insertions(+), 99 deletions(-)
