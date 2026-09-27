@@ -56,7 +56,8 @@ class Cart extends Component
 
     public function render()
     {
-        return view('livewire.shop.cart');
+        // return view('livewire.shop.cart');
+        return view('livewire.shop.cart')->layout('layouts.app-dark');
     }
 
     public function mount()

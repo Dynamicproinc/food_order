@@ -1,6 +1,3 @@
-@extends('layouts.app-dark')
-@section('title', '')
-@section('content')
 <div>
     {{-- navbar --}}
     @include('inc.dark-navbar')
@@ -145,4 +142,3 @@
 
     </div>
 </div>
-@endsection

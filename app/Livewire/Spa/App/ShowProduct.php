@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Livewire\Shop;
+namespace App\Livewire\Spa\App;
 
 use Livewire\Component;
-use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductChoice;
 use App\Models\Variant;
+use App\Models\Category;
 
-
-
-class Index extends Component
+class ShowProduct extends Component
 {
+    public $product;
+
     public $categories;
     public $selected_category_id = 1;
     public $category;
@@ -29,50 +29,43 @@ class Index extends Component
     public $success_message;
     public $error_message;
 
-    protected $queryString = [
-        'category' => ['except' => ''] // optional, removes empty category from URL
-    ];
-
-
     public function render()
     {
-        // $products = Product::query()
-        //     ->when($this->category, function ($query) {
-        //         $query->where('category_id', $this->category);
-        //     })
-        //     ->where('status', 'active')
-        //     ->get();
-
-        // return view('livewire.shop.index', [
-        //     'products' => $products,
-        // ]);
-        return view('livewire.shop.index');
+        return view('livewire.spa.app.show-product')->layout('layouts.app-dark');
     }
 
-    public function mount($products)
+    public function mount($slug)
     {
-        // dd($products);
-        // $this->cat_id = Category::where('category_name', $category);
-        //  $products = Product::query()
-        //     ->when($category, function ($query) {
-        //         $query->where('category_id', $this->cat_id);
-        //     })
-        //     ->where('status', 'active')
-        //     ->get();
-        $this->products = $products;
+        $product = Product::where('slug', $slug)->where('status', 'active')->first();
+        if ($product) {
+            $this->product = $product;
+            $this->variant = [];
+            $this->refreshCart();
+             $this->selected_product = $product;
+        $this->grand_total = $this->selected_product->discounted_price;
+        $this->quantity = 1;
+        // $this->selected_product_image = $product->image_path;
+        // set first item as checked
+        //    $this->resetVariant();
+        if (count($this->selected_product->getGroupedOption()) > 0) {
+
+            foreach ($this->selected_product->getGroupedOption() as $option_id => $variants) {
+                $this->variant[$option_id] = $variants->first()->id;
+            }
+        }
+
+        $this->calculateTotal();
         
-        $this->categories = Category::all();
-        $this->variant = [];
-        $this->refreshCart();
-        // dd($this->selected_product->getGroupedOption());
-    }
-    public function refreshCart(){
-          $this->cart_items = session('cart', []);
-        //   $this->calculateTotal();
-        
-        
+        } else {
+            abort(404);
+        }
     }
 
+    public function refreshCart()
+    {
+        $this->cart_items = session('cart', []);
+    }
+    
     public function calculateTotal()
     {
 
@@ -100,35 +93,31 @@ class Index extends Component
         // $this->grand_total = ($pprice + $total_v + $total_c) * $this->quantity;
         $this->grand_total = ($pprice + $total_v + $total_c);
     }
-
-
-
-    public function selectCategory($id)
+     public function selectCategory($id)
     {
         $this->selected_category_id = $id;
     }
+    //  public function selectProduct($id)
+    // {
+    //     //open the model
 
-    public function selectProduct($id)
-    {
-        //open the model
+    //     // load the product details
+    //     $this->selected_product = Product::where('id', $id)->first();
+    //     $this->grand_total = $this->selected_product->discounted_price;
+    //     $this->quantity = 1;
+    //     // $this->selected_product_image = $product->image_path;
+    //     // set first item as checked
+    //     //    $this->resetVariant();
+    //     if (count($this->selected_product->getGroupedOption()) > 0) {
 
-        // load the product details
-        $this->selected_product = Product::where('id', $id)->first();
-        $this->grand_total = $this->selected_product->discounted_price;
-        $this->quantity = 1;
-        // $this->selected_product_image = $product->image_path;
-        // set first item as checked
-        //    $this->resetVariant();
-        if (count($this->selected_product->getGroupedOption()) > 0) {
+    //         foreach ($this->selected_product->getGroupedOption() as $option_id => $variants) {
+    //             $this->variant[$option_id] = $variants->first()->id;
+    //         }
+    //     }
 
-            foreach ($this->selected_product->getGroupedOption() as $option_id => $variants) {
-                $this->variant[$option_id] = $variants->first()->id;
-            }
-        }
-
-        $this->calculateTotal();
-        $this->openModal();
-    }
+    //     $this->calculateTotal();
+    //     $this->openModal();
+    // }
 
     public function resetVariant()
     {
@@ -144,20 +133,20 @@ class Index extends Component
 
     }
 
-    public function openModal()
-    {
-        $this->product_modal = true;
-    }
+    // public function openModal()
+    // {
+    //     $this->product_modal = true;
+    // }
 
-    public function closeModal()
-    {
+    // public function closeModal()
+    // {
 
-        $this->product_modal = false;
-        // $this->resetVariant();
-        $this->variant = [];
-        $this->choices = [];
-        $this->selected_product = null;
-    }
+    //     $this->product_modal = false;
+    //     // $this->resetVariant();
+    //     $this->variant = [];
+    //     $this->choices = [];
+    //     $this->selected_product = null;
+    // }
 
     public function increment()
     {
@@ -195,9 +184,7 @@ class Index extends Component
             }
         }
     }
-
-
-    public function addCart()
+ public function addCart()
     {
 
         if (count($this->selected_product->getVariants())) {
@@ -251,15 +238,16 @@ class Index extends Component
         $this->dispatch('pop');
         // $this->dispatch('cartUpdated');
         // $this->dispatch('open-nav');
-        $this->closeModal();
+        // $this->closeModal();
         // $this->cart_modal = true;
         // $this->success_message = "Item added to the cart";
-        $this->dispatch('cartMessage',title: 'Cart item has been updated');
+        return redirect()->to(route('spa.cart'));
+        // $this->dispatch('cartMessage',title: 'Cart item has been updated');
 
 
     }
 
-    public function openCartModal()
+      public function openCartModal()
     {
         $this->cart_modal = true;
     }
@@ -281,4 +269,5 @@ class Index extends Component
         
        
     }
+    
 }

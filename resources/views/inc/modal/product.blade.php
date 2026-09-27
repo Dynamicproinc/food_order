@@ -209,7 +209,8 @@
                             </div>
                             <div class="col-8">
                                 <button class="btn-add-cart" wire:click="addCart"
-                                    wire:loading.attr="disabled">{{ __('ADD TO BAG') }}
+                                    wire:loading.attr="disabled">
+                                    {{ __('ADD TO BAG') }}
 
                                     ({{ number_format($grand_total, 2, ',', ' ') }} €)
                                 </button>

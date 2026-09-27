@@ -1,4 +1,5 @@
 @extends('home')
+ @section('top_nav_title', __('Orders'))
 @section('acc-content')
     <div>
         <style>

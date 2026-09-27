@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+ @section('top_nav_title', __('Confirm'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

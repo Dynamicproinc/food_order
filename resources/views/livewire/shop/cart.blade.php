@@ -1,16 +1,24 @@
 <div>
+     <div>
+            @section('top_nav_title', __('Checkout'))
+            @section('title', __('Checkout -'))
+            @section('bg_color', __('bg-dark'))
+            @include('inc.spa.topnav')
+        </div>
+         <div class="safty-top"></div>
     @if (session('cart', []) && count(session('cart', [])) > 0)
-        <div class="d-flex justify-content-between">
+        {{-- <div class="d-flex justify-content-between">
 
-            {{-- <a href="{{ route('shop.index') }}" class="btn btn-default btn-lg fw-bold"> <i class="bi bi-chevron-left"></i> {{ __('Order now') }}</a> --}}
+            
             <div class="px-3">
                 <h5 class="fw-bolder">{{ __('Order now') }}</h5>
             </div>
-        </div>
+        </div> --}}
         {{-- <div class="cou-switch">
             
         </div> --}}
-        <div class="row">
+       <div class="">
+         <div class="row">
             <div class="col-lg-6 order-2 order-lg-1">
                 <div class="p-3">
                     <form wire:submit="saveOrder">
@@ -18,7 +26,7 @@
                             <div class="col-lg-6 form-group">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="firstname"
-                                        placeholder="{{ __('First Name') }}" wire:model="first_name" disabled>
+                                        placeholder="{{ __('First Name') }}" wire:model="first_name" disabled data-bs-theme="dark">
                                     <label for="firstname">{{ __('First Name') }}</label>
                                 </div>
                             </div>
@@ -66,14 +74,14 @@
                                                 <div class="map-container mb-3">
                                                     <iframe
                                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.280843386527!2d16.048545452072354!3d45.709555434488244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47667fe21922b5b3%3A0xf18caa017255a3f7!2sM%20Brothers%20Food%20Truck!5e0!3m2!1sen!2shr!4v1776755615938!5m2!1sen!2shr"
-                                                        width="600" height="450" style="border:0;"
+                                                        width="100%" height="100%" style="border:0;"
                                                         allowfullscreen="" loading="lazy"
                                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for=""
-                                                        class="mb-2">{{ __('Select Time (24-hour format)') }}
+                                                        class="mb-2 text-white">{{ __('Select Time (24-hour format)') }}
                                                     </label>
                                                     <input type="time"
                                                         class="form-control @error('pickup_time') is-invalid @enderror mb-2"
@@ -86,7 +94,7 @@
                                                             class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">
                                                             {{ __('Orders can only be placed between 10:00 AM and 2:00 PM.') }}
                                                         </span> --}}
-                                                        <div class="info-alert-bar mt-2">
+                                                        <div class="theme-badge mt-2">
                                                             {{-- <i class="bi bi-info-circle-fill"></i> --}}
                                                             <span>{{ __('Please arrive within 20 minutes of your scheduled pickup time.( Working hours are from 11:00  to 17:00. Mon - Fri )') }}</span>
                                                         </div>
@@ -112,7 +120,7 @@
                                             type="radio" id="pmcod" value="delivery" wire:model="order_type"
                                             @if ($grand_total < 69) disabled @endif>
                                         <label class="pm-check-label my-3" for="pmcod">
-                                            {{ __('Home Delivery') }} <small
+                                            {{ __('Delivery') }} <small
                                                 class="fw-bold">{{ __('(Only for orders above 70,00 €)') }}</small>
 
 
@@ -172,7 +180,7 @@
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox"
                                                         wire:model="save_address" id="ckaddress">
-                                                    <label class="form-check-label" for="ckaddress">
+                                                    <label class="form-check-label text-white" for="ckaddress">
                                                         {{ __('Save this address for future orders') }}
                                                     </label>
                                                 </div>
@@ -216,7 +224,7 @@
                                 
                             @endphp
                             <button
-                                class="btn btn-warning shine-btn form-control @if ($disabled_button) disabled @endif"
+                                class="btn btn-dark-theme btn-lg form-control @if ($disabled_button) disabled @endif"
                                 @if ($disabled_button) disabled @endif>
 
                                 <span class="spinner-border spinner-border-sm" wire:loading wire:target="saveOrder"
@@ -236,14 +244,16 @@
 
 
                             @if ($status)
-                                <div class="text-danger">{{ $status->status_color }}</div>
+                                <div class="theme-notice-wrap">
+                                    <div class="theme-notice m-3">{{ $status->status_color }}</div>
+                                </div>
                             @endif
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2">
-                <div class="cart-items-list p-3">
+                {{-- <div class="cart-items-list p-3">
 
                     @foreach (session('cart', []) as $index => $item)
                         <div class="row mb-3">
@@ -262,7 +272,7 @@
 
                                 </span>
                                 <h6>{{ number_format($item['price'], 2, ',', ' ') }} €</h6>
-                                {{-- <h6>{{ number_format($item['price'] * $item['quantity'], 2, ',', ' ') }} €</h6> --}}
+                               
                                 <div>
                                     @if (!empty($item['variants']))
                                         @foreach ($item['variants'] as $v_id => $variant)
@@ -273,7 +283,7 @@
                                                     €)
                                                 </div>
                                                 <div class="text-xs">
-                                                    {{-- {{ number_format(\App\Models\Variant::where('id', $variant)->first()->price, 2, ',', ' ')}} --}}
+                                                   
                                                 </div>
                                             </div>
                                         @endforeach
@@ -315,7 +325,7 @@
                         </div>
                     @endforeach
 
-                </div>
+                </div> --}}
                 <div>
                     {{-- new design for coupon --}}
                     {{-- end new design coupon --}}
@@ -351,9 +361,24 @@
 
                     @if ($user_points >= $min_coupon_limit)
                         <div class="p-3">
+                             <div class="bg-dark p-3 rounded">
+                                        <h6>{{ __('Coupon Balance:') }}</h6>
+                                        <h3 class="fw-bold theme-text-color">
+                                             {{ $user_points ?? 0 }} 
+                                        </h3>
+                                         <small class="theme-badge mt-0"><i class="bi bi-check2"></i> {{ __('You can apply for 10% discount') }}</small>
+                                        <p class="small text-muted">{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}</p>
+                                         <div class="d-flex justify-content-between">
+                                    <label for="apple-switch" class="text-white">{{ __('Apply Coupon') }}</label>
+                                    <input id="apple-switch" class="apple-switch" type="checkbox"
+                                        wire:model.live="pay_coupon" value="1" wire:click="payCoupon">
 
 
-                            <div class="cou-switch p-3 bg-white rounded">
+
+                                </div>
+                                    </div>
+
+                            {{-- <div class="cou-switch p-3 bg-white rounded">
                                 <div class="mb-2">
                                     <span class="text-success small txt-xs">
                                         <span class="mb-0 h6 text-uppercase"
@@ -362,7 +387,7 @@
                                         <small
                                             class="text-muted mt-0">{{ __('You can apply for 10% discount') }}</small>
                                     </span>
-                                    {{-- <span><i class="bi bi-info-circle"></i></span> --}}
+                                   
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <label for="apple-switch">{{ __('Apply Coupon') }}</label>
@@ -372,14 +397,14 @@
 
 
                                 </div>
-                            </div>
+                            </div> --}}
                             <div>
                                 <p class="placeholder-glow w-100 rounded" wire:loading wire:target="payCoupon">
                                     <span class="placeholder col-12 rounded"></span>
                                 </p>
                             </div>
                             @if ($pay_coupon)
-                                <div class="info-alert-warning mt-2">
+                                <div class="theme-badge mt-2">
                                     {{-- <i class="bi bi-exclamation-triangle-fill"></i> --}}
                                     <span>{{ __('You have applied a 10% discount using all 10 of your coupons') }}</span>
 
@@ -387,26 +412,35 @@
                             @endif
                         @else
                             <div class="p-3 row">
-                                <div class="col-9">
-                                    <span
+                                <div class="col-12">
+                                    {{-- <span
                                         class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">
                                         {{ __('Coupon Balance:') }} {{ $user_points }} |
                                         {{ __('Not enough coupons for disccount') }}
-                                    </span>
+                                    </span> --}}
+                                    <div class="bg-dark p-3 rounded">
+                                        <h6>{{ __('Coupon Balance:') }}</h6>
+                                        <h3 class="fw-bold theme-text-color">
+                                             {{ $user_points ?? 0 }} 
+                                        </h3>
+                                        <p class="dark-warning-alert"><i class="bi bi-exclamation-triangle-fill"></i> {{ __('Not enough coupons for disccount') }}</p>
+                                        <p class="small text-muted">{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}</p>
+
+                                    </div>
 
                                 </div>
-                                <div class="col-3 d-flex flex-row-reverse">
+                                {{-- <div class="col-3 d-flex flex-row-reverse">
 
 
 
-                                </div>
+                                </div> --}}
                             </div>
-                            <div class="p-3">
-                                <div class="info-alert-bar">
+                            {{-- <div class="p-3">
+                                <div class="bg-dark p-3 rounded">
                                     <p>{{ __('For every burger you purchase, you’ll receive one coupon. Once you collect 10 coupons, you become eligible for a 10% discount on your next order') }}
                                     </p>
                                 </div>
-                            </div>
+                            </div> --}}
 
                     @endif
 
@@ -443,11 +477,11 @@
                         </div>
                         <div class="d-flex justify-content-between fw-bold">
                             <div>
-                                <span class="fw-bolder">{{ __('Net Total') }}</span>
+                                <h5 class="fw-bolder">{{ __('Net Total') }}</h5>
 
                             </div>
                             <div class="text-right">
-                                <span class="fw-bolder"> {{ number_format($net_total, 2, ',', ' ') }} €</span>
+                                <h5 class="fw-bolder theme-text-color"> {{ number_format($net_total, 2, ',', ' ') }} €</h5>
 
                             </div>
                         </div>
@@ -484,3 +518,6 @@
         @endif --}}
     {{--  --}}
 </div>
+       </div>
+</div>
+

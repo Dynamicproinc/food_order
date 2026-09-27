@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', __('My Account').' -')
+@section('title', __('My QR').' -')
+ @section('top_nav_title', __('My QR'))
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -16,9 +18,9 @@
                         </div>
                         <div class="col-4">
                             <div class="mid-text">
-                                <div class="rounded bg-dark p-3">
-                                    <h1 class="fw-bolder">{{number_format(auth()->user()->getPointBalance()?->balance ?? 0, 0)}}</h1>
-                                </div>
+                                <h1 class="fw-bolder theme-text-color">{{number_format(auth()->user()->getPointBalance()?->balance ?? 0, 0)}}</h1>
+                                {{-- <div class="rounded bg-dark d-flex justify-content-center align-item-center">
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -50,7 +52,7 @@
                 <div class="mt-3 d-flex justify-content-center">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="btn btn-outline-dark">
+                        <button type="submit" class="btn btn-dark">
                             <i class="bi bi-power"></i> {{ __('Logout')}}
                         </button>
                     </form>
