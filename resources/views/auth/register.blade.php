@@ -1,5 +1,5 @@
 @extends('layouts.app')
- @section('top_nav_title', __('Register'))
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -164,7 +164,7 @@
                                 </div>
                             </div> --}}
                             <div class="form-group">
-                                <button class="btn btn-dark-theme w-100 btn-lg" id="submit-btn" type="submit">
+                                <button class="btn btn-lg btn-warning form-control" id="submit-btn" type="submit">
                                     {{ __('Register') }}
                                 </button>
                                 <div class="mt-3">

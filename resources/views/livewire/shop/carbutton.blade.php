@@ -1,11 +1,11 @@
 <div>
-    <a type="button" href="{{ route('shop.cart') }}" class="btn btn-dark-theme">
+    <a type="button" href="{{ route('shop.cart') }}" class="btn btn-warning">
     <i class="bi bi-bag cart-icon"></i>
     @if (session('cart') && count(session('cart')))
-        <span class=""> {{ $item_count }} - {{ number_format($grand_total, 2, ',', ' ') }}
+        <span class="badge text-bg-warning"> {{ $item_count }} - {{ number_format($grand_total, 2, ',', ' ') }}
             €</span>
     @else
-        <span class="">0 - 0,00 €</span>
+        <span class="badge text-bg-warning">0 - 0,00 €</span>
     @endif
     </a>
      @if (session('cart') && count(session('cart')) > 0)

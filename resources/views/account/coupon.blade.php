@@ -1,5 +1,4 @@
 @extends('home')
- @section('top_nav_title', __('Coupons'))
 @section('acc-content')
     <div>
          <style>

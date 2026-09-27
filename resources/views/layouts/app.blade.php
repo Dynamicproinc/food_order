@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  data-bs-theme="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 <meta name="keywords" content="{{__('burgers, burger shop, online burger delivery, delicious burgers, cheeseburgers, gourmet burgers, fast food, best burgers, fresh food, burger restaurant, burger takeaway')}}">
  <meta property="og:image" content="{{asset('ico/favicon-32x32.png')}}">
 {{--  --}}
-    {{-- <title>{{ config('app.name', 'MBrothers Food') }}</title> --}}
+    <title>{{ config('app.name', 'MBrothers Food') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -31,8 +31,7 @@
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
      {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
-     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}"> --}}
-     <link rel="stylesheet" href="{{ asset('css/dark-mode.css') }}?v={{ uniqid() }}">
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ uniqid() }}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
       {{-- google analytics --}}
       <!-- Google tag (gtag.js) -->
@@ -50,13 +49,7 @@
 
 <body>
     <div id="app">
-       <div>
-           
-           
-            @section('bg_color', __('bg-dark'))
-            @include('inc.spa.topnav')
-        </div>
-        {{-- @include('inc.navbar') --}}
+        @include('inc.navbar')
         {{-- sidebar --}}
         {{-- <div id="snav" class="sidenav">
             <div class="nv-wrap">
@@ -95,7 +88,19 @@
         <i class="bi bi-bag"></i>
        </div> --}}
         {{--  --}}
-       @include('inc.footer')
+        <footer class="text-center py-3 d-flex justify-content-center align-items-center" style="height:150px">
+  <div class="container ">
+    <div><strong>{{ __('Open Hours')}}</strong></div>
+    <div><strong>{{ __('Monday to Friday 11:00 – 17:00')}}</strong></div>
+    {{-- <div><strong>{{ __('Saturday 10:00 – 12:00')}}</strong></div> --}}
+    <div class="">{{__('For support, contact')}} <a href="mailto:info@mbrothers-food.com" class="text-white">info@mbrothers-food.com</a></div>
+    <div class="mb-3">
+      <a href="/terms-of-use" class="me-2 text-white">{{ __('Terms of Use') }}</a>
+      <a href="/privacy-policy" class="text-white">{{ __('Privacy Policy') }}</a>
+    </div>
+    <div class="gray-5">&copy;  {{ date('Y') }} {{ config('app.name') }}. {{__('All rights reserved.')}}</div>
+  </div>
+</footer>
 {{--  notice modal--}}
   @php
             $status = App\Models\ShopStatus::whereDate('closing_date', today())
@@ -128,21 +133,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     {{-- sidebar --}}
-   <script>
-        function openSB() {
-            const navbar = document.getElementById("side_nav_bar");
-            navbar.style.right = 0;
-            navbar.style.width = "100%";
-           
-
-        }
-
-        function closeSB() {
-            const navbar = document.getElementById("side_nav_bar");
-            navbar.style.width = "400px";
-            navbar.style.right = "-400px";
-        }
-    </script>
+  
     
     <script>
          window.addEventListener('pop', event => {

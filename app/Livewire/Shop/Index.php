@@ -133,6 +133,12 @@ class Index extends Component
     public function resetVariant()
     {
 
+        //   if(count($this->selected_product->getGroupedOption()) > 0){
+
+        //     foreach ($this->selected_product->getGroupedOption() as $option_id => $variants) {
+        //        $this->variant[$option_id] = $variants->first()->id;
+        //    }
+        // }
         $this->variant = [];
         $this->choices = [];
 

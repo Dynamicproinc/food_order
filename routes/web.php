@@ -7,14 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\SSEController;
 
-use App\Livewire\Darktheme\Shop\Index as ShopIndex;
-use App\Livewire\spa\App\Shop;
-use App\Livewire\spa\App\Cart;
-use App\Livewire\spa\App\ShowProduct;
-use App\Livewire\Shop\Cart as Checkout;
-
-
-
 Route::get('/sse', [SSEController::class, 'sendSSE']);
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
@@ -50,11 +42,11 @@ Route::get('/my-account/setting', [App\Http\Controllers\HomeController::class, '
 
 
 
-// Route::get('/', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
-// // Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
-// Route::get('/category/{category}', [App\Http\Controllers\ShopController::class, 'category'])->name('shop.category');
-// // Route::get('/shop/{slug}', [App\Http\Controllers\ShopController::class, 'showProduct'])->name('shop.showproduct');
-// Route::get('/cart', [App\Http\Controllers\ShopController::class, 'cart'])->name('shop.cart')->middleware(['auth','verified']);
+Route::get('/', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+// Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+Route::get('/category/{category}', [App\Http\Controllers\ShopController::class, 'category'])->name('shop.category');
+// Route::get('/shop/{slug}', [App\Http\Controllers\ShopController::class, 'showProduct'])->name('shop.showproduct');
+Route::get('/cart', [App\Http\Controllers\ShopController::class, 'cart'])->name('shop.cart')->middleware(['auth','verified']);
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
@@ -72,27 +64,6 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/setting/shop-status',[App\Http\Controllers\AdminController::class,'changeShostatus'])->name('admin.setting.shopstatus');
     Route::get('/extract-emails',[App\Http\Controllers\AdminController::class,'extractEmails'])->name('admin.users.extractemails');
 });
-
-
-// testing
-
-// Route::get('/test', function(){
-//  return view('dark.home');
-// });
-// Route::get('/test/show/{id}', function(){
-//  return view('shop.show-product');
-// })->name('product.show');
-
-Route::get('shop/{category?}', Shop::class)->name('spa.shop');
-Route::get('/', Shop::class)->name('spa.shop');
-// Route::get('/cart', Cart::class)->name('spa.cart');
-Route::get('/product/{slug}', ShowProduct::class)->name('spa.show-product');
-Route::get('/cart', Cart::class)->name('spa.cart')->middleware(['auth','verified']);
-Route::get('/checkout', Checkout::class)->name('spa.checkout')->middleware('auth');
-// Route::get('spa/shop/{slug}', Cart::class)->name('spa.shop.show');
-
-
-// end testing
 
 
 // Route::get('/.env', function(Request $request) {

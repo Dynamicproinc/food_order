@@ -11,8 +11,8 @@
 
         <div class="d-felx justify-content-center mt-3">
             <div class="rounded p-3 d-flex justify-content-center" wire:ignore>
-                <div class="bg-white p-3 rounded-4">
-                    <h6 class="fw-bold text-black">{{ __('My QR') }}</h6>
+                <div>
+                    <h6 class="fw-bold">{{ __('My QR') }}</h6>
                     <div id="qrcode"></div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="d-flex-justify-content-center mt-3">
-                <button class="btn btn-dark-theme w-100 btn-lg" wire:click="generateQR">{{ __('Get Your QR') }}</button>
+                <button class="btn btn-warning w-100" wire:click="generateQR">{{ __('Get Your QR') }}</button>
             </div>
         </div>
     @endif
