@@ -73,7 +73,7 @@
                                             <p>Sada dostupno za preuzimanje u našem food trucku!
 
                                                 Požurite po svoju porciju dok traju zalihe!</p>
-                                            <a href="/category/Zamrznut" class="btn btn-warning">Buy now
+                                            <a href="/category/Zamrznut" class="btn btn-warning">{{_('Naruči sada')}}</a>
                                                 </a>
                                         </div>
                                     </div>
