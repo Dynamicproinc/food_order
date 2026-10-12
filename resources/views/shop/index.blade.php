@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="">
-                                    <img src="{{ asset('images/design/banner-bolognese.png') }}" alt="burger"
+                                    <img src="{{ asset('images/design/bolognese-image.png') }}" alt="burger"
                                         class="banner-image">
                                 </div>
                             </div>
