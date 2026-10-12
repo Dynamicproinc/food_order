@@ -44,7 +44,26 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="banner">
+                    <div class="banner" style="background-image: url('{{ asset('images/design/banner-bolognese.png') }}'); background-size: cover; background-position: center;">
+                        {{-- <div class="row">
+                            <div class="col-12">
+                                <div class="">
+                                    <div class="hero-banner" style="background-color: rgba(0, 0, 0, 0.5); height:400px">
+                                        <div>
+                                            <h1>Gladni? 😋</h1>
+                                            <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i pridružite se street food zabavi!</p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                           
+                        </div> --}}
+                    </div>
+                    {{-- <div class="banner">
                         <div class="row">
                             <div class="col-8">
                                 <div class="">
@@ -69,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="carousel-item">
                     <div class="banner" style="background-image: url('{{ asset('images/design/banner2.JPG') }}')">
