@@ -44,8 +44,8 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="banner" style="background-image: url('{{ asset('images/design/banner-bolognese.png') }}'); background-size: cover; background-position: center;">
-                        {{-- <div class="row">
+                    {{-- <div class="banner" style="background-image: url('{{ asset('images/design/banner-bolognese.png') }}'); background-size: cover; background-position: center;">
+                        <div class="row">
                             <div class="col-12">
                                 <div class="">
                                     <div class="hero-banner" style="background-color: rgba(0, 0, 0, 0.5); height:400px">
@@ -61,19 +61,20 @@
 
                             </div>
                            
-                        </div> --}}
-                    </div>
-                    {{-- <div class="banner">
+                        </div>
+                    </div> --}}
+                    <div class="banner">
                         <div class="row">
                             <div class="col-8">
                                 <div class="">
                                     <div class="hero-banner">
                                         <div>
-                                            <h1>Uživaj u ukusnoj hrani i osvoji kupone!</h1>
-                                            <p>Dobij kupon za svako jelo iz <strong>M Brothers Food</strong> trucka — požuri
-                                                i registriraj se još danas!</p>
-                                            @guest<a href="{{ route('register') }}" class="btn btn-warning">Registriraj
-                                                se</a>@endguest
+                                            <h1>Bolognese Black Angus 350g</h1>
+                                            <p>Sada dostupno za preuzimanje u našem food trucku!
+
+                                                Požurite po svoju porciju dok traju zalihe!</p>
+                                            <a href="/category/Zamrznut" class="btn btn-warning">Buy now
+                                                </a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,12 +84,12 @@
                             </div>
                             <div class="col-4">
                                 <div class="">
-                                    <img src="{{ asset('images/design/philly_cheese.png') }}" alt="burger"
+                                    <img src="{{ asset('images/design/banner-bolognese.png') }}" alt="burger"
                                         class="banner-image">
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <div class="banner" style="background-image: url('{{ asset('images/design/banner2.JPG') }}')">
@@ -98,8 +99,9 @@
                                     <div class="hero-banner" style="background-color: rgba(0, 0, 0, 0.5); height:400px">
                                         <div>
                                             <h1>Gladni? 😋</h1>
-                                            <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i pridružite se street food zabavi!</p>
-                                           
+                                            <p>Naš food truck u Velikoj Gorici poslužuje sreću, zalogaj po zalogaj. Dođite i
+                                                pridružite se street food zabavi!</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -107,13 +109,13 @@
 
 
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
-               
+
             </div>
-           
+
         </div>
         {{-- <div class="banner">
             
