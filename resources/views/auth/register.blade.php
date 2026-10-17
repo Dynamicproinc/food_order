@@ -12,19 +12,19 @@
                         <div class="col-6 p-3">
                             <a href="{{ route('google.login') }}" class="btn d-flex align-items-center justify-content-center"
                                 style="background-color: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo"
-                                    style="width: 20px; margin-right: 8px;">
-                                   
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                                    alt="Google logo" style="width: 20px; margin-right: 8px;">
+
                                 <span style="color: #555;">{{ __('Continue with Google') }}</span>
                             </a>
                         </div>
-                            <div class="p-3">
-                            @if(session('error'))
+                        <div class="p-3">
+                            @if (session('error'))
                                 <div class="alert alert-danger" role="alert">
                                     {{ __(session('error')) }}
                                 </div>
                             @endif
-                            </div>
+                        </div>
                         <div class="text-center">
                             {{ __('Or') }}
                         </div>
@@ -173,8 +173,18 @@
                                                 href="{{ route('login') }}">{{ __('Login') }}</a></p>
                                     </div>
                                     <div>
-                                        <p class="text-muted">{{ __('By clicking, you agree to the') }} <a href="/terms"
-                                                target="_blank" rel="noopener">{{ __('Terms and Conditions') }}</a>.</p>
+
+                                        <p class="text-muted">
+                                            {{ __('By clicking, you agree to the') }}
+                                            <a href="{{route('terms')}}" target="_blank" rel="noopener">
+                                                {{ __('Terms and Conditions') }}
+                                            </a>
+                                            {{ __('and acknowledge the') }}
+                                            <a href="{{route('privacy.policy')}}" target="_blank" rel="noopener">
+                                                {{ __('Privacy Policy') }}
+                                            </a>.
+                                        </p>
+
 
                                     </div>
                                 </div>
