@@ -77,7 +77,7 @@ class Cart extends Component
         // point availabilty and eligiblity
         $this->user_points = UserPointTotal::where('user_id', auth()->user()->id)->first()?->balance;
 
-        $this->recomendation = Product::whereIn('id', [1,2])->where('status', 'active')->get();
+        $this->recomendation = Product::whereIn('id', [1, 2])->where('status', 'active')->get();
         // $this->recomendation = Product::whereIn('id', [18,21,26])->where('status', 'active')->get();
     }
 
@@ -130,9 +130,9 @@ class Cart extends Component
     public function saveOrder()
     {
 
-    if (empty(session('cart', []))) {
-    return redirect()->to(route('shop.index'));
-}
+        if (empty(session('cart', []))) {
+            return redirect()->to(route('shop.index'));
+        }
 
         //first must calcluate latest cart total
         $this->calculateTotal();
@@ -141,40 +141,38 @@ class Cart extends Component
             // $this->validate([
             //     'pickup_time' => 'required|after_or_equal:now',
             // ]);
-          $this->validate([
-    'pickup_time' => [
-        'required',
+            $this->validate([
+                'pickup_time' => [
+                    'required',
 
-        // Check pickup time is within 10:00–14:00
-        function ($attribute, $value, $fail) {
-            $time = \Carbon\Carbon::parse($value)->format('H:i');
-            $start = '10:00';
-            $end = '16:00';
+                    // Check pickup time is within 10:00–14:00
+                    function ($attribute, $value, $fail) {
+                        $time = \Carbon\Carbon::parse($value)->format('H:i');
+                        $start = '10:00';
+                        $end = '16:00';
 
-            if ($time < $start || $time > $end) {
-                $fail(\Lang::get('validation.custom.pickup_time.time_range'));
-            }
-            // if date is saturday user cannot order after 12:00
-            // $date = \Carbon\Carbon::parse($value);
-            // if ($date->isSaturday() && $time > '12:00') {
-            //     $fail(\Lang::get('validation.custom.pickup_time.saturday_limit'));
-            // }
-        },
+                        if ($time < $start || $time > $end) {
+                            $fail(\Lang::get('validation.custom.pickup_time.time_range'));
+                        }
+                        // if date is saturday user cannot order after 12:00
+                        // $date = \Carbon\Carbon::parse($value);
+                        // if ($date->isSaturday() && $time > '12:00') {
+                        //     $fail(\Lang::get('validation.custom.pickup_time.saturday_limit'));
+                        // }
+                    },
 
-        // Check 20-minute gap from order_time
-        function ($attribute, $value, $fail) {
-           $orderTime = now()->setTimezone('Europe/Zagreb');
-$pickupTime = \Carbon\Carbon::parse($value, 'Europe/Zagreb');
+                    // Check 20-minute gap from order_time
+                    function ($attribute, $value, $fail) {
+                        $orderTime = now()->setTimezone('Europe/Zagreb');
+                        $pickupTime = \Carbon\Carbon::parse($value, 'Europe/Zagreb');
 
-// Check if pickup time is less than 20 minutes after order time
-if ($pickupTime->lessThan($orderTime->copy()->addMinutes(20))) {
-    $fail(__('Pickup time must be at least 20 minutes after the order time. Current time: ') . $orderTime->format('H:i'));
-}
-
-        },
-    ],
-]);
-
+                        // Check if pickup time is less than 20 minutes after order time
+                        if ($pickupTime->lessThan($orderTime->copy()->addMinutes(20))) {
+                            $fail(__('Pickup time must be at least 20 minutes after the order time. Current time: ') . $orderTime->format('H:i'));
+                        }
+                    },
+                ],
+            ]);
         }
 
         if ($this->order_type == 'delivery') {
@@ -297,6 +295,9 @@ if ($pickupTime->lessThan($orderTime->copy()->addMinutes(20))) {
             // clear cart
             // send email to customer
             $sales_order_for_email = SalesOrder::where('id', $order->id)->where('user_id', auth()->user()->id)->first();
+            // send event to the google
+
+
             //mail to customer
             Mail::to(auth()->user()->email)
                 // ->bcc('info@mbrothers-food.com')
@@ -305,15 +306,21 @@ if ($pickupTime->lessThan($orderTime->copy()->addMinutes(20))) {
 
             // 
             // send notification to admin or kitchen staff
-            
+
             SSENotification::create([
-                'user_id' => auth()->user()->id, 
+                'user_id' => auth()->user()->id,
                 'message' => 'New order placed. Order ID: ' . $order->id,
             ]);
 
             session()->forget('cart');
 
             // redirections
+
+            session()->flash('ga4_purchase', [
+                'transaction_id' => (string) $order->id,
+                'value' => (float) $order->net_total,
+                'currency' => 'EUR',
+            ]);
 
             return redirect()->to(route('myaccount.vieworder', $order->slug));
         }

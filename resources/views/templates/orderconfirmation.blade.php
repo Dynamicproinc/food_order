@@ -154,5 +154,20 @@
       {{__('For support, contact')}}: info@mbrothers-food.com
     </div>
   </div>
+
+  @if (session()->has('ga4_purchase'))
+    <script>
+        const purchase = @json(session('ga4_purchase'));
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'purchase', {
+                transaction_id: purchase.transaction_id,
+                value: purchase.value,
+                currency: purchase.currency,
+                
+            });
+        }
+    </script>
+@endif
 </body>
 </html>
