@@ -128,6 +128,12 @@ class Index extends Component
 
         $this->calculateTotal();
         $this->openModal();
+         $this->dispatch(
+        'ga4-view-item',
+        productId: (string) $this->selected_product->id,
+        itemName: $this->selected_product->title,
+        price: (float) $this->selected_product->discounted_price,
+    );
     }
 
     public function resetVariant()

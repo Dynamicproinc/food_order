@@ -127,4 +127,31 @@
         @endif --}}
     {{--  --}}
     {{--  --}}
+
+
+    
+@script
+<script>
+    $wire.on('ga4-view-item', (event) => {
+        if (typeof window.gtag !== 'function') {
+            console.warn('GA4 gtag is not loaded');
+            return;
+        }
+
+        window.gtag('event', 'view_item', {
+            currency: 'EUR',
+            value: Number(event.price),
+            items: [{
+                item_id: String(event.productId),
+                item_name: event.itemName,
+                price: Number(event.price),
+                quantity: 1
+            }]
+        });
+
+        console.log('GA4 view_item sent:', event.itemName);
+    });
+</script>
+@endscript
+
 </div>
