@@ -149,7 +149,7 @@
             }]
         });
 
-        console.log('GA4 view_item sent:', event.itemName);
+        // console.log('GA4 view_item sent:', event.itemName);
     });
 </script>
 @endscript
