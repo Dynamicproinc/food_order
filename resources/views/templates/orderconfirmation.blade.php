@@ -4,6 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ORD-{{ date('Y') }}- {{ $order->daily_order_number}} {{ __('Order confirmation')}}</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WSYZRPENSJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-WSYZRPENSJ');
+</script>
+{{-- G-WSYZRPENSJ --}}
   <style>
     body {
       font-family: Arial, sans-serif;
