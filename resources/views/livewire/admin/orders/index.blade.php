@@ -20,14 +20,15 @@
                 </thead>
                 <tbody>
                     @foreach ($orders as $item)
-                        <tr @if($item->status === 'pending') class="pending-order" @endif>
-                            <td scope="row" @if($item->status === 'pending') class="hg-l-b" @endif>
-                           {{ $item->id }} 
+                        <tr @if ($item->status === 'pending') class="pending-order" @endif>
+                            <td scope="row" @if ($item->status === 'pending') class="hg-l-b" @endif>
+                                {{ $item->id }}
                             </td>
                             <td>
                                 <span class="badge text-bg-dark">
 
-                                    <a href="{{ route('admin.orders.show', $item->id) }}" target="_blank" class="text-decoration-none text-white">
+                                    <a href="{{ route('admin.orders.show', $item->id) }}" target="_blank"
+                                        class="text-decoration-none text-white">
                                         {{ $item->daily_order_number }}
                                     </a>
                                 </span>
@@ -35,26 +36,28 @@
                             <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                             <td>
                                 <div class="d-flex mb-2">
-                                    {{-- <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2"> --}}
-                                    <div style="height: 60px; display: flex; align-items: center; justify-content: center;">
-    <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; color: #343a40; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">
-        {{ strtoupper(mb_substr($item->getUser()?->name ?? '', 0, 1) . mb_substr($item->getUser()?->last_name ?? '', 0, 1)) }}
-    </div>
-</div>
+                                    <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2">
+                                    {{-- <div class="me-2"
+                                        style="height: 60px; display: flex; align-items: center; justify-content: center;">
+                                        <div
+                                            style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; color: #343a40; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">
+                                            {{ strtoupper(mb_substr($item->getUser()?->name ?? '', 0, 1) . mb_substr($item->getUser()?->last_name ?? '', 0, 1)) }}
+                                        </div>
+                                    </div> --}}
                                     <div>
-                                        {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}<br/>
+                                        {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}<br />
                                         <span class="fw-bold small text-muted text-capitalize">
                                             @if ($item->order_type === 'delivery')
                                                 <i class="bi bi-truck"></i>
                                             @else
                                                 <i class="bi bi-person-walking"></i>
                                             @endif
-                                             {{ $item->order_type }}
-                                            </span>
+                                            {{ $item->order_type }}
+                                        </span>
                                     </div>
                                 </div>
-                                
-                               
+
+
 
                             </td>
                             {{-- <td></td> --}}
@@ -68,17 +71,17 @@
                                     <span class="badge text-bg-success"> <i class="bi bi-check"></i>
                                         {{ $item->status }}</span>
                                 @else
-                                          @if ($item->status === 'canceled')
-                                    <span class="badge text-bg-danger"> <i class="bi bi-x"></i>
-                                        {{ $item->status }}</span>
-                                @else
-                                    <span class="badge text-bg-secondary"> <i class="bi bi-clock-history"></i>
-                                        {{ $item->status }}
-                                    </span>
+                                    @if ($item->status === 'canceled')
+                                        <span class="badge text-bg-danger"> <i class="bi bi-x"></i>
+                                            {{ $item->status }}</span>
+                                    @else
+                                        <span class="badge text-bg-secondary"> <i class="bi bi-clock-history"></i>
+                                            {{ $item->status }}
+                                        </span>
                                     @endif
                                 @endif
 
-                                
+
                             </td>
                             <td>
                                 {{-- dispatch order action  --}}
@@ -92,21 +95,29 @@
                                     {{ __('Dispatch') }} 
                                 </button> --}}
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif"  @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif  href="#"  wire:confirm="Are you sure?"  wire:click="dispatchOrder({{ $item->id }})">{{ __('Dispatch') }}</a>
-                                    </li>
-                                    <li class="">
-                                        <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif" @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif href="#" wire:confirm="Are you sure?" wire:click="cancelOrder({{ $item->id }})">{{ __('Cancel order') }}</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('admin.orders.show', $item->id) }}" target="_blank">{{ __('View') }}</a>
-                                    </li>
-                                    
-                                </ul>
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif"
+                                                @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif
+                                                href="#" wire:confirm="Are you sure?"
+                                                wire:click="dispatchOrder({{ $item->id }})">{{ __('Dispatch') }}</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="dropdown-item @if ($item->status === 'dispatched' || $item->status === 'canceled') disabled @endif"
+                                                @if ($item->status === 'dispatched' || $item->status === 'canceled') aria-disabled="true" @endif
+                                                href="#" wire:confirm="Are you sure?"
+                                                wire:click="cancelOrder({{ $item->id }})">{{ __('Cancel order') }}</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('admin.orders.show', $item->id) }}"
+                                                target="_blank">{{ __('View') }}</a>
+                                        </li>
+
+                                    </ul>
                                 </div>
 
                             </td>
@@ -124,10 +135,10 @@
         @endif
     </div>
     <script>
-    document.addEventListener('livewire:init', () => {
-        Livewire.on('show-alert', (event) => {
-            alert(event.message);
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('show-alert', (event) => {
+                alert(event.message);
+            });
         });
-    });
-</script>
+    </script>
 </div>
