@@ -35,7 +35,12 @@
                             <td>{{ $item->created_at->timezone('Europe/Zagreb')->format('d.m.Y. H:i') }}</td>
                             <td>
                                 <div class="d-flex mb-2">
-                                    <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2">
+                                    {{-- <img src="{{ $item->getUser()?->avatar }}" class="xs-avatar mx-2"> --}}
+                                    <div style="height: 60px; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; color: #343a40; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">
+        {{ strtoupper(mb_substr($item->getUser()?->name ?? '', 0, 1) . mb_substr($item->getUser()?->last_name ?? '', 0, 1)) }}
+    </div>
+</div>
                                     <div>
                                         {{ $item->getUser()?->name . ' ' . $item->getUser()?->last_name }}<br/>
                                         <span class="fw-bold small text-muted text-capitalize">
